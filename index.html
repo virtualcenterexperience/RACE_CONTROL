@@ -1,48 +1,463 @@
-<!doctype html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VCE ESPORT • Race Control LIVE</title><style>
-:root{font-family:Inter,system-ui,Segoe UI,sans-serif;color:#edf3ff;background:#081020}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0,#1b3760,transparent 35%),#081020}.app{max-width:1540px;margin:auto;padding:20px}.top,.bar,.actions,.tabs{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.top{margin-bottom:16px}h1{font-size:23px;margin:0}h1 b{color:#ed505a}h2{font-size:17px;margin:0 0 12px}h3{font-size:12px;color:#a5bddc;text-transform:uppercase;letter-spacing:.1em;margin:18px 0 9px}.muted,small{font-size:12px;color:#9cb0cd}.layout{display:grid;grid-template-columns:minmax(320px,380px) 1fr;gap:14px}.panel{background:#111e32;border:1px solid #2d405d;border-radius:14px;padding:16px;min-width:0}.fields{display:grid;grid-template-columns:1fr 1fr;gap:9px}.field.wide{grid-column:span 2}label{font-size:11px;color:#b2c6df;display:block;margin-bottom:4px}input,select,textarea{width:100%;padding:10px;background:#081528;color:#fff;border:1px solid #38516f;border-radius:8px;font:inherit;font-size:13px}textarea{min-height:100px;resize:vertical}button{cursor:pointer;background:#1e3656;color:white;border:1px solid #3e5c81;border-radius:9px;padding:10px 13px;font-weight:700}button.active,button.primary{background:#2668c9;border-color:#397fe4}button.ok{background:#127657}button:disabled{opacity:.45;cursor:not-allowed}.tabs{justify-content:flex-start;margin:12px 0}.message{border-radius:10px;background:#153451;border:1px solid #2e658e;color:#d7ecff;padding:11px;font-size:12px;margin:12px 0}.message.bad{background:#462529;border-color:#a64a57;color:#ffdddd}.stats{display:grid;grid-template-columns:repeat(4,minmax(95px,1fr));gap:8px;margin-bottom:13px}.stat{background:#0a172b;border:1px solid #2c415f;padding:12px;border-radius:10px}.stat b{display:block;font-size:22px;margin-top:5px}.stat small{font-size:10px}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:12px}td,th{padding:10px;border-bottom:1px solid #2b4160;text-align:left}th{font-size:10px;color:#a4bad7;background:#0b172b;text-transform:uppercase}td input[type=checkbox]{width:auto;accent-color:#28bf89}.done{background:#113c31}.lockbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#14233b;border:1px solid #345275;border-radius:12px;padding:10px 14px;margin:13px 0}.lockbar input{max-width:160px}.hidden{display:none!important}.readonly{opacity:.75}.tips{padding:10px;border:1px solid #355476;border-radius:10px;background:#10253e;font-size:12px;line-height:1.6}.status{color:#54dba6}.warning{color:#ffc777}@media(max-width:1060px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.app{padding:10px}.fields{grid-template-columns:1fr}.field.wide{grid-column:span 1}}
-</style></head><body><div class="app">
-<div class="top"><div><h1><b>VCE</b> ESPORT / RACE CONTROL <span class="status">LIVE</span></h1><small>GITHUB PAGES · DONNÉES COMMUNES · 3 COURSES INDÉPENDANTES</small></div><div class="actions"><button id="reload" onclick="loadCourse(true)">↻ Actualiser</button><button onclick="exportCsv()">Exporter CSV</button></div></div>
-<div class="lockbar"><strong>🔒 Modifications</strong><input type="password" id="password" autocomplete="off" placeholder="Mot de passe"><button id="unlock" onclick="unlock()">Valider</button><button id="lock" onclick="lock()" class="hidden">Verrouiller</button><span id="access" class="muted">Lecture seule</span><span class="muted">· Mise à jour toutes les 5 secondes</span></div>
-<div class="tabs" id="raceTabs"><button class="active" onclick="chooseCourse(1)">COURSE 1</button><button onclick="chooseCourse(2)">COURSE 2</button><button onclick="chooseCourse(3)">COURSE 3</button></div>
-<div id="message" class="message">Configuration nécessaire : renseigner l'adresse de ton Worker dans le HTML.</div>
-<div class="layout"><aside class="panel"><h2>⚙ Paramètres de course</h2><div id="inputs" class="fields"></div><h3>Pilotes / chronos</h3><div id="pilots"></div><div class="actions" style="margin-top:13px"><button class="primary" id="save" onclick="saveConfig()">Enregistrer les paramètres</button></div><small>Enregistrement automatique après 1,5 s d'inactivité quand le mode modification est activé.</small></aside>
-<main class="panel"><div class="bar"><div><h2 id="raceName">COURSE 1</h2><small id="context">Chargement...</small></div><small id="sync">Pas encore synchronisé</small></div><div id="stats" class="stats"></div><div class="tabs"><button class="active" onclick="switchView('strategy')" id="tabstrategy">Stratégie</button><button onclick="switchView('pit')" id="tabpit">Simulateur PIT</button><button onclick="switchView('debrief')" id="tabdebrief">Débrief</button><button onclick="switchView('scenario')" id="tabscenario">Scénario</button></div>
-<section id="strategy"><div class="scroll"><table><thead><tr><th>Relais</th><th>Pilote</th><th>Début</th><th>Fin</th><th>Tours</th><th>Essence</th><th>Pneus restants</th><th>Actions fin relais</th><th>PIT</th><th>Validé</th></tr></thead><tbody id="stints"></tbody></table></div><div class="tips" id="planTips" style="margin-top:12px"></div></section>
-<section id="pit" class="hidden"><h2>Simulateur de temps d'arrêt</h2><div class="fields" id="pitChecks"></div><div class="tips" style="margin-top:12px"><strong>Temps total : <span id="pitTotal">0,0 s</span></strong><div id="pitDetail"></div></div><small>0 seconde si aucune case n'est cochée. Les temps cochés sont additionnés.</small></section>
-<section id="debrief" class="hidden"><h2>Bilan de relais</h2><div class="fields" id="debriefFields"></div><div class="field"><label>Commentaires / faits marquants</label><textarea id="notes" placeholder="Difficultés, trafic, incidents, virages à améliorer..."></textarea></div><div class="actions" style="margin-top:10px"><button class="primary" onclick="saveDebrief()">Publier le débrief</button></div><div id="debriefAdvice" class="tips" style="margin-top:12px"></div><h3>Historique partagé</h3><div id="debriefHistory"></div></section>
-<section id="scenario" class="hidden"><h2>Scénario : rattrapage de l'adversaire</h2><div class="fields"><div class="field"><label>Écart avec la voiture devant (s)</label><input type="number" id="gap" value="40"></div><div class="field"><label>Temps restant (min)</label><input type="number" id="remaining" value="20"></div><div class="field"><label>Mon chrono</label><input id="ownLap" value="1:30.000"></div><div class="field"><label>Chrono adversaire</label><input id="otherLap" value="1:32.000"></div></div><button style="margin-top:10px" onclick="updateScenario()">Calculer</button><div id="scenarioResult" class="tips" style="margin-top:12px"></div></section>
-</main></div></div><script>
-// IMPORTANT : remplace cette adresse par l'URL publique de TON Worker Cloudflare.
-const API_BASE='COLLE_ICI_URL_WORKER';
-const $=id=>document.getElementById(id), esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const fieldDefs=[['name','Nom de course','text'],['type','Type de course','select','endurance|sprint'],['car','Voiture','text'],['track','Circuit','text'],['sim','Simulateur','select','LMU|Assetto Corsa|ACC|iRacing|Autre'],['hours','Durée (h)','number'],['start','Départ','time'],['lap','Chrono moyen (m:ss.mmm)','text'],['fuel','Essence L/tour','number'],['tank','Réservoir L','number'],['reserve','Réserve (tours)','number'],['tyreLife','Vie pneus (tours)','number'],['nPilots','Nombre pilotes','select','1|2|3|4'],['minSwaps','Swaps minimum','number'],['maxStint','Relais max (min, 0 = libre)','number'],['stintMargin','Marge réglementaire (min)','number'],['mode','Mode PIT','select','normal|avance|rapide|decale|retard'],['pitLane','Traversée voie pit (s)','number'],['fuelTime','Essence (s)','number'],['tyreTime','Pneus (s)','number'],['swapTime','Changement pilote (s)','number'],['damageLight','Dégâts légers (s)','number'],['damageHeavy','Dégâts lourds (s)','number']];
-const pitKeys=[['lane','Voie des stands','pitLane'],['fuel','Essence','fuelTime'],['tyres','Pneus','tyreTime'],['swap','Swap','swapTime'],['light','Dégâts légers','damageLight'],['heavy','Dégâts lourds','damageHeavy']];
-let courseId=1,server=null,unlocked=false,editDirty=false,saving=false,fetching=false,saveTimer=0,errAt=0,plan=[];
-function renderInputs(){ $('inputs').innerHTML=fieldDefs.map(([k,label,type,options])=>`<div class="field"><label for="f_${k}">${esc(label)}</label>${type==='select'?`<select id="f_${k}" data-field="${k}">${options.split('|').map(o=>`<option value="${esc(o)}">${esc(o.toUpperCase())}</option>`).join('')}</select>`:`<input id="f_${k}" data-field="${k}" type="${type}" ${type==='number'?'step="any"':''}>`}</div>`).join(''); $('pitChecks').innerHTML=pitKeys.map(([key,label])=>`<label><input type="checkbox" id="pit_${key}" onchange="updatePit()"> ${label}</label>`).join(''); $('debriefFields').innerHTML=`<div class="field"><label>Pilote</label><select id="dPilot"></select></div><div class="field"><label>Relais n°</label><input id="dStint" type="number" value="1" min="1"></div>`+[['regular','Régularité','Centième|Dixième|Seconde|Variable'],['apex','Points de corde','Toujours|Souvent|Parfois|Rarement'],['handling','Comportement auto','Neutre|Sous-virage|Survirage'],['tyres','État pneus','Bons|Usés|Très usés'],['braking','Freinage','Propre|Quelques erreurs|Erreurs répétées'],['throttle','Accélération','Propre|Quelques erreurs|Erreurs répétées'],['traffic','Trafic','Facile|Moyen|Difficile'],['damage','Voiture endommagée','Non|Oui']].map(([k,l,o])=>`<div class="field"><label>${l}</label><select id="d_${k}" onchange="debriefPreview()">${o.split('|').map(x=>`<option>${x}</option>`).join('')}</select></div>`).join('');document.querySelectorAll('#inputs [data-field]').forEach(el=>el.addEventListener('input',inputChanged));}
-function inputChanged(e){if(!unlocked)return;editDirty=true;if(e.target.dataset.field==='nPilots')renderPilotsFromInputs();calculate();clearTimeout(saveTimer);saveTimer=setTimeout(saveConfig,1500);}
-function renderPilotsFromInputs(){let n=Math.min(4,Math.max(1,Number($('f_nPilots').value)||1));let current=Array.from({length:4},(_,i)=>({name:$('pname'+i)?.value||`Pilote ${i+1}`,lap:$('plap'+i)?.value||$('f_lap').value||'1:40.000'}));$('pilots').innerHTML=Array.from({length:n},(_,i)=>`<div class="fields" style="margin-bottom:7px"><input id="pname${i}" placeholder="Nom pilote" value="${esc(current[i].name)}"><input id="plap${i}" placeholder="Chrono" value="${esc(current[i].lap)}"></div>`).join('');document.querySelectorAll('#pilots input').forEach(el=>el.addEventListener('input',inputChanged)); $('dPilot').innerHTML=Array.from({length:n},(_,i)=>`<option>${esc($('pname'+i).value)}</option>`).join('');applyPermissions();}
-function config(){let c={};for(let [k,,type] of fieldDefs){let v=$('f_'+k).value;c[k]=type==='number'?Number(v):v;}c.pilots=Array.from({length:Math.min(4,Math.max(1,c.nPilots))},(_,i)=>({name:$('pname'+i)?.value||`Pilote ${i+1}`,lap:$('plap'+i)?.value||c.lap}));return c;}
-function applyData(d){server=d;for(let [k] of fieldDefs){let el=$('f_'+k);el.value=d.config[k]??'';}renderPilotsFromInputs();(d.config.pilots||[]).forEach((p,i)=>{if($('pname'+i)){$('pname'+i).value=p.name;$('plap'+i).value=p.lap;}});$('dPilot').innerHTML=(d.config.pilots||[]).slice(0,d.config.nPilots).map(p=>`<option>${esc(p.name)}</option>`).join('');$('sync').textContent=`Synchronisé · version ${d.revision} · ${d.updatedAt?new Date(d.updatedAt).toLocaleTimeString('fr-FR'):'initial'}`;calculate();renderDebriefs();}
-async function api(method,path,data){const options={method,headers:{'Content-Type':'application/json'}};if(method==='POST'){options.headers['X-VCE-Password']=sessionStorage.getItem('vce-edit-password')||'';options.body=JSON.stringify({patch:data})}const res=await fetch(API_BASE.replace(/\/$/,'')+path,options);const j=await res.json();if(!res.ok||!j.ok)throw Error(j.error||`Erreur ${res.status}`);return j;}
-function msg(text,bad=false){$('message').textContent=text;$('message').className='message'+(bad?' bad':'');}
-async function loadCourse(force=false){if(fetching||saving||editDirty)return;if(API_BASE.includes('COLLE_ICI')){msg('⚠ Configure API_BASE dans index.html avec ton URL Cloudflare Worker.',true);return;}fetching=true;try{const j=await api('GET',`/api/course/${courseId}`);if(force||!server||server.revision!==j.course.revision||server.id!==courseId){applyData(j.course);msg(`✅ Données de COURSE ${courseId} à jour. Les autres écrans sont vérifiés toutes les 5 secondes.`);} }catch(e){if(Date.now()-errAt>8000){msg('Connexion serveur : '+e.message,true);errAt=Date.now();}}finally{fetching=false;}}
-async function savePatch(patch){if(!unlocked){msg('Saisis le mot de passe vce pour modifier.',true);return false;}if(saving)return false;saving=true;try{const j=await api('POST',`/api/course/${courseId}`,patch);server=j.course;msg('✅ Modifications enregistrées sur GitHub.');$('sync').textContent=`Enregistré · version ${server.revision}`;return true}catch(e){msg('Sauvegarde impossible : '+e.message,true);return false}finally{saving=false;}}
-async function saveConfig(){clearTimeout(saveTimer);if(!editDirty||!unlocked)return;const snapshot=config();const ok=await savePatch({config:snapshot});if(ok){editDirty=false;calculate();} }
-function unlock(){const pass=$('password').value.trim();if(!pass){msg('Entre un mot de passe.',true);return;}sessionStorage.setItem('vce-edit-password',pass);unlocked=true;applyPermissions();msg('🔓 Mode modification activé. Le serveur vérifie le mot de passe à chaque sauvegarde.');}
-function lock(){sessionStorage.removeItem('vce-edit-password');$('password').value='';unlocked=false;applyPermissions();msg('🔒 Lecture seule.');}
-function applyPermissions(){document.querySelectorAll('#inputs input,#inputs select,#pilots input').forEach(el=>el.disabled=!unlocked);$('save').disabled=!unlocked;$('password').classList.toggle('hidden',unlocked);$('unlock').classList.toggle('hidden',unlocked);$('lock').classList.toggle('hidden',!unlocked);$('access').textContent=unlocked?'Mode modification':'Lecture seule';}
-async function chooseCourse(id){if(editDirty){await saveConfig();if(editDirty){msg('Sauvegarde non effectuée : reste sur cette course pour corriger.',true);return;}}courseId=id;server=null;document.querySelectorAll('#raceTabs button').forEach((el,i)=>el.classList.toggle('active',i===id-1));await loadCourse(true);}
-function seconds(s){let m=String(s||'').replace(',','.').match(/^(\d+):(\d{1,2})(?:\.(\d+))?$/);return m?Number(m[1])*60+Number(m[2])+Number('0.'+(m[3]||0)):0;}
-function clock(s){let t=$('f_start').value.split(':').map(Number),a=((t[0]||0)*3600+(t[1]||0)*60+(t[2]||0)+Math.round(s))%86400;return [Math.floor(a/3600),Math.floor(a%3600/60),a%60].map(x=>String(x).padStart(2,'0')).join(':');}
-function calculate(){const c=config();let lap=seconds(c.lap),fuelPer=c.fuel,life=Math.max(1,Math.floor(c.tyreLife));if(!lap||!fuelPer||!c.tank)return;let maxFuel=Math.max(1,Math.floor(c.tank/fuelPer-c.reserve)),maxTime=c.maxStint>0?Math.max(1,Math.floor((c.maxStint-c.stintMargin)*60/lap)):9999,cap=Math.min(maxFuel,life,maxTime),total=Math.floor(c.hours*3600/lap),left=total,age=0,t=0,pits=0,swaps=0,i=0;plan=[];while(left>0&&i<120){const tours=Math.min(cap,left),last=tours===left,pilot=c.pilots[i%(c.pilots.length||1)]||{name:'Pilote 1'},tyres=!last&&age+tours>=life,swap=!last&&c.type==='endurance'&&c.pilots.length>1,pt=last?0:c.pitLane+c.fuelTime+(tyres?c.tyreTime:0)+(swap?c.swapTime:0);plan.push({i:i+1,pilot:pilot.name,start:t,end:t+tours*lap,tours,liters:Math.min(c.tank,(tours+c.reserve)*fuelPer),remaining:life-age-tours,tyres,swap,pit:pt,last});t+=tours*lap+pt;age=tyres?0:age+tours;left-=tours;pits+=last?0:1;swaps+=swap?1:0;i++;}
-$('raceName').textContent=c.name||`COURSE ${courseId}`;$('context').textContent=`${c.car} · ${c.track} · ${c.sim} · ${c.hours} h · ${c.type.toUpperCase()}`;$('stats').innerHTML=[['Autonomie',maxFuel+' tours'],['Vie des pneus',life+' tours'],['Relais max',cap+' tours'],['Arrêts',pits],['Tours prévus',total],['Swaps',swaps],['Essence départ',plan[0]?(plan[0].liters.toFixed(1)+' L'):'—'],['Départ',c.start]].map(([a,b])=>`<div class="stat"><small>${esc(a)}</small><b>${esc(b)}</b></div>`).join('');$('stints').innerHTML=plan.map(p=>`<tr class="${server?.checks?.[String(p.i)]?'done':''}"><td>${p.i}</td><td>${esc(p.pilot)}</td><td>${clock(p.start)}</td><td>${clock(p.end)}</td><td>${p.tours}</td><td>${p.liters.toFixed(1)} L</td><td>${Math.max(0,p.remaining)}</td><td>${p.last?'Arrivée':`Essence${p.tyres?' + pneus':''}${p.swap?' + swap':''}`}</td><td>${p.pit.toFixed(1)} s</td><td><input type="checkbox" ${server?.checks?.[String(p.i)]?'checked':''} ${unlocked?'':'disabled'} onchange="markStint(${p.i},this.checked)"></td></tr>`).join('');$('planTips').textContent=(swaps<c.minSwaps?'⚠ Nombre de swaps prévu inférieur au minimum requis. ':'')+'Prévision fondée sur le chrono moyen et les capacités déclarées ; vérifier les règles et temps réels de LMU.';updatePit();}
-async function markStint(stint,done){const ok=await savePatch({check:{stint,done}});if(ok)await loadCourse(true);}
-function updatePit(){if(!server)return;const c=config();const details=pitKeys.filter(([key])=>$('pit_'+key).checked).map(([key,label,source])=>({label,time:Number(c[source])||0}));$('pitTotal').textContent=details.reduce((a,x)=>a+x.time,0).toFixed(1)+' s';$('pitDetail').textContent=details.map(x=>x.label+': '+x.time+' s').join(' · ')||'Aucune action sélectionnée.';}
-function debriefPreview(){let tips=[],h=$('d_handling').value,ty=$('d_tyres').value;if(h==='Sous-virage'&&ty!=='Bons')tips.push('Sous-virage avec pneus usés : anticiper les virages et freiner légèrement plus tôt.');if(h==='Survirage')tips.push('Remettre les gaz plus progressivement.');if($('d_braking').value!=='Propre')tips.push('Stabiliser les repères de freinage.');if($('d_apex').value==='Parfois'||$('d_apex').value==='Rarement')tips.push('Travailler les points de corde.');if(!tips.length)tips.push('Relais propre : conserver la régularité.');$('debriefAdvice').textContent=tips.join(' ');}
-async function saveDebrief(){const notes=[...document.querySelectorAll('[id^=d_]')].map(el=>el.id.replace('d_','')+': '+el.value).join(' | ')+' | Notes: '+$('notes').value;const result=await savePatch({debrief:{pilot:$('dPilot').value,stint:$('dStint').value,notes,score:0}});if(result){$('notes').value='';renderDebriefs();}}
-function renderDebriefs(){ $('debriefHistory').innerHTML=(server?.debriefs||[]).slice(0,20).map(d=>`<div class="tips" style="margin-bottom:8px"><b>${esc(d.pilot)} · relais ${esc(d.stint)}</b> <small>${new Date(d.createdAt).toLocaleString('fr-FR')}</small><p>${esc(d.notes)}</p></div>`).join('')||'<small>Aucun débrief partagé.</small>';}
-function updateScenario(){let own=seconds($('ownLap').value),other=seconds($('otherLap').value),remaining=Number($('remaining').value)*60,gap=Number($('gap').value);if(!own||!other){$('scenarioResult').textContent='Chrono invalide';return}let gain=(other-own)*Math.floor(remaining/other);$('scenarioResult').textContent=`Gain théorique : ${gain.toFixed(1)} s. Écart final : ${(gap-gain).toFixed(1)} s. ${gain>=gap?'Rattrapage possible à rythme constant.':'Rattrapage non prévu à rythme constant.'}`;}
-function switchView(view){['strategy','pit','debrief','scenario'].forEach(v=>{$(v).classList.toggle('hidden',v!==view);$('tab'+v).classList.toggle('active',v===view);});}
-function exportCsv(){let rows=[['Relais','Pilote','Début','Fin','Tours','Essence','PIT'],...plan.map(p=>[p.i,p.pilot,clock(p.start),clock(p.end),p.tours,p.liters,p.pit])];const csv='\ufeff'+rows.map(r=>r.map(s=>'"'+String(s).replaceAll('"','""')+'"').join(';')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download=`VCE-course-${courseId}.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
-renderInputs();applyPermissions();debriefPreview();updateScenario();loadCourse(true);setInterval(()=>{if(!editDirty&&!saving)loadCourse(false)},5000);
-</script></body></html>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VCE ESPORT | Race Control - Autonome</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#e9eef8;background:#0b1120}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 85% 0,#17315a 0,transparent 35%),#0b1120}
+.app{max-width:1680px;margin:auto;padding:20px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:900;letter-spacing:.06em}.logo b{color:#ef4d54}.sub{font-size:12px;color:#97accc;letter-spacing:.1em}
+.actions,.courseTabs,.tabbar{display:flex;gap:8px;flex-wrap:wrap}
+.btn,.tab,.courseBtn{cursor:pointer;border:1px solid #35527b;background:#15233b;color:#dce7f5;padding:10px 13px;border-radius:10px;font-weight:750;font-size:12px}
+.btn.red{background:#db444d;border-color:#db444d;color:#fff}.btn.blue,.tab.active,.courseBtn.active{background:#2664c5;border-color:#4f88e3;color:#fff}.btn.green{background:#188b69;border-color:#188b69;color:#fff}
+.layout{display:grid;grid-template-columns:minmax(390px,460px) minmax(0,1fr);gap:18px}
+.panel{background:#131d30;border:1px solid #2b3c59;border-radius:16px;overflow:hidden}
+.pad{padding:16px}
+.panel h2{margin:0 0 12px;font-size:15px}.sect{border-top:1px solid #2b3c59;margin-top:14px;padding-top:14px}.sect h3{margin:0 0 10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a9bdd9}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.field.wide{grid-column:1/-1}label{display:block;margin:0 0 5px;font-size:11px;color:#a8bbd8}
+input,select,textarea{width:100%;background:#091427;border:1px solid #374c69;border-radius:9px;color:#f6f8fe;padding:10px;font:inherit;font-size:13px;outline:0}
+textarea{min-height:86px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:#5d9cff;box-shadow:0 0 0 2px #376ad733}
+input[type=checkbox]{width:auto;transform:scale(1.05);accent-color:#30c28b}
+.checkrow{display:flex;align-items:center;gap:8px;color:#d5e0ef;font-size:12px;padding:3px 0}
+.pilots{display:grid;gap:8px}.pilot{display:grid;grid-template-columns:28px minmax(0,1fr) 110px;gap:8px;align-items:center}.pilot .num{font-weight:800;color:#83a9de}
+.mainTop{display:grid;grid-template-columns:260px 1fr;gap:14px}
+.courseCard{background:#0d1729;border:1px solid #2a3b58;border-radius:12px;padding:12px}
+.courseNameRow{display:grid;grid-template-columns:82px 1fr;gap:8px;align-items:center;margin-top:8px}
+.muted{font-size:12px;color:#9ab0cd}.notice{padding:12px;border:1px solid #2d5e91;background:#142b42;border-radius:11px;color:#d7ecfe;font-size:12px;line-height:1.6}.warn{background:#3f2528;border-color:#97444c;color:#ffd6d8}
+.statgrid{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:10px}.stat{background:#0c182b;border:1px solid #2a3b56;border-radius:12px;padding:14px}.stat .name{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#93a8c6}.stat .val{font-size:26px;font-weight:900;margin-top:8px}.stat .hint{font-size:11px;color:#91a6c2;margin-top:5px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.tablewrap{overflow:auto}
+table{border-collapse:collapse;width:100%;font-size:12px;white-space:nowrap}th,td{padding:11px 10px;border-bottom:1px solid #293b56}th{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:#94a9c8;background:#0d182a;text-align:left}
+tr.done td{background:#13332d;color:#a9dacb}tr.current td{background:#173657}
+.badge{display:inline-block;font-size:10px;padding:4px 8px;border:1px solid #41536e;border-radius:999px;color:#b5cae7}
+.progress{height:8px;background:#32465f;border-radius:99px;overflow:hidden;margin-top:8px}.progress>div{height:100%;background:linear-gradient(90deg,#3d8aff,#36d5a2)}
+.hidden{display:none!important}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.score{font-size:34px;font-weight:900}
+.tip{background:#0d182b;border:1px solid #2a3b56;border-radius:12px;padding:12px;margin-top:10px}
+.small{font-size:11px;color:#93a9c5}.sprintOnlyNote{padding:10px;border-radius:10px;background:#173024;border:1px solid #2f7057;color:#d5ffec;font-size:12px}
+@media(max-width:1150px){.layout,.mainTop{grid-template-columns:1fr}.statgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.app{padding:10px}.fields,.grid2,.courseNameRow{grid-template-columns:1fr}.pilot{grid-template-columns:24px 1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top">
+    <div>
+      <div class="logo"><b>VCE</b> ESPORT <span style="color:#86acdf">/ RACE CONTROL</span></div>
+      <div class="sub">ORDINATEUR DE STRATÉGIE · ENDURANCE & SPRINT · VERSION LOCALE</div>
+    </div>
+    <div class="actions">
+      <button class="btn" onclick="window.print()">Imprimer</button>
+      <button class="btn blue" onclick="exportCSV()">Exporter CSV</button>
+      <button class="btn green" onclick="calculate()">Recalculer</button>
+      <button class="btn red" onclick="resetCurrentCourse()">Réinitialiser la course</button>
+    </div>
+  </div>
+
+  <div style="background:#142b42;border:1px solid #28547f;border-radius:12px;padding:10px 14px;margin-bottom:14px;color:#cbe6fc;font-size:12px">Mode sans cloud : sauvegarde automatique sur cet appareil uniquement. Les autres PC ne voient pas les modifications. Pour partager les paramètres, utilisez l’export CSV ou ajoutez ultérieurement un stockage commun.</div>
+<div class="panel" style="margin:0 0 16px"><div class="pad">
+  <div class="bar"><h2>📨 Publication de stratégie sur GitHub</h2><span class="badge">Sans serveur externe</span></div>
+  <div class="fields">
+    <div class="field"><label>Pseudo propriétaire GitHub</label><input id="ghOwner" placeholder="ex. vce-esport"></div>
+    <div class="field"><label>Nom du dépôt public</label><input id="ghRepo" value="vce-race-control"></div>
+  </div>
+  <div class="actions" style="margin-top:12px">
+    <button class="btn green" onclick="publishToGitHub()">📤 Enregistrer / publier sur GitHub</button>
+    <button class="btn blue" onclick="pullFromGitHub(true)">↻ Récupérer la dernière version</button>
+    <label class="checkrow"><input id="ghAuto" type="checkbox" checked> Actualiser chaque minute</label>
+  </div>
+  <div class="small" id="ghStatus" style="margin-top:9px">La publication ouvre une Issue GitHub préremplie. Confirmez « Submit new issue » sur GitHub ; les autres pourront ensuite récupérer les données. Compte GitHub requis pour publier.</div>
+</div></div>
+<div class="layout">
+    <aside class="panel">
+      <div class="pad">
+        <h2>Équipe / courses séparées</h2>
+        <div class="mainTop">
+          <div class="courseCard">
+            <div class="courseTabs" id="courseTabs"></div>
+            <div class="small" style="margin-top:10px">Chaque course garde ses propres données, sa stratégie, ses validations et ses débriefs.</div>
+          </div>
+          <div class="courseCard">
+            <div class="muted"><b>Noms des courses</b></div>
+            <div class="courseNameRow"><span class="small">COURSE 1</span><input id="slotName1" value="Course 1"></div>
+            <div class="courseNameRow"><span class="small">COURSE 2</span><input id="slotName2" value="Course 2"></div>
+            <div class="courseNameRow"><span class="small">COURSE 3</span><input id="slotName3" value="Course 3"></div>
+          </div>
+        </div>
+
+        <div class="sect">
+          <h3>⚙ Paramètres de course</h3>
+          <div class="fields">
+            <div class="field"><label>Type de course</label><select id="raceType"><option value="endurance">ENDURANCE</option><option value="sprint">SPRINT</option></select></div>
+            <div class="field"><label>Nom de course</label><input id="race" value="Endurance VCE"></div>
+            <div class="field"><label>Voiture</label><input id="car" value="LMP2"></div>
+            <div class="field"><label>Circuit</label><input id="track" value="Le Mans"></div>
+            <div class="field"><label>Simulateur</label><select id="sim"><option>LMU</option><option>Assetto Corsa</option><option>ACC</option><option>iRacing</option><option>Autre</option></select></div>
+            <div class="field"><label>Durée de course (heures)</label><input id="hours" type="number" min="0.25" max="24" step="0.25" value="4"></div>
+            <div class="field"><label>Heure de départ</label><input id="start" type="time" step="1" value="13:30:00"></div>
+            <div class="field"><label>Temps tour moyen (m:ss.mmm)</label><input id="lap" value="1:37.589"></div>
+          </div>
+        </div>
+
+        <div class="sect">
+          <h3>⛽ Carburant & pneus</h3>
+          <div class="fields">
+            <div class="field"><label>Consommation (L/tour)</label><input id="fuel" type="number" step="0.01" value="3.1"></div>
+            <div class="field"><label>Capacité réservoir (L)</label><input id="tank" type="number" step="0.1" value="75"></div>
+            <div class="field"><label>Marge carburant (tours)</label><input id="reserve" type="number" step="0.1" value="1"></div>
+            <div class="field"><label>Durée de vie pneus (tours)</label><input id="tyreLife" type="number" step="1" value="23"></div>
+            <div class="field"><label>Conso sécurité (%)</label><input id="safetyFuel" type="number" step="0.5" value="3"></div>
+            <div class="field"><label>Usure supplémentaire trafic (tours)</label><input id="trafficTyres" type="number" step="1" value="0"></div>
+          </div>
+        </div>
+
+        <div class="sect">
+          <h3>👤 Équipage</h3>
+          <div class="fields">
+            <div class="field"><label>Nombre de pilotes</label><select id="nPilots"><option>1</option><option>2</option><option>3</option><option selected>4</option></select></div>
+            <div class="field"><label>Gestion des relais</label><select id="driverMode"><option value="rotation">Rotation équitable</option><option value="fast">Priorité pilote rapide</option></select></div>
+          </div>
+          <div class="pilots" id="pilots" style="margin-top:10px"></div>
+          <div class="checkrow"><input id="allowDoubleFast" type="checkbox"><label for="allowDoubleFast">Autoriser les doubles relais automatiques du plus rapide</label></div>
+        </div>
+
+        <div class="sect enduranceOnly">
+          <h3>📋 Règles stratégie</h3>
+          <div class="fields">
+            <div class="field"><label>Swaps minimum obligatoires</label><input id="swaps" type="number" min="0" value="2"></div>
+            <div class="field"><label>Durée max de stint (min), 0 = libre</label><input id="maxStint" type="number" min="0" value="0"></div>
+            <div class="field"><label>Marge pénalité avant fin stint (min)</label><input id="stintMargin" type="number" step="0.1" value="2"></div>
+            <div class="field"><label>Mode PIT</label><select id="mode"><option value="normal">NORMAL</option><option value="advance">PIT AVANCÉ</option><option value="quick">PIT RAPIDE</option><option value="offset">PIT DÉCALÉ</option><option value="late">PIT EN RETARD</option></select></div>
+            <div class="field"><label>Ouverture PIT après départ (min)</label><input id="open" type="number" min="0" value="0"></div>
+            <div class="field"><label>Fermeture PIT avant fin (min)</label><input id="close" type="number" min="0" value="0"></div>
+          </div>
+        </div>
+
+        <div class="sect">
+          <h3>⏱ Temps aux stands (secondes)</h3>
+          <div class="fields">
+            <div class="field"><label>Passage voie des stands</label><input id="pitlane" type="number" step="0.1" value="41"></div>
+            <div class="field"><label>Essence</label><input id="fuelTime" type="number" step="0.1" value="14.5"></div>
+            <div class="field"><label>Pneus</label><input id="tyreTime" type="number" step="0.1" value="20"></div>
+            <div class="field"><label>Swap pilote</label><input id="swapTime" type="number" step="0.1" value="20"></div>
+            <div class="field"><label>Dégât léger</label><input id="lightTime" type="number" step="0.1" value="20"></div>
+            <div class="field"><label>Dégât lourd</label><input id="heavyTime" type="number" step="0.1" value="70"></div>
+          </div>
+        </div>
+
+        <div class="sect enduranceOnly">
+          <h3>🚨 Centre de contrôle / urgence</h3>
+          <div class="checkrow"><input id="emergency" type="checkbox"><label for="emergency">Activer le recalcul d'urgence</label></div>
+          <div class="fields">
+            <div class="field"><label>Temps écoulé depuis départ (min)</label><input id="elapsed" type="number" min="0" value="60"></div>
+            <div class="field"><label>Réparations après crash (s)</label><input id="repair" type="number" min="0" value="120"></div>
+            <div class="field"><label>Pilote en cours</label><select id="currentPilot"></select></div>
+            <div class="field"><label>Essence restante (L)</label><input id="remainFuel" type="number" min="0" step="0.1" value="30"></div>
+            <div class="field"><label>Tours pneus restants</label><input id="remainTyres" type="number" min="0" step="1" value="10"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="panel">
+      <div class="pad">
+        <div class="bar">
+          <div>
+            <h2 id="heading">Endurance VCE</h2>
+            <div class="muted" id="context">Le Mans · LMP2 · LMU · 4 h · 13:30:00</div>
+          </div>
+          <div class="badge" id="strategyStatus">STRATÉGIE PRÉVISIONNELLE</div>
+        </div>
+
+        <div class="statgrid" id="stats"></div>
+        <div id="message" class="notice" style="margin-top:12px">Plan calculé.</div>
+        <div class="progress"><div id="progressFill" style="width:0%"></div></div>
+        <div id="raceProgress" class="muted" style="margin-top:6px">0 relais validé.</div>
+
+        <div class="sect" style="margin-top:18px">
+          <div class="bar">
+            <h2 style="margin:0">Plan de course</h2>
+            <div class="tabbar">
+              <button class="tab active" data-view="strategy" onclick="view('strategy')">Relais & pits</button>
+              <button class="tab" data-view="scenario" onclick="view('scenario')">Scénario</button>
+              <button class="tab" data-view="pit" onclick="view('pit')">Simulateur pit</button>
+              <button class="tab" data-view="debrief" onclick="view('debrief')">Débrief</button>
+            </div>
+          </div>
+
+          <div id="strategyView">
+            <div id="sprintNote" class="sprintOnlyNote hidden" style="margin-bottom:10px"></div>
+            <div class="tablewrap"><table>
+              <thead><tr><th>#</th><th>Pilote</th><th>Début</th><th>Fin / arrêt</th><th>Tours</th><th>Essence départ</th><th>Pneus restants</th><th>Arrêt</th><th>Swap</th><th>Pneus</th><th>Double</th><th>Durée pit</th><th>Fait</th></tr></thead>
+              <tbody id="stints"></tbody>
+            </table></div>
+          </div>
+
+          <div id="scenarioView" class="hidden">
+            <div class="grid2">
+              <div class="panel" style="border-radius:12px">
+                <div class="pad">
+                  <h2 style="margin-top:0">Comparaison de rythme</h2>
+                  <div class="fields">
+                    <div class="field"><label>Position actuelle</label><input id="pos" type="number" value="2"></div>
+                    <div class="field"><label>Objectif position</label><input id="goalPos" type="number" value="1"></div>
+                    <div class="field"><label>Écart avec l’adversaire (s)</label><input id="gap" type="number" step="0.1" value="40"></div>
+                    <div class="field"><label>Temps restant (min)</label><input id="remaining" type="number" step="1" value="20"></div>
+                    <div class="field"><label>Mon chrono</label><input id="ownLap" value="1:30.000"></div>
+                    <div class="field"><label>Chrono adversaire</label><input id="otherLap" value="1:32.000"></div>
+                    <div class="field"><label>Différence pit prévue (s)</label><input id="gapPit" type="number" step="0.1" value="0"></div>
+                    <div class="field"><label>Risque retard stand (s)</label><input id="pitRisk" type="number" step="0.1" value="5"></div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="panel" style="border-radius:12px">
+                  <div class="pad">
+                    <h2 style="margin-top:0">Évaluation de la course</h2>
+                    <div id="scenarioResult"></div>
+                  </div>
+                </div>
+                <div class="tip" id="scenarioTips"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="pitView" class="hidden">
+            <div class="grid2">
+              <div class="panel" style="border-radius:12px"><div class="pad">
+                <h2 style="margin-top:0">Sélection des actions</h2>
+                <div class="checkrow"><input id="pLane" type="checkbox"><label for="pLane">Passage voie des stands</label></div>
+                <div class="checkrow"><input id="pFuel" type="checkbox"><label for="pFuel">Essence</label></div>
+                <div class="checkrow"><input id="pTyre" type="checkbox"><label for="pTyre">Changement de pneus</label></div>
+                <div class="checkrow"><input id="pSwap" type="checkbox"><label for="pSwap">Swap pilote</label></div>
+                <div class="checkrow"><input id="pLight" type="checkbox"><label for="pLight">Dégât léger</label></div>
+                <div class="checkrow"><input id="pHeavy" type="checkbox"><label for="pHeavy">Dégât lourd</label></div>
+              </div></div>
+              <div class="panel" style="border-radius:12px"><div class="pad">
+                <h2 style="margin-top:0">Durée totale de l'arrêt</h2>
+                <div id="pitResult"></div>
+              </div></div>
+            </div>
+          </div>
+
+          <div id="debriefView" class="hidden">
+            <div class="grid2">
+              <div class="panel" style="border-radius:12px"><div class="pad">
+                <h2 style="margin-top:0">Bilan de fin de stint</h2>
+                <div class="fields">
+                  <div class="field"><label>Pilote</label><select id="debriefDriver"></select></div>
+                  <div class="field"><label>Relais n°</label><input id="debriefStint" type="number" min="1" value="1"></div>
+                  <div class="field"><label>Voiture endommagée ?</label><select id="damaged"><option value="no">NON</option><option value="yes">OUI</option></select></div>
+                  <div class="field"><label>Régularité</label><select id="consistency"><option value="4">Même centième</option><option value="3" selected>Même dixième</option><option value="2">Même seconde</option><option value="1">Très variable</option></select></div>
+                  <div class="field"><label>Points de corde touchés ?</label><select id="apex"><option value="4">Toujours</option><option value="3" selected>Souvent</option><option value="2">Parfois</option><option value="1">Rarement</option></select></div>
+                  <div class="field"><label>Track limits</label><select id="limits"><option value="0">Aucun</option><option value="1">1 à 2</option><option value="2">3 à 5</option><option value="3">Beaucoup</option></select></div>
+                  <div class="field"><label>Erreurs de freinage</label><select id="brakes"><option value="0">Aucune</option><option value="1">Quelques-unes</option><option value="2">Beaucoup</option></select></div>
+                  <div class="field"><label>Erreurs d’accélération</label><select id="throttle"><option value="0">Aucune</option><option value="1">Quelques-unes</option><option value="2">Beaucoup</option></select></div>
+                  <div class="field"><label>Gestion du trafic</label><select id="trafficDebrief"><option value="4">Excellente</option><option value="3" selected>Bonne</option><option value="2">Moyenne</option><option value="1">Difficile</option></select></div>
+                  <div class="field"><label>État des pneus</label><select id="tyreState"><option value="fresh">Correct</option><option value="used">Usés</option><option value="degraded">Très usés</option><option value="critical">Critiques</option></select></div>
+                  <div class="field"><label>Comportement auto</label><select id="handling"><option value="ok">Neutre</option><option value="under">Sous-virage</option><option value="over">Survirage</option></select></div>
+                  <div class="field"><label>Concentration</label><select id="focus"><option value="4">Excellente</option><option value="3" selected>Bonne</option><option value="2">Moyenne</option><option value="1">Faible</option></select></div>
+                  <div class="field"><label>Communication équipe</label><select id="comm"><option value="4">Excellente</option><option value="3" selected>Bonne</option><option value="2">Moyenne</option><option value="1">Faible</option></select></div>
+                  <div class="field wide"><label>Notes pilote / remarques</label><textarea id="notes" placeholder="Exemple : gros sous-virage dans les virages rapides, mieux freiner un poil plus tôt, trafic compliqué..."></textarea></div>
+                </div>
+                <div class="actions" style="margin-top:10px">
+                  <button class="btn green" onclick="saveDebrief()">Enregistrer le débrief</button>
+                  <button class="btn" onclick="clearDebrief()">Effacer l'historique</button>
+                </div>
+              </div></div>
+              <div>
+                <div class="panel" style="border-radius:12px"><div class="pad">
+                  <h2 style="margin-top:0">Analyse du relais</h2>
+                  <div id="debriefScore"></div>
+                </div></div>
+                <div class="panel" style="border-radius:12px;margin-top:12px"><div class="pad">
+                  <h2 style="margin-top:0">Historique des débriefs</h2>
+                  <div id="debriefResult"></div>
+                </div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const inputIds=['raceType','race','car','track','sim','hours','start','lap','fuel','tank','reserve','tyreLife','safetyFuel','trafficTyres','nPilots','driverMode','allowDoubleFast','swaps','maxStint','stintMargin','mode','open','close','pitlane','fuelTime','tyreTime','swapTime','lightTime','heavyTime','emergency','elapsed','repair','currentPilot','remainFuel','remainTyres','pos','goalPos','gap','remaining','ownLap','otherLap','gapPit','pitRisk','slotName1','slotName2','slotName3','pLane','pFuel','pTyre','pSwap','pLight','pHeavy','debriefDriver','debriefStint','damaged','consistency','apex','limits','brakes','throttle','trafficDebrief','tyreState','handling','focus','comm','notes'];
+const DEFAULTS={slotNames:['Course 1','Course 2','Course 3'],active:0,slots:[null,null,null]};
+let store=loadStore(); let plan=[]; let doneMap={}; let doubleMap={};
+function loadStore(){try{let s=JSON.parse(localStorage.getItem('vce_race_control_v2')||'null'); if(s&&s.slots&&s.slotNames)return s;}catch(e){} return structuredClone(DEFAULTS);}
+function saveStore(){localStorage.setItem('vce_race_control_v2',JSON.stringify(store));}
+function num(id){let v=parseFloat(String($(id).value).replace(',','.'));return Number.isFinite(v)?v:0}
+function yes(id){return !!$(id).checked}
+function lapSeconds(str){str=String(str||'').trim().replace(',', '.'); let m=str.match(/^(\d+):(\d{1,2})(?:\.(\d+))?$/); if(!m)return 0; let mins=+m[1], secs=+m[2], frac=('0.'+(m[3]||'0')); return mins*60+secs+parseFloat(frac);}
+function fmtClock(sec){let start=parseTime($('start').value); let total=(start+Math.round(sec))%(24*3600); if(total<0)total+=24*3600; let h=String(Math.floor(total/3600)).padStart(2,'0'); let m=String(Math.floor((total%3600)/60)).padStart(2,'0'); let s=String(total%60).padStart(2,'0'); return `${h}:${m}:${s}`;}
+function parseTime(t){let [h,m,s]=(t||'00:00:00').split(':').map(Number); return (h||0)*3600+(m||0)*60+(s||0);}
+function fmtDur(sec){sec=Number(sec)||0; if(sec<=0)return '0 s'; let h=Math.floor(sec/3600), m=Math.floor((sec%3600)/60), s=(sec%60); if(h>0)return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(Math.round(s)).padStart(2,'0')}`; if(m>0)return `${m}:${String(Math.round(s)).padStart(2,'0')}`; return `${s.toFixed(1)} s`;}
+function esc(x){return String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function currentSlot(){return store.active;}
+function getSlotData(){return store.slots[currentSlot()]||{};}
+function setSlotData(data){store.slots[currentSlot()]=data; saveStore();}
+function saveCurrentState(){let slot=getSlotData(); slot.inputs={}; for(let id of inputIds){ if($(id)){ slot.inputs[id]=($(id).type==='checkbox')?$(id).checked:$(id).value; } } slot.pilotData=[]; let n=num('nPilots'); for(let i=0;i<Math.max(4,n);i++){ slot.pilotData[i]={name:$('pilotName'+i)?.value||`PILOTE ${i+1}`,lap:$('pilotLap'+i)?.value||$('lap').value}; } slot.doneMap=doneMap; slot.doubleMap=doubleMap; slot.debriefs=slot.debriefs||[]; setSlotData(slot); }
+function applyCurrentState(){ renderCourseTabs(); let slot=getSlotData(); // names
+ for(let i=1;i<=3;i++) $('slotName'+i).value=store.slotNames[i-1]||`Course ${i}`;
+ if(slot.inputs){ for(let [k,v] of Object.entries(slot.inputs)){ if($(k)) $(k).type==='checkbox'?$(k).checked=v:$(k).value=v; } }
+ pilotList(slot.pilotData); doneMap=slot.doneMap||{}; doubleMap=slot.doubleMap||{}; updateCourseVisibility(); fillDebriefPilots(); calculate(); showDebrief(); }
+function renderCourseTabs(){ $('courseTabs').innerHTML=[0,1,2].map(i=>`<button class="courseBtn ${store.active===i?'active':''}" onclick="switchCourse(${i})">COURSE ${i+1}<br><span class="small" style="color:${store.active===i?'#eaf2ff':'#9cb3cf'}">${esc(store.slotNames[i]||('Course '+(i+1)))}</span></button>`).join(''); }
+function blankSlot(i){ return { inputs:{raceType:'endurance',race:store.slotNames[i]||('Course '+(i+1)),car:'',track:'',sim:'LMU',hours:'4',start:'13:30:00',lap:'1:40.000',fuel:'3.1',tank:'75',reserve:'1',tyreLife:'23',safetyFuel:'3',trafficTyres:'0',nPilots:'2',driverMode:'rotation',allowDoubleFast:false,swaps:'1',maxStint:'0',stintMargin:'2',mode:'normal',open:'0',close:'0',pitlane:'41',fuelTime:'14.5',tyreTime:'20',swapTime:'20',lightTime:'20',heavyTime:'70',emergency:false,elapsed:'60',repair:'120',currentPilot:'0',remainFuel:'30',remainTyres:'10',pos:'2',goalPos:'1',gap:'20',remaining:'20',ownLap:'1:40.000',otherLap:'1:40.500',gapPit:'0',pitRisk:'5',pLane:false,pFuel:false,pTyre:false,pSwap:false,pLight:false,pHeavy:false,debriefStint:'1',damaged:'no',consistency:'3',apex:'3',limits:'0',brakes:'0',throttle:'0',trafficDebrief:'3',tyreState:'fresh',handling:'ok',focus:'3',comm:'3',notes:''}, pilotData:[{name:'PILOTE 1',lap:'1:40.000'},{name:'PILOTE 2',lap:'1:40.500'},{name:'PILOTE 3',lap:'1:41.000'},{name:'PILOTE 4',lap:'1:41.500'}], doneMap:{}, doubleMap:{}, debriefs:[]}; }
+function switchCourse(i){ saveCurrentState(); store.active=i; if(!store.slots[i]){ store.slots[i]=blankSlot(i); } saveStore(); applyCurrentState(); }
+function updateSlotNames(){ store.slotNames=[$('slotName1').value||'Course 1',$('slotName2').value||'Course 2',$('slotName3').value||'Course 3']; saveStore(); }
+function resetCurrentCourse(){ if(confirm('Réinitialiser uniquement cette course ?')){ store.slots[currentSlot()]={}; saveStore(); location.reload(); } }
+function pilotList(existing){ let n=Math.max(1,Math.min(4,parseInt($('nPilots').value||'1',10))); let baseLap=$('lap').value||'1:40.000'; $('pilots').innerHTML=''; let data=existing||[]; for(let i=0;i<n;i++){ let name=(data[i]&&data[i].name)||`PILOTE ${i+1}`; let lap=(data[i]&&data[i].lap)||baseLap; let row=document.createElement('div'); row.className='pilot'; row.innerHTML=`<div class="num">${String(i+1).padStart(2,'0')}</div><input id="pilotName${i}" value="${esc(name)}"><input id="pilotLap${i}" value="${esc(lap)}">`; $('pilots').appendChild(row); }
+ $('currentPilot').innerHTML=Array.from({length:n},(_,i)=>`<option value="${i}">${esc(($('pilotName'+i)?.value)||('PILOTE '+(i+1)))}</option>`).join(''); fillDebriefPilots(); }
+function fillDebriefPilots(){ let n=Math.max(1,Math.min(4,parseInt($('nPilots').value||'1',10))); let opts=Array.from({length:n},(_,i)=>`<option value="${i}">${esc(($('pilotName'+i)?.value)||('PILOTE '+(i+1)))}</option>`).join(''); $('debriefDriver').innerHTML=opts; if($('currentPilot').options.length!==n) $('currentPilot').innerHTML=opts; }
+function updateCourseVisibility(){ let sprint=$('raceType').value==='sprint'; document.querySelectorAll('.enduranceOnly').forEach(el=>el.classList.toggle('hidden',sprint)); }
+function getPilots(){ let n=Math.max(1,Math.min(4,parseInt($('nPilots').value||'1',10))); return Array.from({length:n},(_,i)=>({idx:i,name:$('pilotName'+i)?.value||`PILOTE ${i+1}`,lap:lapSeconds($('pilotLap'+i)?.value||$('lap').value)||lapSeconds($('lap').value)})); }
+function pickNextDriver(pilots,currentIdx,stintIndex){ if(doubleMap[stintIndex]) return currentIdx; if($('driverMode').value==='fast'){ let fastest=pilots.reduce((a,p)=>p.lap<a.lap?p:a,pilots[0]); if(yes('allowDoubleFast') && (stintIndex%2===0)) return fastest.idx; return (currentIdx+1)%pilots.length; } return (currentIdx+1)%pilots.length; }
+function pitService({lane,fuel,tyre,swap,light,heavy}){ let t=0; if(lane)t+=num('pitlane'); if(fuel)t+=num('fuelTime'); if(tyre)t+=num('tyreTime'); if(swap)t+=num('swapTime'); if(light)t+=num('lightTime'); if(heavy)t+=num('heavyTime'); return t; }
+function calculate(){ updateSlotNames(); updateCourseVisibility(); fillDebriefPilots(); plan=[]; let warnings=[]; let avgLap=lapSeconds($('lap').value); if(!avgLap){ $('message').className='notice warn'; $('message').textContent='Chrono moyen invalide. Utilise le format 1:37.589'; return; }
+ let raceType=$('raceType').value; let durationSec=num('hours')*3600; let totalLaps=Math.max(1,Math.floor(durationSec/avgLap)); let fuelPerLap=num('fuel')*(1+num('safetyFuel')/100); let tank=num('tank'); let marginTours=num('reserve'); let fuelLaps=Math.max(1,Math.floor((tank/Math.max(0.0001,fuelPerLap))-marginTours)); let tyreLife=Math.max(1,Math.floor(num('tyreLife')-num('trafficTyres'))); let maxStintLaps=9999; if(num('maxStint')>0){ maxStintLaps=Math.max(1,Math.floor(((num('maxStint')-num('stintMargin'))*60)/avgLap)); }
+ let relayCap=Math.max(1,Math.min(fuelLaps,tyreLife,maxStintLaps)); let mode=$('mode').value; let modeDelta=(mode==='advance'?1:mode==='quick'?2:0); let adjustedCap=Math.max(1,relayCap-modeDelta);
+ let pilots=getPilots(); $('currentPilot').innerHTML=pilots.map(p=>`<option value="${p.idx}">${esc(p.name)}</option>`).join('');
+ let isEmergency=yes('emergency')&&raceType==='endurance'; let lapsDone=isEmergency?Math.min(totalLaps,Math.floor(num('elapsed')*60/avgLap)):0; let lapsLeft=Math.max(0,totalLaps-lapsDone); let currentTime=isEmergency?num('elapsed')*60:0; let currentDriver=isEmergency?Math.min(pilots.length-1,parseInt($('currentPilot').value||0,10)):0; let currentFuelLaps=isEmergency?Math.max(1,Math.floor((num('remainFuel')/Math.max(0.0001,fuelPerLap))-marginTours)):fuelLaps; let currentTyreLeft=isEmergency?Math.max(0,Math.floor(num('remainTyres'))):tyreLife; let tyreLeft=currentTyreLeft; let swapCount=0; let totalPit=0; let finishTime=currentTime; let stintIndex=0;
+ if(raceType==='sprint'){
+   $('sprintNote').classList.remove('hidden');
+   let stopNeeded = totalLaps>fuelLaps || totalLaps>tyreLife;
+   $('sprintNote').innerHTML=stopNeeded?`Mode Sprint : un arrêt est probablement nécessaire. L'outil affiche uniquement le plan utile.`:`Mode Sprint : aucun arrêt obligatoire selon les paramètres. L'information clé est la quantité d'essence nécessaire.`;
+   let fuelNeed=totalLaps*fuelPerLap + marginTours*fuelPerLap;
+   if(!stopNeeded){ plan=[{index:1,driver:pilots[0].name,start:0,end:durationSec,tours:totalLaps,fuel:fuelNeed,tyresLeft:Math.max(0,tyreLife-totalLaps),stop:false,swap:false,tyreStop:false,service:0,double:false,finish:true}]; }
+   else {
+     let first=Math.min(adjustedCap,totalLaps); let remaining=totalLaps-first; let stopLane=true; let needTyres=remaining>Math.max(0,tyreLife-first); let pit=pitService({lane:stopLane,fuel:true,tyre:needTyres,swap:false,light:false,heavy:false}); plan.push({index:1,driver:pilots[0].name,start:0,end:first*avgLap,tours:first,fuel:first*fuelPerLap + marginTours*fuelPerLap,tyresLeft:Math.max(0,tyreLife-first),stop:true,swap:false,tyreStop:needTyres,service:pit,double:false,finish:false}); totalPit+=pit; plan.push({index:2,driver:pilots[0].name,start:first*avgLap+pit,end:durationSec,tours:remaining,fuel:remaining*fuelPerLap + marginTours*fuelPerLap,tyresLeft:Math.max(0,needTyres?tyreLife-remaining:tyreLife-first-remaining),stop:false,swap:false,tyreStop:false,service:0,double:false,finish:true}); finishTime=durationSec+pit; }
+ } else {
+   $('sprintNote').classList.add('hidden');
+   while(lapsLeft>0 && stintIndex<80){
+     let localCap = stintIndex===0 && isEmergency ? Math.max(1,Math.min(currentFuelLaps, tyreLeft, maxStintLaps)) : adjustedCap;
+     let baseCap=Math.max(1, localCap - (mode==='offset' && stintIndex%2===1 ? 1:0));
+     let target=Math.min(baseCap,lapsLeft);
+     let pitWindowOpen=num('open')*60, pitWindowClose=durationSec-num('close')*60;
+     let projectedEnd=currentTime + target*avgLap;
+     if(projectedEnd<pitWindowOpen && lapsLeft>target){ while(target<lapsLeft && currentTime+target*avgLap<pitWindowOpen) target++; }
+     let mustStopLater = lapsLeft>target;
+     let needSwap = mustStopLater && pilots.length>1;
+     let needTyres = mustStopLater && (target>=tyreLeft || (tyreLeft-target)<=1 || mode==='quick');
+     if(stintIndex===0 && isEmergency){ needTyres = mustStopLater && target>=tyreLeft; }
+     let pit=mustStopLater?pitService({lane:true,fuel:true,tyre:needTyres,swap:needSwap,light:stintIndex===0&&isEmergency&&num('repair')>0,heavy:false}):0;
+     let row={index:stintIndex+1,driver:pilots[currentDriver].name,start:currentTime,end:currentTime+target*avgLap,tours:target,fuel:target*fuelPerLap + marginTours*fuelPerLap,tyresLeft:Math.max(0,tyreLeft-target),stop:mustStopLater,swap:needSwap,tyreStop:needTyres,service:pit,double:!!doubleMap[stintIndex],finish:!mustStopLater};
+     plan.push(row);
+     currentTime = row.end + (mustStopLater?pit:0);
+     finishTime = currentTime;
+     lapsLeft -= target;
+     totalPit += pit;
+     if(mustStopLater){ if(needSwap) swapCount++; currentDriver=pickNextDriver(pilots,currentDriver,stintIndex); tyreLeft=needTyres?tyreLife:Math.max(0,tyreLeft-target); }
+     stintIndex++;
+     if(currentTime>pitWindowClose && lapsLeft>0){ warnings.push('Fenêtre de pit réglementaire serrée ou dépassée en fin de course.'); }
+     if(stintIndex===1 && relayCap<=1){ warnings.push('Relais trop courts : vérifie consommation / pneus / durée de stint.'); break; }
+   }
+ }
+ let swapsNeeded=raceType==='sprint'?0:num('swaps'); if(raceType==='endurance' && swapCount<swapsNeeded) warnings.push(`Swaps prévus ${swapCount} / minimum requis ${swapsNeeded}.`);
+ if(raceType==='endurance' && maxStintLaps!==9999 && maxStintLaps<relayCap) warnings.push(`Stint limité par règlement à ${maxStintLaps} tours utiles.`);
+ if(isEmergency) warnings.push('Mode urgence actif : plan recalculé à partir de la situation en course.');
+ $('heading').textContent=$('race').value||store.slotNames[currentSlot()]||`Course ${currentSlot()+1}`; $('context').textContent=`${$('track').value} · ${$('car').value} · ${$('sim').value} · ${num('hours')} h · ${$('start').value}`; $('strategyStatus').textContent=isEmergency?'PLAN D’URGENCE':(raceType==='sprint'?'MODE SPRINT':'STRATÉGIE PRÉVISIONNELLE');
+ let finishClock=fmtClock(finishTime); $('stats').innerHTML=[['Tours carburant',fuelLaps,'Avec marge'],['Tours pneus',tyreLife,'Avant fin de vie'],['Relais utiles',relayCap,'Tours / relais max'],['Arrêts prévus',Math.max(0,plan.length-1),raceType==='sprint'?'Sprint':'Hors incident'],['Tours estimés',totalLaps,'Simulation'],['Swaps prévus',swapCount,raceType==='sprint'?'Non requis':`Minimum ${swapsNeeded}`],['Pits cumulés',fmtDur(totalPit),'Temps perdu'],['Fin de course',finishClock,'Heure prévisionnelle']].map(([a,b,c])=>`<div class="stat"><div class="name">${a}</div><div class="val">${esc(b)}</div><div class="hint">${esc(c)}</div></div>`).join('');
+ $('message').className='notice'+(warnings.length?' warn':''); $('message').innerHTML=warnings.length?`⚠ ${esc(warnings.join(' · '))}`:`✅ Plan recalculé. Paramètres cohérents. Continuez avec rigueur, calme et efficacité.`;
+ renderPlan(); updateProgress(); updateScenario(); updatePit(); previewDebrief(); saveCurrentState(); }
+function renderPlan(){ $('stints').innerHTML=plan.map((p,i)=>`<tr class="${doneMap[i]?'done':''} ${!doneMap[i]&&i===0?'current':''}"><td>${p.index}</td><td><b>${esc(p.driver)}</b></td><td>${fmtClock(p.start)}</td><td>${fmtClock(p.end)}</td><td>${p.tours}</td><td>${p.fuel.toFixed(1)} L</td><td>${p.tyresLeft}</td><td>${p.stop?'OUI':'NON'}</td><td>${p.stop && p.swap?'OUI':'NON'}</td><td>${p.stop && p.tyreStop?'OUI':'NON'}</td><td>${p.stop?`<input type="checkbox" ${p.double?'checked':''} onchange="toggleDouble(${i},this.checked)">`:'—'}</td><td>${p.stop?fmtDur(p.service):'0 s'}</td><td><input type="checkbox" ${doneMap[i]?'checked':''} onchange="markDone(${i},this.checked)"></td></tr>`).join(''); }
+function toggleDouble(i,v){ doubleMap[i]=v; saveCurrentState(); calculate(); }
+function markDone(i,v){ doneMap[i]=v; saveCurrentState(); updateProgress(); }
+function updateProgress(){ let total=plan.length||0, done=Object.values(doneMap).filter(Boolean).length; $('progressFill').style.width=(total?done*100/total:0)+'%'; $('raceProgress').textContent=total?`${done} action(s) validée(s) sur ${total} — ${done===0?'Concentration et précision.':done<total?'Bon boulot, on garde le rythme !':'🏁 Excellent travail, mission validée !'}`:'Aucune action.'; }
+function view(v){ ['strategy','scenario','pit','debrief'].forEach(name=>{$(name+'View').classList.toggle('hidden',name!==v)}); document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.view===v)); if(v==='scenario')updateScenario(); if(v==='pit')updatePit(); if(v==='debrief')previewDebrief(); }
+function updateScenario(){ let own=lapSeconds($('ownLap').value), other=lapSeconds($('otherLap').value), gap=num('gap')+num('gapPit')+num('pitRisk'), remain=num('remaining')*60; if(!(own>0&&other>0&&remain>0)){ $('scenarioResult').innerHTML='<div class="muted">Renseigne des chronos valides.</div>'; return; } let lapsLeft=Math.floor(remain/Math.max(own,other)); let deltaPerLap=other-own; let gain=Math.max(0,deltaPerLap*lapsLeft); let finalGap=gap-gain; let state='NEUTRE', color='#ffd16f'; if(finalGap<=-3){state='GAGNANTE'; color='#45d499';} else if(finalGap>15){state='PERDANTE'; color='#ff7d86';} else if(finalGap<=5){state='EN FAVEUR'; color='#70c8ff';} else if(finalGap<=15){state='NEUTRE'; color='#ffd16f';}
+ $('scenarioResult').innerHTML=`<div class="score" style="color:${color}">${state}</div><div class="tip"><b>Écart final estimé :</b> ${finalGap.toFixed(1)} s<br><b>Gain théorique :</b> ${gain.toFixed(1)} s sur ${lapsLeft} tour(s)<br><b>Position actuelle / objectif :</b> P${num('pos')} → P${num('goalPos')}</div>`;
+ let tips=[]; if(finalGap<=0) tips.push('Si le rythme reste identique, le rattrapage est théoriquement possible avant l’arrivée.'); else tips.push('Il faudra soit augmenter le rythme, soit profiter d’un meilleur pit, du trafic ou d’une erreur adverse.'); if(deltaPerLap>0.5) tips.push('Avantage chrono important : stratégie agressive envisageable.'); if(deltaPerLap<0.2) tips.push('L’avantage est faible : éviter toute erreur et optimiser le pit.'); if(num('pitRisk')>=5) tips.push('Attention au risque de temps perdu aux stands.'); $('scenarioTips').innerHTML='<b>Lecture rapide</b><br>'+tips.join('<br>'); }
+function updatePit(){ let t=pitService({lane:yes('pLane'),fuel:yes('pFuel'),tyre:yes('pTyre'),swap:yes('pSwap'),light:yes('pLight'),heavy:yes('pHeavy')}); let details=[]; if(yes('pLane')) details.push(`Passage voie des stands : ${num('pitlane')} s`); if(yes('pFuel')) details.push(`Essence : ${num('fuelTime')} s`); if(yes('pTyre')) details.push(`Pneus : ${num('tyreTime')} s`); if(yes('pSwap')) details.push(`Swap : ${num('swapTime')} s`); if(yes('pLight')) details.push(`Dégât léger : ${num('lightTime')} s`); if(yes('pHeavy')) details.push(`Dégât lourd : ${num('heavyTime')} s`); $('pitResult').innerHTML=`<div class="score">${t.toFixed(1)} <span style="font-size:18px">sec</span></div><div class="small" style="margin-top:6px">${details.length?details.join(' · '):'Aucune case cochée : 0 seconde.'}</div>`; }
+function previewDebrief(){ let score=100; score -= (4-parseInt($('consistency').value))*8; score -= (4-parseInt($('apex').value))*6; score -= parseInt($('limits').value)*5; score -= parseInt($('brakes').value)*6; score -= parseInt($('throttle').value)*5; score -= (4-parseInt($('trafficDebrief').value))*4; score -= (4-parseInt($('focus').value))*6; score -= (4-parseInt($('comm').value))*3; if($('damaged').value==='yes') score -= 10; if($('tyreState').value==='used') score -= 3; if($('tyreState').value==='degraded') score -= 7; if($('tyreState').value==='critical') score -= 12; if($('handling').value!=='ok') score -= 5; score=Math.max(0,Math.round(score));
+ let advice=[]; if($('handling').value==='under' && ['used','degraded','critical'].includes($('tyreState').value)) advice.push('Sous-virage avec pneus usés : anticipe un peu plus les virages, freine un poil plus tôt et soigne l’entrée pour éviter de surcharger l’avant.');
+ if($('handling').value==='over') advice.push('Survirage : remets les gaz plus progressivement et sécurise l’appui à la remise des gaz.');
+ if(parseInt($('brakes').value)>0) advice.push('Travail des freinages : stabiliser les repères, alléger la pression en fin de freinage et éviter les blocages.');
+ if(parseInt($('throttle').value)>0) advice.push('Accélération : être plus progressif en sortie, surtout si l’arrière bouge.');
+ if(parseInt($('apex').value)<=2) advice.push('Points de corde : identifier 2 à 3 virages clés et les répéter proprement au prochain relais.');
+ if(parseInt($('limits').value)>=2) advice.push('Réduire les track limits : sortir 2 km/h moins vite si nécessaire vaut mieux qu’une pénalité.');
+ if(parseInt($('focus').value)<=2) advice.push('Concentration : fractionner le relais en mini-objectifs de 3 à 5 tours.');
+ if($('damaged').value==='yes') advice.push('Voiture endommagée : comparer le temps perdu en piste avec le coût d’une réparation future.');
+ if(!advice.length) advice.push('Très bon relais : garde cette base et continue sur le même niveau de rigueur.');
+ $('debriefScore').innerHTML=`<div class="score">${score}/100</div><div class="tip"><b>Avis automatique</b><br>${advice.join('<br>')}</div>`; }
+function saveDebrief(){ previewDebrief(); let slot=getSlotData(); slot.debriefs=slot.debriefs||[]; slot.debriefs.unshift({date:new Date().toLocaleString('fr-FR'),pilot:$('debriefDriver').selectedOptions[0]?.textContent||'',stint:$('debriefStint').value,score:document.querySelector('#debriefScore .score')?.textContent||'',notes:$('notes').value,summary:document.querySelector('#debriefScore .tip')?.innerText||''}); setSlotData(slot); showDebrief(); }
+function showDebrief(){ let slot=getSlotData(); let list=slot.debriefs||[]; $('debriefResult').innerHTML=list.length?list.slice(0,20).map(d=>`<div class="tip"><b>${esc(d.pilot)} · relais ${esc(d.stint)} · ${esc(d.score)}</b><div class="small">${esc(d.date)}</div><div style="margin-top:6px">${esc(d.summary)}</div>${d.notes?`<div class="small" style="margin-top:6px">Notes : ${esc(d.notes)}</div>`:''}</div>`).join(''):'<div class="muted">Aucun débrief enregistré pour cette course.</div>'; }
+function clearDebrief(){ if(confirm('Effacer les débriefs de cette course ?')){ let slot=getSlotData(); slot.debriefs=[]; setSlotData(slot); showDebrief(); } }
+function exportCSV(){ if(!plan.length) calculate(); let rows=[['Relais','Pilote','Début','Fin','Tours','Essence départ L','Pneus restants','Arrêt','Swap','Pneus','Double','Durée pit','Validé'],...plan.map((p,i)=>[p.index,p.driver,fmtClock(p.start),fmtClock(p.end),p.tours,p.fuel.toFixed(1),p.tyresLeft,p.stop?'OUI':'NON',p.swap?'OUI':'NON',p.tyreStop?'OUI':'NON',p.double?'OUI':'NON',p.service.toFixed(1),doneMap[i]?'OUI':'NON'])]; let csv='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\r\n'); let a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'})); a.download='VCE_Race_Control_'+(store.slotNames[currentSlot()]||('Course_'+(currentSlot()+1))).replace(/[^\w-]+/g,'_')+'.csv'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000); }
+function initDefaultsIfEmpty(){ if(!store.slots[0]){ store.slots[0]={ inputs:{raceType:'endurance',race:'Endurance VCE',car:'LMP2',track:'Le Mans',sim:'LMU',hours:'4',start:'13:30:00',lap:'1:37.589',fuel:'3.1',tank:'75',reserve:'1',tyreLife:'23',safetyFuel:'3',trafficTyres:'0',nPilots:'4',driverMode:'rotation',allowDoubleFast:false,swaps:'2',maxStint:'0',stintMargin:'2',mode:'normal',open:'0',close:'0',pitlane:'41',fuelTime:'14.5',tyreTime:'20',swapTime:'20',lightTime:'20',heavyTime:'70',emergency:false,elapsed:'60',repair:'120',currentPilot:'0',remainFuel:'30',remainTyres:'10',pos:'2',goalPos:'1',gap:'40',remaining:'20',ownLap:'1:30.000',otherLap:'1:32.000',gapPit:'0',pitRisk:'5',pLane:false,pFuel:false,pTyre:false,pSwap:false,pLight:false,pHeavy:false,debriefStint:'1',damaged:'no',consistency:'3',apex:'3',limits:'0',brakes:'0',throttle:'0',trafficDebrief:'3',tyreState:'fresh',handling:'ok',focus:'3',comm:'3',notes:''}, pilotData:[{name:'PILOTE 1',lap:'1:37.589'},{name:'PILOTE 2',lap:'1:37.989'},{name:'PILOTE 3',lap:'1:38.389'},{name:'PILOTE 4',lap:'1:38.789'}], doneMap:{}, doubleMap:{}, debriefs:[]}; saveStore(); } }
+initDefaultsIfEmpty();
+function bind(){ document.addEventListener('input',e=>{ if(e.target.id==='nPilots'){ pilotList(); } if(e.target.id.startsWith('pilotName')||e.target.id.startsWith('pilotLap')){ fillDebriefPilots(); } if(['slotName1','slotName2','slotName3'].includes(e.target.id)){ updateSlotNames(); } if(['pLane','pFuel','pTyre','pSwap','pLight','pHeavy'].includes(e.target.id)) updatePit(); if(['pos','goalPos','gap','remaining','ownLap','otherLap','gapPit','pitRisk'].includes(e.target.id)) updateScenario(); if(['damaged','consistency','apex','limits','brakes','throttle','trafficDebrief','tyreState','handling','focus','comm','notes','debriefDriver','debriefStint'].includes(e.target.id)) previewDebrief(); if(['raceType'].includes(e.target.id)) updateCourseVisibility(); if(e.target.matches('input,select,textarea') && !['notes'].includes(e.target.id)){ saveCurrentState(); calculate(); }
+ }); document.addEventListener('change',e=>{ if(e.target.matches('input,select,textarea')){ saveCurrentState(); if(['pLane','pFuel','pTyre','pSwap','pLight','pHeavy'].includes(e.target.id)) updatePit(); if(['damaged','consistency','apex','limits','brakes','throttle','trafficDebrief','tyreState','handling','focus','comm'].includes(e.target.id)) previewDebrief(); }}); }
+bind(); applyCurrentState();
+
+// Publication GitHub : chaque envoi crée une Issue publique contenant une seule course.
+// Aucun jeton n'est présent dans la page. Les visiteurs peuvent charger les données sans se connecter.
+const GH_PREFIX='VCE-RC-DATA-COURSE-';
+let ghBusy=false, ghLastSeen={}, ghLastLocalEdit=0;
+const ghCfg=()=>({owner:$('ghOwner').value.trim(),repo:$('ghRepo').value.trim()});
+function ghSet(s){$('ghStatus').textContent=s;}
+function ghConfigSave(){localStorage.setItem('vce_gh_config',JSON.stringify({...ghCfg(),auto:$('ghAuto').checked}));}
+function ghInit(){
+  try{const c=JSON.parse(localStorage.getItem('vce_gh_config')||'{}');$('ghOwner').value=c.owner||'';$('ghRepo').value=c.repo||'vce-race-control';$('ghAuto').checked=c.auto!==false;}catch(e){}
+  ['ghOwner','ghRepo','ghAuto'].forEach(x=>$(x).addEventListener('change',ghConfigSave));
+  document.addEventListener('input',e=>{if(e.target.closest('.sidebar')||e.target.closest('main'))ghLastLocalEdit=Date.now();});
+  setInterval(()=>{if($('ghAuto').checked && Date.now()-ghLastLocalEdit>20000 && !ghBusy)pullFromGitHub(false);},60000);
+}
+function ghSanitize(s){return String(s||'').replace(/[^a-zA-Z0-9_.-]/g,'');}
+function packSharedSlot(slot){
+  return {inputs:slot.inputs||{},pilotData:slot.pilotData||[],doneMap:slot.doneMap||{},doubleMap:slot.doubleMap||{},debriefs:(slot.debriefs||[]).slice(0,12)};
+}
+function publishToGitHub(){
+  const {owner,repo}=ghCfg();
+  if(!owner||!repo){ghSet('Renseigne le propriétaire et le dépôt GitHub.');return;}
+  saveCurrentState();ghConfigSave();
+  const course=currentSlot()+1;
+  const data={v:1,course,slotName:store.slotNames[currentSlot()],savedAt:new Date().toISOString(),payload:packSharedSlot(getSlotData())};
+  const body='Copie de données VCE Race Control. Cette Issue est publique.\n\n```json\n'+JSON.stringify(data)+'\n```';
+  const url=`https://github.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/issues/new?title=${encodeURIComponent(GH_PREFIX+course+' '+new Date().toISOString())}&body=${encodeURIComponent(body)}`;
+  if(url.length>16000){ghSet('Données trop volumineuses pour une Issue préremplie. Réduis les débriefs ou utilise un stockage serveur.');return;}
+  window.open(url,'_blank','noopener');
+  ghSet('GitHub s’ouvre : clique sur « Submit new issue » pour publier. La simple ouverture ne sauvegarde rien.');
+}
+async function pullFromGitHub(manual=false){
+ const {owner,repo}=ghCfg();if(!owner||!repo){if(manual)ghSet('Renseigne d’abord le dépôt.');return;}
+ if(ghBusy)return;
+ if(Date.now()-ghLastLocalEdit<20000&&!manual)return;
+ ghBusy=true;
+ const course=currentSlot()+1;
+ try{
+  const url=`https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/issues?state=all&sort=created&direction=desc&per_page=100`;
+  const res=await fetch(url,{headers:{Accept:'application/vnd.github+json'} ,cache:'no-store'});
+  if(!res.ok)throw Error(res.status===403?'Limite GitHub atteinte : réessaie plus tard.':`Erreur GitHub ${res.status}. Dépôt public et Issues activées ?`);
+  const items=await res.json();
+  const found=items.find(i=>!i.pull_request && String(i.title||'').startsWith(GH_PREFIX+course+' '));
+  if(!found){if(manual)ghSet('Aucune version publiée pour COURSE '+course+'.');return;}
+  if(ghLastSeen[course]===found.number){if(manual)ghSet('Tu as déjà la dernière version publiée.');return;}
+  const match=String(found.body||'').match(/```json\s*([\s\S]*?)\s*```/);
+  if(!match)throw Error('Format de publication invalide.');
+  const data=JSON.parse(match[1]);if(data.v!==1||data.course!==course||!data.payload?.inputs)throw Error('Données de course incompatibles.');
+  if(!manual && Date.now()-ghLastLocalEdit<20000)return;
+  if(manual && !confirm('Charger la version GitHub de COURSE '+course+' ? Cela remplacera les modifications locales non publiées.'))return;
+  const slot=getSlotData();store.slots[currentSlot()]={...slot,...data.payload};
+  if(data.slotName)store.slotNames[currentSlot()]=data.slotName;
+  ghLastSeen[course]=found.number;
+  saveStore();applyCurrentState();
+  ghSet(`COURSE ${course} chargée depuis GitHub · publication #${found.number}.`);
+ }catch(err){if(manual)ghSet('Erreur : '+err.message);else console.warn('Synchronisation GitHub',err);}
+ finally{ghBusy=false;}
+}
+
+ghInit();
+if($('ghOwner').value)pullFromGitHub(false);
+</script>
+</body>
+</html>
