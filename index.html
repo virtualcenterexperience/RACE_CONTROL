@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VCE ESPORT | Race Control v2</title>
+<title>VCE ESPORT | Race Control V8</title>
 <style>
 :root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#e9eef8;background:#0b1120}
 *{box-sizing:border-box}
@@ -53,6 +53,33 @@ tr.done td{background:#13332d;color:#a9dacb}tr.current td{background:#173657}
 .control-launch{position:sticky;top:7px;z-index:8;display:flex;gap:10px;align-items:center;justify-content:space-between;background:#0e1e34f2;border:1px solid #385479;border-radius:13px;padding:12px 16px;margin-bottom:15px;backdrop-filter:blur(10px)}
 .control-launch .btn{font-size:13px}.vce-dialog{position:fixed;inset:0;z-index:60;background:#030916db;display:none;align-items:center;justify-content:center;padding:12px}.vce-dialog.open{display:flex}.vce-dialog-main{background:#111c31;border:1px solid #49638b;box-shadow:0 28px 75px #000a;border-radius:20px;width:min(1020px,100%);max-height:94vh;overflow:auto;padding:20px}.vce-dialog-header{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #2d4260;padding-bottom:12px;margin-bottom:12px}.vce-dialog-header h2{font-size:22px;margin:0}.setup-pills{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 15px}.setup-pills button{background:#152740;border:1px solid #496080;color:#c7dcf9;border-radius:8px;padding:9px 16px;cursor:pointer}.setup-pills button.active{background:#2365b5;color:white}.setup-section{display:none}.setup-section.active{display:block}.setting-pair{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px;border-bottom:1px solid #263956}.setting-pair .desc{max-width:62%;font-size:13px}.setting-pair strong{display:block}.setting-pair small{display:block;color:#91add3;margin-top:3px}.setting-pair select,.setting-pair input{max-width:180px}.pit-item{display:grid;grid-template-columns:minmax(140px,1fr) minmax(70px,105px) 65px;align-items:center;gap:9px;padding:10px;background:#0c1729;border:1px solid #2a3d5a;border-radius:10px;margin-bottom:8px}.pit-item span{font-size:13px}.pit-item .pit-status{color:#8fb3da;font-size:11px}.setup-preview{padding:13px;background:#102b40;border:1px solid #2876ac;border-radius:10px;line-height:1.7;margin-top:12px}.minitabs{display:flex;gap:8px;flex-wrap:wrap}.minitabs .btn{background:#213e66}.vce-warning{color:#ffd17e}
 @media(max-width:650px){.control-launch{flex-direction:column;align-items:stretch}.vce-dialog-main{padding:12px}.setting-pair{flex-wrap:wrap}.setting-pair .desc{max-width:100%}.pit-item{grid-template-columns:1fr 85px}}
+
+/* V8 — cockpit rouge / blanc / vert */
+:root{--vce-red:#ed4456;--vce-green:#20c78d;--vce-white:#f5f7fd;--vce-border:#44536b}
+body{background:radial-gradient(circle at 7% 0%,#3e1726 0,transparent 27%),radial-gradient(circle at 95% 4%,#123f36 0,transparent 35%),#0a0e18}
+.panel,.vce-dialog-main{border-color:#36445c;box-shadow:0 12px 36px #0004}
+.logo b{color:#ff5162}.panel h2,.vce-dialog-header h2{color:#fff}
+.sect h3{color:#f4f6fa;border-left:3px solid var(--vce-red);padding-left:9px}
+.btn.blue,.tab.active,.courseBtn.active{background:#e74452!important;border-color:#fa6d78!important;color:white!important}
+.btn.green{background:#108d62!important;border-color:#30ce99!important}
+.btn.red{background:#b82e3d!important}
+.stat{border-top:3px solid #d84252}.stat:nth-child(2n){border-top-color:#27c590}.stat .val{color:#f8faff}
+.notice:not(.warn){border-color:#247f63;background:#102b28;color:#d8fff1}
+.control-launch{border-left:4px solid #e84c5c!important;border-right:4px solid #2ecb98!important;background:#171d2af5!important}
+.pit-item{background:#101b2a;border:1px solid #34465e;border-radius:10px;padding:10px!important;margin-bottom:8px}
+input[type=checkbox]{accent-color:#26c98e}
+input:focus,select:focus,textarea:focus{border-color:#29cc94;box-shadow:0 0 0 2px #2bcc942a}
+.vce-slider-wrap{grid-column:1/-1;min-width:0;margin-top:2px;padding:7px 8px 10px;background:#0a1422;border:1px solid #2b3e56;border-radius:9px}
+.vce-slider-header{display:flex;justify-content:space-between;align-items:center;gap:8px;color:#a9bbd1;font-size:10px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px}
+.vce-slider-readout{color:#fff;background:#204537;padding:4px 9px;border-radius:6px;font-size:12px;font-weight:850;letter-spacing:0}
+.vce-slider{appearance:none;-webkit-appearance:none;width:100%;height:9px;padding:0;border:0!important;border-radius:99px;cursor:pointer;background:linear-gradient(to right,#ed4558 0%,#f6f8fd var(--pct,50%),#345047 var(--pct,50%),#203045 100%)!important;box-shadow:none!important}
+.vce-slider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:#f9fcff;border:3px solid #20c78d;border-radius:100%;box-shadow:0 2px 8px #0008;cursor:grab}
+.vce-slider::-moz-range-thumb{width:16px;height:16px;background:#f9fcff;border:3px solid #20c78d;border-radius:100%;cursor:grab}
+.vce-slider-help{display:flex;justify-content:space-between;font-size:10px;color:#748eab;margin-top:6px}
+.vce-slider:focus-visible{outline:2px solid #f2f5fc;outline-offset:5px}
+.setting-pair.vce-has-slider{flex-wrap:wrap}.setting-pair.vce-has-slider>.vce-slider-wrap{width:100%;flex-basis:100%}
+.pit-item.vce-has-slider{display:flex!important;align-items:center;flex-wrap:wrap}.pit-item.vce-has-slider>label{flex:1}.pit-item.vce-has-slider>input[type=number]{width:90px}.pit-item.vce-has-slider>.vce-slider-wrap{flex:1 1 100%}
+
 </style></head>
 <body>
 <div class="app">
@@ -569,6 +596,40 @@ function cfgTechInfo(){let l=lapSeconds($('cfgLap').value)||0, fuel=+($('cfgFuel
  let cap=fuel>0?Math.max(0,Math.floor(tank/(fuel*(1+safety/100))-m)):0;
  $('cfgTechPreview').innerHTML=`<b>Prévision :</b> ${cap} tours au carburant · ${tyre} tours pneus · ${(l?Math.max(0,Math.min(cap,tyre))*l/60:0).toFixed(1)} min maximum théorique. Données à mesurer en simulateur.`;}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('setupDialog').classList.contains('open'))closeSetup();});
+
+// V8 — accessible range sliders, linked to the exact numeric inputs of V7.
+const V8_SLIDERS={
+ cfgHours:[.25,24,.25,' h'],cfgFuel:[0,12,.05,' L/tour'],cfgTank:[1,160,1,' L'],
+ cfgTyre:[1,160,1,' tours'],cfgReserve:[0,8,.5,' tours'],cfgSafety:[0,30,.5,' %'],
+ pitlane:[0,180,.5,' s'],fuelTime:[0,120,.5,' s'],tyreTime:[0,120,.5,' s'],
+ swapTime:[0,120,.5,' s'],lightTime:[0,240,1,' s'],heavyTime:[0,600,5,' s']
+};
+function v8Range(target, min, max, step, unit){
+ if(!target||target.dataset.v8Ready)return;
+ target.dataset.v8Ready='1';
+ let block=document.createElement('div');block.className='vce-slider-wrap';
+ let name=target.id==='cfgHours'?'Durée de course':target.id.startsWith('cfg')?({cfgFuel:'Consommation',cfgTank:'Réservoir',cfgTyre:'Durée de vie pneus',cfgReserve:'Marge carburant',cfgSafety:'Marge de sécurité'})[target.id]||'Réglage':'Temps de service';
+ const head=document.createElement('div');head.className='vce-slider-header';
+ const title=document.createElement('span');title.textContent=name;
+ const read=document.createElement('span');read.className='vce-slider-readout';head.append(title,read);
+ const range=document.createElement('input');range.type='range';range.className='vce-slider';range.min=min;range.max=max;range.step=step;range.setAttribute('aria-label',name);
+ const hints=document.createElement('div');hints.className='vce-slider-help';const low=document.createElement('span'),high=document.createElement('span');low.textContent=min+unit;high.textContent=max+unit;hints.append(low,high);
+ block.append(head,range,hints);target.parentElement.appendChild(block);target.parentElement.classList.add('vce-has-slider');
+ function show(){let value=parseFloat(target.value);if(!Number.isFinite(value))value=min;range.value=Math.min(max,Math.max(min,value));let pct=(+range.value-min)/(max-min)*100;range.style.setProperty('--pct',Math.max(0,Math.min(100,pct))+'%');read.textContent=Number(value).toLocaleString('fr-FR')+unit;}
+ range.addEventListener('input',()=>{target.value=range.value;target.dispatchEvent(new Event('input',{bubbles:true}));if(target.id.startsWith('cfg'))cfgApply();else{let sourceId=target.id.replace(/^v8_/,'');if($(sourceId))$(sourceId).value=target.value;updatePit();calculate();cfgPitInfo();}show();});
+ range.addEventListener('change',()=>{target.dispatchEvent(new Event('change',{bubbles:true}));show();});
+ target.addEventListener('input',show);target.addEventListener('change',show);show();
+}
+function v8InitTechSliders(){for(let id of ['cfgHours','cfgFuel','cfgTank','cfgTyre','cfgReserve','cfgSafety']){let el=$(id);if(el)v8Range(el,...V8_SLIDERS[id]);}}
+function v8InitPitSliders(){let items=[...$('cfgPitList').querySelectorAll('.pit-item')];items.forEach((item,i)=>{let id=cfgPitFields[i]?.[0];let input=item.querySelector('input[type="number"]');if(id&&input){input.id='v8_'+id;v8Range(input,...V8_SLIDERS[id]);}});}
+// Ensure dynamically regenerated pitstop rows get sliders on each opening.
+const v8OriginalPitRender=cfgPitRender;
+cfgPitRender=function(){v8OriginalPitRender();v8InitPitSliders();};
+const v8OriginalCfgSync=cfgSync;
+cfgSync=function(){v8OriginalCfgSync();v8InitTechSliders();for(let id of Object.keys(V8_SLIDERS)){let el=$(id);if(el&&el.id.startsWith('cfg'))el.dispatchEvent(new Event('input'));}};
+// Pit row's original onchange remains the source of truth for main stop-time values.
+for(let id of ['cfgHours','cfgFuel','cfgTank','cfgTyre','cfgReserve','cfgSafety']){const el=$(id);if(el)el.addEventListener('input',()=>{if($('setupDialog').classList.contains('open'))cfgTechInfo();});}
+
 </script>
 <footer style="max-width:1680px;margin:25px auto 14px;text-align:center;font-size:11px;letter-spacing:.08em;color:#9aaac2;padding:14px">CE SITE APPARTIENT À LA PROPRIÉTÉ DE VIRTUAL CENTER EXPERIENCE ET EST PRIVÉ.</footer>
 </body>
