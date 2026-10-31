@@ -5,7 +5,7 @@ function logout(){const s=selection();if(s?.mode==='coach')sessionStorage.remove
 function addNav(){const s=selection();if(!s)return;const nav=document.getElementById('vce-shared-nav')||document.querySelector('header.top');if(!nav||nav.querySelector('.vce-v7-logout'))return;
 const pill=document.createElement('span');pill.id='vce-v7-profile-pill';pill.textContent=s.mode==='coach'?'COACH CONNECTÉ':s.mode==='group'?'GROUPE VCE':(window.VCEV5?.getProfile?.()?.name||'PILOTE CONNECTÉ');pill.title='Profil actif';
 const b=document.createElement('button');b.type='button';b.className='vce-v7-logout';b.textContent='↪ DÉCONNEXION';b.title='Quitter ce profil (les statistiques restent enregistrées sur cet appareil)';b.addEventListener('click',logout);
-if(nav.id==='vce-shared-nav'){nav.append(pill,b)}else{const status=nav.querySelector('.top-status');if(status)status.replaceWith(pill);nav.append(b)}
+if(nav.id==='vce-shared-nav'){(nav.querySelector('.vce-nav-actions')||nav).append(pill,b)}else{const status=nav.querySelector('.top-status');if(status)status.replaceWith(pill);nav.append(b)}
 const old=document.getElementById('v5-entry-change');if(old){old.textContent='CHANGER DE PROFIL';old.title='Choisir un autre espace sans effacer les données'}
 }
 function enhanceTraining(){const dashboard=document.getElementById('vce-training-dashboard');if(!dashboard)return;const observer=new MutationObserver(()=>{const box=document.getElementById('v5-clock');if(!box||document.getElementById('v7-week-control'))return;const parent=box.closest('.v5-box');if(!parent)return;
