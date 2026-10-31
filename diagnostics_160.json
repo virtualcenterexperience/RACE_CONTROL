@@ -1,0 +1,3142 @@
+{
+  "description": "160 cas pédagogiques générés par symptômes et familles de voiture; hypothèses, pas diagnostics télémétriques",
+  "total": 160,
+  "diagnostics": [
+    {
+      "id": "blocage_avant_gt3",
+      "symptome": "Je bloque les roues avant",
+      "phase": "brake",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "bloque les roues",
+        "blocage avant",
+        "bloque l avant",
+        "roues avant bloquent"
+      ],
+      "cause_possible": "Pic de pression trop élevé pour le grip disponible, ou frein conservé trop longtemps.",
+      "conseil": "Avance ton repère, diminue légèrement la pression au moment du blocage, puis relâche à mesure que la vitesse baisse.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Nombre de blocages et vitesse à la corde",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_avant_gt4",
+      "symptome": "Je bloque les roues avant",
+      "phase": "brake",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "bloque les roues",
+        "blocage avant",
+        "bloque l avant",
+        "roues avant bloquent"
+      ],
+      "cause_possible": "Pic de pression trop élevé pour le grip disponible, ou frein conservé trop longtemps.",
+      "conseil": "Avance ton repère, diminue légèrement la pression au moment du blocage, puis relâche à mesure que la vitesse baisse.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Nombre de blocages et vitesse à la corde",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_avant_porsche_cup",
+      "symptome": "Je bloque les roues avant",
+      "phase": "brake",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "bloque les roues",
+        "blocage avant",
+        "bloque l avant",
+        "roues avant bloquent"
+      ],
+      "cause_possible": "Pic de pression trop élevé pour le grip disponible, ou frein conservé trop longtemps.",
+      "conseil": "Avance ton repère, diminue légèrement la pression au moment du blocage, puis relâche à mesure que la vitesse baisse.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Nombre de blocages et vitesse à la corde",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_avant_f1",
+      "symptome": "Je bloque les roues avant",
+      "phase": "brake",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "bloque les roues",
+        "blocage avant",
+        "bloque l avant",
+        "roues avant bloquent"
+      ],
+      "cause_possible": "Pic de pression trop élevé pour le grip disponible, ou frein conservé trop longtemps.",
+      "conseil": "Avance ton repère, diminue légèrement la pression au moment du blocage, puis relâche à mesure que la vitesse baisse.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Nombre de blocages et vitesse à la corde",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_avant_f4",
+      "symptome": "Je bloque les roues avant",
+      "phase": "brake",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "bloque les roues",
+        "blocage avant",
+        "bloque l avant",
+        "roues avant bloquent"
+      ],
+      "cause_possible": "Pic de pression trop élevé pour le grip disponible, ou frein conservé trop longtemps.",
+      "conseil": "Avance ton repère, diminue légèrement la pression au moment du blocage, puis relâche à mesure que la vitesse baisse.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Nombre de blocages et vitesse à la corde",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_avant_hypercar",
+      "symptome": "Je bloque les roues avant",
+      "phase": "brake",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "bloque les roues",
+        "blocage avant",
+        "bloque l avant",
+        "roues avant bloquent"
+      ],
+      "cause_possible": "Pic de pression trop élevé pour le grip disponible, ou frein conservé trop longtemps.",
+      "conseil": "Avance ton repère, diminue légèrement la pression au moment du blocage, puis relâche à mesure que la vitesse baisse.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Nombre de blocages et vitesse à la corde",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_avant_lmp2",
+      "symptome": "Je bloque les roues avant",
+      "phase": "brake",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "bloque les roues",
+        "blocage avant",
+        "bloque l avant",
+        "roues avant bloquent"
+      ],
+      "cause_possible": "Pic de pression trop élevé pour le grip disponible, ou frein conservé trop longtemps.",
+      "conseil": "Avance ton repère, diminue légèrement la pression au moment du blocage, puis relâche à mesure que la vitesse baisse.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Nombre de blocages et vitesse à la corde",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_avant_tcr",
+      "symptome": "Je bloque les roues avant",
+      "phase": "brake",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "bloque les roues",
+        "blocage avant",
+        "bloque l avant",
+        "roues avant bloquent"
+      ],
+      "cause_possible": "Pic de pression trop élevé pour le grip disponible, ou frein conservé trop longtemps.",
+      "conseil": "Avance ton repère, diminue légèrement la pression au moment du blocage, puis relâche à mesure que la vitesse baisse.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Nombre de blocages et vitesse à la corde",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_arriere_gt3",
+      "symptome": "Je bloque l’arrière",
+      "phase": "brake",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "bloque l arriere",
+        "blocage arriere",
+        "arriere qui bloque"
+      ],
+      "cause_possible": "Répartition de frein, rétrogradage ou transfert de masse pouvant rendre l’arrière instable.",
+      "conseil": "Commence par stabiliser les rétrogradages; teste une légère avance du freinage vers l’avant si nécessaire.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Stabilité à l’entrée et fréquence des pertes d’arrière",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_arriere_gt4",
+      "symptome": "Je bloque l’arrière",
+      "phase": "brake",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "bloque l arriere",
+        "blocage arriere",
+        "arriere qui bloque"
+      ],
+      "cause_possible": "Répartition de frein, rétrogradage ou transfert de masse pouvant rendre l’arrière instable.",
+      "conseil": "Commence par stabiliser les rétrogradages; teste une légère avance du freinage vers l’avant si nécessaire.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Stabilité à l’entrée et fréquence des pertes d’arrière",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_arriere_porsche_cup",
+      "symptome": "Je bloque l’arrière",
+      "phase": "brake",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "bloque l arriere",
+        "blocage arriere",
+        "arriere qui bloque"
+      ],
+      "cause_possible": "Répartition de frein, rétrogradage ou transfert de masse pouvant rendre l’arrière instable.",
+      "conseil": "Commence par stabiliser les rétrogradages; teste une légère avance du freinage vers l’avant si nécessaire.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Stabilité à l’entrée et fréquence des pertes d’arrière",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_arriere_f1",
+      "symptome": "Je bloque l’arrière",
+      "phase": "brake",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "bloque l arriere",
+        "blocage arriere",
+        "arriere qui bloque"
+      ],
+      "cause_possible": "Répartition de frein, rétrogradage ou transfert de masse pouvant rendre l’arrière instable.",
+      "conseil": "Commence par stabiliser les rétrogradages; teste une légère avance du freinage vers l’avant si nécessaire.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Stabilité à l’entrée et fréquence des pertes d’arrière",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_arriere_f4",
+      "symptome": "Je bloque l’arrière",
+      "phase": "brake",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "bloque l arriere",
+        "blocage arriere",
+        "arriere qui bloque"
+      ],
+      "cause_possible": "Répartition de frein, rétrogradage ou transfert de masse pouvant rendre l’arrière instable.",
+      "conseil": "Commence par stabiliser les rétrogradages; teste une légère avance du freinage vers l’avant si nécessaire.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Stabilité à l’entrée et fréquence des pertes d’arrière",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_arriere_hypercar",
+      "symptome": "Je bloque l’arrière",
+      "phase": "brake",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "bloque l arriere",
+        "blocage arriere",
+        "arriere qui bloque"
+      ],
+      "cause_possible": "Répartition de frein, rétrogradage ou transfert de masse pouvant rendre l’arrière instable.",
+      "conseil": "Commence par stabiliser les rétrogradages; teste une légère avance du freinage vers l’avant si nécessaire.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Stabilité à l’entrée et fréquence des pertes d’arrière",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_arriere_lmp2",
+      "symptome": "Je bloque l’arrière",
+      "phase": "brake",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "bloque l arriere",
+        "blocage arriere",
+        "arriere qui bloque"
+      ],
+      "cause_possible": "Répartition de frein, rétrogradage ou transfert de masse pouvant rendre l’arrière instable.",
+      "conseil": "Commence par stabiliser les rétrogradages; teste une légère avance du freinage vers l’avant si nécessaire.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Stabilité à l’entrée et fréquence des pertes d’arrière",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "blocage_arriere_tcr",
+      "symptome": "Je bloque l’arrière",
+      "phase": "brake",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "bloque l arriere",
+        "blocage arriere",
+        "arriere qui bloque"
+      ],
+      "cause_possible": "Répartition de frein, rétrogradage ou transfert de masse pouvant rendre l’arrière instable.",
+      "conseil": "Commence par stabiliser les rétrogradages; teste une légère avance du freinage vers l’avant si nécessaire.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Stabilité à l’entrée et fréquence des pertes d’arrière",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tard_gt3",
+      "symptome": "Je freine trop tard",
+      "phase": "brake",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "freine trop tard",
+        "trop tard au freinage",
+        "rate mon freinage"
+      ],
+      "cause_possible": "Le point de freinage peut être trop ambitieux pour la vitesse d’arrivée et le carburant embarqué.",
+      "conseil": "Recule le repère de 5 à 20 m comme test, puis rapproche-le si les sorties restent meilleures.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Vitesse de sortie et temps sur le segment",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tard_gt4",
+      "symptome": "Je freine trop tard",
+      "phase": "brake",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "freine trop tard",
+        "trop tard au freinage",
+        "rate mon freinage"
+      ],
+      "cause_possible": "Le point de freinage peut être trop ambitieux pour la vitesse d’arrivée et le carburant embarqué.",
+      "conseil": "Recule le repère de 5 à 20 m comme test, puis rapproche-le si les sorties restent meilleures.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Vitesse de sortie et temps sur le segment",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tard_porsche_cup",
+      "symptome": "Je freine trop tard",
+      "phase": "brake",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "freine trop tard",
+        "trop tard au freinage",
+        "rate mon freinage"
+      ],
+      "cause_possible": "Le point de freinage peut être trop ambitieux pour la vitesse d’arrivée et le carburant embarqué.",
+      "conseil": "Recule le repère de 5 à 20 m comme test, puis rapproche-le si les sorties restent meilleures.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Vitesse de sortie et temps sur le segment",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tard_f1",
+      "symptome": "Je freine trop tard",
+      "phase": "brake",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "freine trop tard",
+        "trop tard au freinage",
+        "rate mon freinage"
+      ],
+      "cause_possible": "Le point de freinage peut être trop ambitieux pour la vitesse d’arrivée et le carburant embarqué.",
+      "conseil": "Recule le repère de 5 à 20 m comme test, puis rapproche-le si les sorties restent meilleures.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Vitesse de sortie et temps sur le segment",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tard_f4",
+      "symptome": "Je freine trop tard",
+      "phase": "brake",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "freine trop tard",
+        "trop tard au freinage",
+        "rate mon freinage"
+      ],
+      "cause_possible": "Le point de freinage peut être trop ambitieux pour la vitesse d’arrivée et le carburant embarqué.",
+      "conseil": "Recule le repère de 5 à 20 m comme test, puis rapproche-le si les sorties restent meilleures.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Vitesse de sortie et temps sur le segment",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tard_hypercar",
+      "symptome": "Je freine trop tard",
+      "phase": "brake",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "freine trop tard",
+        "trop tard au freinage",
+        "rate mon freinage"
+      ],
+      "cause_possible": "Le point de freinage peut être trop ambitieux pour la vitesse d’arrivée et le carburant embarqué.",
+      "conseil": "Recule le repère de 5 à 20 m comme test, puis rapproche-le si les sorties restent meilleures.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Vitesse de sortie et temps sur le segment",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tard_lmp2",
+      "symptome": "Je freine trop tard",
+      "phase": "brake",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "freine trop tard",
+        "trop tard au freinage",
+        "rate mon freinage"
+      ],
+      "cause_possible": "Le point de freinage peut être trop ambitieux pour la vitesse d’arrivée et le carburant embarqué.",
+      "conseil": "Recule le repère de 5 à 20 m comme test, puis rapproche-le si les sorties restent meilleures.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Vitesse de sortie et temps sur le segment",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tard_tcr",
+      "symptome": "Je freine trop tard",
+      "phase": "brake",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "freine trop tard",
+        "trop tard au freinage",
+        "rate mon freinage"
+      ],
+      "cause_possible": "Le point de freinage peut être trop ambitieux pour la vitesse d’arrivée et le carburant embarqué.",
+      "conseil": "Recule le repère de 5 à 20 m comme test, puis rapproche-le si les sorties restent meilleures.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Vitesse de sortie et temps sur le segment",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tot_gt3",
+      "symptome": "Je freine trop tôt",
+      "phase": "brake",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "freine trop tot",
+        "freinage trop tot"
+      ],
+      "cause_possible": "Marge excessive au freinage ou mauvaise perception de la vitesse.",
+      "conseil": "Garde un repère fixe et avance-le progressivement par petites étapes sans sacrifier la stabilité.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Distance de roue libre avant le point de corde",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tot_gt4",
+      "symptome": "Je freine trop tôt",
+      "phase": "brake",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "freine trop tot",
+        "freinage trop tot"
+      ],
+      "cause_possible": "Marge excessive au freinage ou mauvaise perception de la vitesse.",
+      "conseil": "Garde un repère fixe et avance-le progressivement par petites étapes sans sacrifier la stabilité.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Distance de roue libre avant le point de corde",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tot_porsche_cup",
+      "symptome": "Je freine trop tôt",
+      "phase": "brake",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "freine trop tot",
+        "freinage trop tot"
+      ],
+      "cause_possible": "Marge excessive au freinage ou mauvaise perception de la vitesse.",
+      "conseil": "Garde un repère fixe et avance-le progressivement par petites étapes sans sacrifier la stabilité.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Distance de roue libre avant le point de corde",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tot_f1",
+      "symptome": "Je freine trop tôt",
+      "phase": "brake",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "freine trop tot",
+        "freinage trop tot"
+      ],
+      "cause_possible": "Marge excessive au freinage ou mauvaise perception de la vitesse.",
+      "conseil": "Garde un repère fixe et avance-le progressivement par petites étapes sans sacrifier la stabilité.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Distance de roue libre avant le point de corde",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tot_f4",
+      "symptome": "Je freine trop tôt",
+      "phase": "brake",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "freine trop tot",
+        "freinage trop tot"
+      ],
+      "cause_possible": "Marge excessive au freinage ou mauvaise perception de la vitesse.",
+      "conseil": "Garde un repère fixe et avance-le progressivement par petites étapes sans sacrifier la stabilité.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Distance de roue libre avant le point de corde",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tot_hypercar",
+      "symptome": "Je freine trop tôt",
+      "phase": "brake",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "freine trop tot",
+        "freinage trop tot"
+      ],
+      "cause_possible": "Marge excessive au freinage ou mauvaise perception de la vitesse.",
+      "conseil": "Garde un repère fixe et avance-le progressivement par petites étapes sans sacrifier la stabilité.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Distance de roue libre avant le point de corde",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tot_lmp2",
+      "symptome": "Je freine trop tôt",
+      "phase": "brake",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "freine trop tot",
+        "freinage trop tot"
+      ],
+      "cause_possible": "Marge excessive au freinage ou mauvaise perception de la vitesse.",
+      "conseil": "Garde un repère fixe et avance-le progressivement par petites étapes sans sacrifier la stabilité.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Distance de roue libre avant le point de corde",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "frein_tot_tcr",
+      "symptome": "Je freine trop tôt",
+      "phase": "brake",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "freine trop tot",
+        "freinage trop tot"
+      ],
+      "cause_possible": "Marge excessive au freinage ou mauvaise perception de la vitesse.",
+      "conseil": "Garde un repère fixe et avance-le progressivement par petites étapes sans sacrifier la stabilité.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Distance de roue libre avant le point de corde",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pedale_gt3",
+      "symptome": "Je manque de pression / de constance au frein",
+      "phase": "brake",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "pression de frein",
+        "pedale de frein",
+        "pas assez de frein",
+        "frein pas constant"
+      ],
+      "cause_possible": "Calibration load cell, adaptation musculaire ou variation de pression initiale.",
+      "conseil": "Teste 5 freinages au même repère et vérifie calibration, saturation et répétabilité.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Dispersion des points de freinage",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pedale_gt4",
+      "symptome": "Je manque de pression / de constance au frein",
+      "phase": "brake",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "pression de frein",
+        "pedale de frein",
+        "pas assez de frein",
+        "frein pas constant"
+      ],
+      "cause_possible": "Calibration load cell, adaptation musculaire ou variation de pression initiale.",
+      "conseil": "Teste 5 freinages au même repère et vérifie calibration, saturation et répétabilité.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Dispersion des points de freinage",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pedale_porsche_cup",
+      "symptome": "Je manque de pression / de constance au frein",
+      "phase": "brake",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "pression de frein",
+        "pedale de frein",
+        "pas assez de frein",
+        "frein pas constant"
+      ],
+      "cause_possible": "Calibration load cell, adaptation musculaire ou variation de pression initiale.",
+      "conseil": "Teste 5 freinages au même repère et vérifie calibration, saturation et répétabilité.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Dispersion des points de freinage",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pedale_f1",
+      "symptome": "Je manque de pression / de constance au frein",
+      "phase": "brake",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "pression de frein",
+        "pedale de frein",
+        "pas assez de frein",
+        "frein pas constant"
+      ],
+      "cause_possible": "Calibration load cell, adaptation musculaire ou variation de pression initiale.",
+      "conseil": "Teste 5 freinages au même repère et vérifie calibration, saturation et répétabilité.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Dispersion des points de freinage",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pedale_f4",
+      "symptome": "Je manque de pression / de constance au frein",
+      "phase": "brake",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "pression de frein",
+        "pedale de frein",
+        "pas assez de frein",
+        "frein pas constant"
+      ],
+      "cause_possible": "Calibration load cell, adaptation musculaire ou variation de pression initiale.",
+      "conseil": "Teste 5 freinages au même repère et vérifie calibration, saturation et répétabilité.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Dispersion des points de freinage",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pedale_hypercar",
+      "symptome": "Je manque de pression / de constance au frein",
+      "phase": "brake",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "pression de frein",
+        "pedale de frein",
+        "pas assez de frein",
+        "frein pas constant"
+      ],
+      "cause_possible": "Calibration load cell, adaptation musculaire ou variation de pression initiale.",
+      "conseil": "Teste 5 freinages au même repère et vérifie calibration, saturation et répétabilité.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Dispersion des points de freinage",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pedale_lmp2",
+      "symptome": "Je manque de pression / de constance au frein",
+      "phase": "brake",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "pression de frein",
+        "pedale de frein",
+        "pas assez de frein",
+        "frein pas constant"
+      ],
+      "cause_possible": "Calibration load cell, adaptation musculaire ou variation de pression initiale.",
+      "conseil": "Teste 5 freinages au même repère et vérifie calibration, saturation et répétabilité.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Dispersion des points de freinage",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pedale_tcr",
+      "symptome": "Je manque de pression / de constance au frein",
+      "phase": "brake",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "pression de frein",
+        "pedale de frein",
+        "pas assez de frein",
+        "frein pas constant"
+      ],
+      "cause_possible": "Calibration load cell, adaptation musculaire ou variation de pression initiale.",
+      "conseil": "Teste 5 freinages au même repère et vérifie calibration, saturation et répétabilité.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Dispersion des points de freinage",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "trail_gt3",
+      "symptome": "Je ne maîtrise pas le trail braking",
+      "phase": "brake",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "trail braking",
+        "trailbraking",
+        "relache le frein",
+        "relacher frein"
+      ],
+      "cause_possible": "Transition brutale entre freinage et direction ou maintien excessif du frein en appui.",
+      "conseil": "Travaille un relâchement progressif en augmentant doucement l’angle de volant.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Courbe de frein et précision au point de corde",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "trail_gt4",
+      "symptome": "Je ne maîtrise pas le trail braking",
+      "phase": "brake",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "trail braking",
+        "trailbraking",
+        "relache le frein",
+        "relacher frein"
+      ],
+      "cause_possible": "Transition brutale entre freinage et direction ou maintien excessif du frein en appui.",
+      "conseil": "Travaille un relâchement progressif en augmentant doucement l’angle de volant.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Courbe de frein et précision au point de corde",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "trail_porsche_cup",
+      "symptome": "Je ne maîtrise pas le trail braking",
+      "phase": "brake",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "trail braking",
+        "trailbraking",
+        "relache le frein",
+        "relacher frein"
+      ],
+      "cause_possible": "Transition brutale entre freinage et direction ou maintien excessif du frein en appui.",
+      "conseil": "Travaille un relâchement progressif en augmentant doucement l’angle de volant.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Courbe de frein et précision au point de corde",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "trail_f1",
+      "symptome": "Je ne maîtrise pas le trail braking",
+      "phase": "brake",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "trail braking",
+        "trailbraking",
+        "relache le frein",
+        "relacher frein"
+      ],
+      "cause_possible": "Transition brutale entre freinage et direction ou maintien excessif du frein en appui.",
+      "conseil": "Travaille un relâchement progressif en augmentant doucement l’angle de volant.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Courbe de frein et précision au point de corde",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "trail_f4",
+      "symptome": "Je ne maîtrise pas le trail braking",
+      "phase": "brake",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "trail braking",
+        "trailbraking",
+        "relache le frein",
+        "relacher frein"
+      ],
+      "cause_possible": "Transition brutale entre freinage et direction ou maintien excessif du frein en appui.",
+      "conseil": "Travaille un relâchement progressif en augmentant doucement l’angle de volant.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Courbe de frein et précision au point de corde",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "trail_hypercar",
+      "symptome": "Je ne maîtrise pas le trail braking",
+      "phase": "brake",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "trail braking",
+        "trailbraking",
+        "relache le frein",
+        "relacher frein"
+      ],
+      "cause_possible": "Transition brutale entre freinage et direction ou maintien excessif du frein en appui.",
+      "conseil": "Travaille un relâchement progressif en augmentant doucement l’angle de volant.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Courbe de frein et précision au point de corde",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "trail_lmp2",
+      "symptome": "Je ne maîtrise pas le trail braking",
+      "phase": "brake",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "trail braking",
+        "trailbraking",
+        "relache le frein",
+        "relacher frein"
+      ],
+      "cause_possible": "Transition brutale entre freinage et direction ou maintien excessif du frein en appui.",
+      "conseil": "Travaille un relâchement progressif en augmentant doucement l’angle de volant.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Courbe de frein et précision au point de corde",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "trail_tcr",
+      "symptome": "Je ne maîtrise pas le trail braking",
+      "phase": "brake",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "trail braking",
+        "trailbraking",
+        "relache le frein",
+        "relacher frein"
+      ],
+      "cause_possible": "Transition brutale entre freinage et direction ou maintien excessif du frein en appui.",
+      "conseil": "Travaille un relâchement progressif en augmentant doucement l’angle de volant.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Courbe de frein et précision au point de corde",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "retrogradage_gt3",
+      "symptome": "La voiture bouge au rétrogradage",
+      "phase": "brake",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "retrograde",
+        "retrogradage",
+        "frein moteur"
+      ],
+      "cause_possible": "Rétrogradage trop tôt pouvant perturber le train moteur.",
+      "conseil": "Décale légèrement les rétrogradages et contrôle le régime, sans compromettre le freinage.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Stabilité arrière sur cinq freinages",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "retrogradage_gt4",
+      "symptome": "La voiture bouge au rétrogradage",
+      "phase": "brake",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "retrograde",
+        "retrogradage",
+        "frein moteur"
+      ],
+      "cause_possible": "Rétrogradage trop tôt pouvant perturber le train moteur.",
+      "conseil": "Décale légèrement les rétrogradages et contrôle le régime, sans compromettre le freinage.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Stabilité arrière sur cinq freinages",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "retrogradage_porsche_cup",
+      "symptome": "La voiture bouge au rétrogradage",
+      "phase": "brake",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "retrograde",
+        "retrogradage",
+        "frein moteur"
+      ],
+      "cause_possible": "Rétrogradage trop tôt pouvant perturber le train moteur.",
+      "conseil": "Décale légèrement les rétrogradages et contrôle le régime, sans compromettre le freinage.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Stabilité arrière sur cinq freinages",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "retrogradage_f1",
+      "symptome": "La voiture bouge au rétrogradage",
+      "phase": "brake",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "retrograde",
+        "retrogradage",
+        "frein moteur"
+      ],
+      "cause_possible": "Rétrogradage trop tôt pouvant perturber le train moteur.",
+      "conseil": "Décale légèrement les rétrogradages et contrôle le régime, sans compromettre le freinage.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Stabilité arrière sur cinq freinages",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "retrogradage_f4",
+      "symptome": "La voiture bouge au rétrogradage",
+      "phase": "brake",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "retrograde",
+        "retrogradage",
+        "frein moteur"
+      ],
+      "cause_possible": "Rétrogradage trop tôt pouvant perturber le train moteur.",
+      "conseil": "Décale légèrement les rétrogradages et contrôle le régime, sans compromettre le freinage.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Stabilité arrière sur cinq freinages",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "retrogradage_hypercar",
+      "symptome": "La voiture bouge au rétrogradage",
+      "phase": "brake",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "retrograde",
+        "retrogradage",
+        "frein moteur"
+      ],
+      "cause_possible": "Rétrogradage trop tôt pouvant perturber le train moteur.",
+      "conseil": "Décale légèrement les rétrogradages et contrôle le régime, sans compromettre le freinage.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Stabilité arrière sur cinq freinages",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "retrogradage_lmp2",
+      "symptome": "La voiture bouge au rétrogradage",
+      "phase": "brake",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "retrograde",
+        "retrogradage",
+        "frein moteur"
+      ],
+      "cause_possible": "Rétrogradage trop tôt pouvant perturber le train moteur.",
+      "conseil": "Décale légèrement les rétrogradages et contrôle le régime, sans compromettre le freinage.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Stabilité arrière sur cinq freinages",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "retrogradage_tcr",
+      "symptome": "La voiture bouge au rétrogradage",
+      "phase": "brake",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "retrograde",
+        "retrogradage",
+        "frein moteur"
+      ],
+      "cause_possible": "Rétrogradage trop tôt pouvant perturber le train moteur.",
+      "conseil": "Décale légèrement les rétrogradages et contrôle le régime, sans compromettre le freinage.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Stabilité arrière sur cinq freinages",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_entree_gt3",
+      "symptome": "Je sous-vire à l’entrée",
+      "phase": "entry",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "sous vire a l entree",
+        "sous virage en entree",
+        "tourne pas en entrant"
+      ],
+      "cause_possible": "Entrée trop rapide ou relâchement du frein inadéquat : train avant saturé.",
+      "conseil": "Réduis légèrement la vitesse d’entrée et libère progressivement les freins; ne rajoute pas de volant.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Point de corde atteint et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_entree_gt4",
+      "symptome": "Je sous-vire à l’entrée",
+      "phase": "entry",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "sous vire a l entree",
+        "sous virage en entree",
+        "tourne pas en entrant"
+      ],
+      "cause_possible": "Entrée trop rapide ou relâchement du frein inadéquat : train avant saturé.",
+      "conseil": "Réduis légèrement la vitesse d’entrée et libère progressivement les freins; ne rajoute pas de volant.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Point de corde atteint et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_entree_porsche_cup",
+      "symptome": "Je sous-vire à l’entrée",
+      "phase": "entry",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "sous vire a l entree",
+        "sous virage en entree",
+        "tourne pas en entrant"
+      ],
+      "cause_possible": "Entrée trop rapide ou relâchement du frein inadéquat : train avant saturé.",
+      "conseil": "Réduis légèrement la vitesse d’entrée et libère progressivement les freins; ne rajoute pas de volant.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Point de corde atteint et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_entree_f1",
+      "symptome": "Je sous-vire à l’entrée",
+      "phase": "entry",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "sous vire a l entree",
+        "sous virage en entree",
+        "tourne pas en entrant"
+      ],
+      "cause_possible": "Entrée trop rapide ou relâchement du frein inadéquat : train avant saturé.",
+      "conseil": "Réduis légèrement la vitesse d’entrée et libère progressivement les freins; ne rajoute pas de volant.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Point de corde atteint et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_entree_f4",
+      "symptome": "Je sous-vire à l’entrée",
+      "phase": "entry",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "sous vire a l entree",
+        "sous virage en entree",
+        "tourne pas en entrant"
+      ],
+      "cause_possible": "Entrée trop rapide ou relâchement du frein inadéquat : train avant saturé.",
+      "conseil": "Réduis légèrement la vitesse d’entrée et libère progressivement les freins; ne rajoute pas de volant.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Point de corde atteint et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_entree_hypercar",
+      "symptome": "Je sous-vire à l’entrée",
+      "phase": "entry",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "sous vire a l entree",
+        "sous virage en entree",
+        "tourne pas en entrant"
+      ],
+      "cause_possible": "Entrée trop rapide ou relâchement du frein inadéquat : train avant saturé.",
+      "conseil": "Réduis légèrement la vitesse d’entrée et libère progressivement les freins; ne rajoute pas de volant.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Point de corde atteint et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_entree_lmp2",
+      "symptome": "Je sous-vire à l’entrée",
+      "phase": "entry",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "sous vire a l entree",
+        "sous virage en entree",
+        "tourne pas en entrant"
+      ],
+      "cause_possible": "Entrée trop rapide ou relâchement du frein inadéquat : train avant saturé.",
+      "conseil": "Réduis légèrement la vitesse d’entrée et libère progressivement les freins; ne rajoute pas de volant.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Point de corde atteint et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_entree_tcr",
+      "symptome": "Je sous-vire à l’entrée",
+      "phase": "entry",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "sous vire a l entree",
+        "sous virage en entree",
+        "tourne pas en entrant"
+      ],
+      "cause_possible": "Entrée trop rapide ou relâchement du frein inadéquat : train avant saturé.",
+      "conseil": "Réduis légèrement la vitesse d’entrée et libère progressivement les freins; ne rajoute pas de volant.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Point de corde atteint et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_entree_gt3",
+      "symptome": "Je survire à l’entrée",
+      "phase": "entry",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "survire a l entree",
+        "survirage entree",
+        "arriere part au freinage"
+      ],
+      "cause_possible": "Transfert de charge brusque, frein moteur ou équilibre de freinage instable.",
+      "conseil": "Adoucis la transition frein-direction et vérifie le brake bias avant d’ajuster le setup.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Corrections volant en entrée",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_entree_gt4",
+      "symptome": "Je survire à l’entrée",
+      "phase": "entry",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "survire a l entree",
+        "survirage entree",
+        "arriere part au freinage"
+      ],
+      "cause_possible": "Transfert de charge brusque, frein moteur ou équilibre de freinage instable.",
+      "conseil": "Adoucis la transition frein-direction et vérifie le brake bias avant d’ajuster le setup.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Corrections volant en entrée",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_entree_porsche_cup",
+      "symptome": "Je survire à l’entrée",
+      "phase": "entry",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "survire a l entree",
+        "survirage entree",
+        "arriere part au freinage"
+      ],
+      "cause_possible": "Transfert de charge brusque, frein moteur ou équilibre de freinage instable.",
+      "conseil": "Adoucis la transition frein-direction et vérifie le brake bias avant d’ajuster le setup.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Corrections volant en entrée",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_entree_f1",
+      "symptome": "Je survire à l’entrée",
+      "phase": "entry",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "survire a l entree",
+        "survirage entree",
+        "arriere part au freinage"
+      ],
+      "cause_possible": "Transfert de charge brusque, frein moteur ou équilibre de freinage instable.",
+      "conseil": "Adoucis la transition frein-direction et vérifie le brake bias avant d’ajuster le setup.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Corrections volant en entrée",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_entree_f4",
+      "symptome": "Je survire à l’entrée",
+      "phase": "entry",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "survire a l entree",
+        "survirage entree",
+        "arriere part au freinage"
+      ],
+      "cause_possible": "Transfert de charge brusque, frein moteur ou équilibre de freinage instable.",
+      "conseil": "Adoucis la transition frein-direction et vérifie le brake bias avant d’ajuster le setup.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Corrections volant en entrée",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_entree_hypercar",
+      "symptome": "Je survire à l’entrée",
+      "phase": "entry",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "survire a l entree",
+        "survirage entree",
+        "arriere part au freinage"
+      ],
+      "cause_possible": "Transfert de charge brusque, frein moteur ou équilibre de freinage instable.",
+      "conseil": "Adoucis la transition frein-direction et vérifie le brake bias avant d’ajuster le setup.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Corrections volant en entrée",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_entree_lmp2",
+      "symptome": "Je survire à l’entrée",
+      "phase": "entry",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "survire a l entree",
+        "survirage entree",
+        "arriere part au freinage"
+      ],
+      "cause_possible": "Transfert de charge brusque, frein moteur ou équilibre de freinage instable.",
+      "conseil": "Adoucis la transition frein-direction et vérifie le brake bias avant d’ajuster le setup.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Corrections volant en entrée",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_entree_tcr",
+      "symptome": "Je survire à l’entrée",
+      "phase": "entry",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "survire a l entree",
+        "survirage entree",
+        "arriere part au freinage"
+      ],
+      "cause_possible": "Transfert de charge brusque, frein moteur ou équilibre de freinage instable.",
+      "conseil": "Adoucis la transition frein-direction et vérifie le brake bias avant d’ajuster le setup.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Corrections volant en entrée",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "corde_gt3",
+      "symptome": "Je rate le point de corde",
+      "phase": "mid",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "rate le point de corde",
+        "rate la corde",
+        "corde ratee",
+        "point de corde"
+      ],
+      "cause_possible": "Vitesse d’entrée ou trajectoire préparatoire empêchant une bonne rotation.",
+      "conseil": "Ralentis un peu avant le virage pour rejoindre la corde sans corriger tardivement.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Distance à la corde et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "corde_gt4",
+      "symptome": "Je rate le point de corde",
+      "phase": "mid",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "rate le point de corde",
+        "rate la corde",
+        "corde ratee",
+        "point de corde"
+      ],
+      "cause_possible": "Vitesse d’entrée ou trajectoire préparatoire empêchant une bonne rotation.",
+      "conseil": "Ralentis un peu avant le virage pour rejoindre la corde sans corriger tardivement.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Distance à la corde et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "corde_porsche_cup",
+      "symptome": "Je rate le point de corde",
+      "phase": "mid",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "rate le point de corde",
+        "rate la corde",
+        "corde ratee",
+        "point de corde"
+      ],
+      "cause_possible": "Vitesse d’entrée ou trajectoire préparatoire empêchant une bonne rotation.",
+      "conseil": "Ralentis un peu avant le virage pour rejoindre la corde sans corriger tardivement.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Distance à la corde et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "corde_f1",
+      "symptome": "Je rate le point de corde",
+      "phase": "mid",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "rate le point de corde",
+        "rate la corde",
+        "corde ratee",
+        "point de corde"
+      ],
+      "cause_possible": "Vitesse d’entrée ou trajectoire préparatoire empêchant une bonne rotation.",
+      "conseil": "Ralentis un peu avant le virage pour rejoindre la corde sans corriger tardivement.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Distance à la corde et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "corde_f4",
+      "symptome": "Je rate le point de corde",
+      "phase": "mid",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "rate le point de corde",
+        "rate la corde",
+        "corde ratee",
+        "point de corde"
+      ],
+      "cause_possible": "Vitesse d’entrée ou trajectoire préparatoire empêchant une bonne rotation.",
+      "conseil": "Ralentis un peu avant le virage pour rejoindre la corde sans corriger tardivement.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Distance à la corde et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "corde_hypercar",
+      "symptome": "Je rate le point de corde",
+      "phase": "mid",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "rate le point de corde",
+        "rate la corde",
+        "corde ratee",
+        "point de corde"
+      ],
+      "cause_possible": "Vitesse d’entrée ou trajectoire préparatoire empêchant une bonne rotation.",
+      "conseil": "Ralentis un peu avant le virage pour rejoindre la corde sans corriger tardivement.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Distance à la corde et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "corde_lmp2",
+      "symptome": "Je rate le point de corde",
+      "phase": "mid",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "rate le point de corde",
+        "rate la corde",
+        "corde ratee",
+        "point de corde"
+      ],
+      "cause_possible": "Vitesse d’entrée ou trajectoire préparatoire empêchant une bonne rotation.",
+      "conseil": "Ralentis un peu avant le virage pour rejoindre la corde sans corriger tardivement.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Distance à la corde et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "corde_tcr",
+      "symptome": "Je rate le point de corde",
+      "phase": "mid",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "rate le point de corde",
+        "rate la corde",
+        "corde ratee",
+        "point de corde"
+      ],
+      "cause_possible": "Vitesse d’entrée ou trajectoire préparatoire empêchant une bonne rotation.",
+      "conseil": "Ralentis un peu avant le virage pour rejoindre la corde sans corriger tardivement.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Distance à la corde et vitesse de sortie",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_milieu_gt3",
+      "symptome": "Je sous-vire au milieu",
+      "phase": "mid",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "sous vire au milieu",
+        "sous virage au milieu",
+        "pousse a la corde"
+      ],
+      "cause_possible": "Pneu avant saturé ou maintien du frein / de la vitesse trop important.",
+      "conseil": "Allège les commandes et observe si tu retrouves de la rotation sans rajouter du volant.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Vitesse minimale et précision de trajectoire",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_milieu_gt4",
+      "symptome": "Je sous-vire au milieu",
+      "phase": "mid",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "sous vire au milieu",
+        "sous virage au milieu",
+        "pousse a la corde"
+      ],
+      "cause_possible": "Pneu avant saturé ou maintien du frein / de la vitesse trop important.",
+      "conseil": "Allège les commandes et observe si tu retrouves de la rotation sans rajouter du volant.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Vitesse minimale et précision de trajectoire",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_milieu_porsche_cup",
+      "symptome": "Je sous-vire au milieu",
+      "phase": "mid",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "sous vire au milieu",
+        "sous virage au milieu",
+        "pousse a la corde"
+      ],
+      "cause_possible": "Pneu avant saturé ou maintien du frein / de la vitesse trop important.",
+      "conseil": "Allège les commandes et observe si tu retrouves de la rotation sans rajouter du volant.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Vitesse minimale et précision de trajectoire",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_milieu_f1",
+      "symptome": "Je sous-vire au milieu",
+      "phase": "mid",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "sous vire au milieu",
+        "sous virage au milieu",
+        "pousse a la corde"
+      ],
+      "cause_possible": "Pneu avant saturé ou maintien du frein / de la vitesse trop important.",
+      "conseil": "Allège les commandes et observe si tu retrouves de la rotation sans rajouter du volant.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Vitesse minimale et précision de trajectoire",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_milieu_f4",
+      "symptome": "Je sous-vire au milieu",
+      "phase": "mid",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "sous vire au milieu",
+        "sous virage au milieu",
+        "pousse a la corde"
+      ],
+      "cause_possible": "Pneu avant saturé ou maintien du frein / de la vitesse trop important.",
+      "conseil": "Allège les commandes et observe si tu retrouves de la rotation sans rajouter du volant.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Vitesse minimale et précision de trajectoire",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_milieu_hypercar",
+      "symptome": "Je sous-vire au milieu",
+      "phase": "mid",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "sous vire au milieu",
+        "sous virage au milieu",
+        "pousse a la corde"
+      ],
+      "cause_possible": "Pneu avant saturé ou maintien du frein / de la vitesse trop important.",
+      "conseil": "Allège les commandes et observe si tu retrouves de la rotation sans rajouter du volant.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Vitesse minimale et précision de trajectoire",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_milieu_lmp2",
+      "symptome": "Je sous-vire au milieu",
+      "phase": "mid",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "sous vire au milieu",
+        "sous virage au milieu",
+        "pousse a la corde"
+      ],
+      "cause_possible": "Pneu avant saturé ou maintien du frein / de la vitesse trop important.",
+      "conseil": "Allège les commandes et observe si tu retrouves de la rotation sans rajouter du volant.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Vitesse minimale et précision de trajectoire",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sous_milieu_tcr",
+      "symptome": "Je sous-vire au milieu",
+      "phase": "mid",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "sous vire au milieu",
+        "sous virage au milieu",
+        "pousse a la corde"
+      ],
+      "cause_possible": "Pneu avant saturé ou maintien du frein / de la vitesse trop important.",
+      "conseil": "Allège les commandes et observe si tu retrouves de la rotation sans rajouter du volant.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Vitesse minimale et précision de trajectoire",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_milieu_gt3",
+      "symptome": "Je survire en appui",
+      "phase": "mid",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "survire au milieu",
+        "survirage en appui",
+        "part en appui"
+      ],
+      "cause_possible": "Équilibre mécanique/aéro ou changement de charge trop rapide.",
+      "conseil": "Stabilise les commandes, repère le début de la glisse et évite de corriger en retard.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Amplitude de contre-braquage",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_milieu_gt4",
+      "symptome": "Je survire en appui",
+      "phase": "mid",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "survire au milieu",
+        "survirage en appui",
+        "part en appui"
+      ],
+      "cause_possible": "Équilibre mécanique/aéro ou changement de charge trop rapide.",
+      "conseil": "Stabilise les commandes, repère le début de la glisse et évite de corriger en retard.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Amplitude de contre-braquage",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_milieu_porsche_cup",
+      "symptome": "Je survire en appui",
+      "phase": "mid",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "survire au milieu",
+        "survirage en appui",
+        "part en appui"
+      ],
+      "cause_possible": "Équilibre mécanique/aéro ou changement de charge trop rapide.",
+      "conseil": "Stabilise les commandes, repère le début de la glisse et évite de corriger en retard.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Amplitude de contre-braquage",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_milieu_f1",
+      "symptome": "Je survire en appui",
+      "phase": "mid",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "survire au milieu",
+        "survirage en appui",
+        "part en appui"
+      ],
+      "cause_possible": "Équilibre mécanique/aéro ou changement de charge trop rapide.",
+      "conseil": "Stabilise les commandes, repère le début de la glisse et évite de corriger en retard.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Amplitude de contre-braquage",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_milieu_f4",
+      "symptome": "Je survire en appui",
+      "phase": "mid",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "survire au milieu",
+        "survirage en appui",
+        "part en appui"
+      ],
+      "cause_possible": "Équilibre mécanique/aéro ou changement de charge trop rapide.",
+      "conseil": "Stabilise les commandes, repère le début de la glisse et évite de corriger en retard.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Amplitude de contre-braquage",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_milieu_hypercar",
+      "symptome": "Je survire en appui",
+      "phase": "mid",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "survire au milieu",
+        "survirage en appui",
+        "part en appui"
+      ],
+      "cause_possible": "Équilibre mécanique/aéro ou changement de charge trop rapide.",
+      "conseil": "Stabilise les commandes, repère le début de la glisse et évite de corriger en retard.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Amplitude de contre-braquage",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_milieu_lmp2",
+      "symptome": "Je survire en appui",
+      "phase": "mid",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "survire au milieu",
+        "survirage en appui",
+        "part en appui"
+      ],
+      "cause_possible": "Équilibre mécanique/aéro ou changement de charge trop rapide.",
+      "conseil": "Stabilise les commandes, repère le début de la glisse et évite de corriger en retard.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Amplitude de contre-braquage",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_milieu_tcr",
+      "symptome": "Je survire en appui",
+      "phase": "mid",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "survire au milieu",
+        "survirage en appui",
+        "part en appui"
+      ],
+      "cause_possible": "Équilibre mécanique/aéro ou changement de charge trop rapide.",
+      "conseil": "Stabilise les commandes, repère le début de la glisse et évite de corriger en retard.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Amplitude de contre-braquage",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "patinage_gt3",
+      "symptome": "Je patine à l’accélération",
+      "phase": "throttle",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "patine",
+        "patinage",
+        "roues qui patinent",
+        "perds la motricite"
+      ],
+      "cause_possible": "Trop de couple pour l’adhérence disponible au braquage actuel.",
+      "conseil": "Dose davantage l’accélérateur, redresse la direction et teste un passage de rapport plus tôt.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Interventions TC et vitesse 100 m après la corde",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "patinage_gt4",
+      "symptome": "Je patine à l’accélération",
+      "phase": "throttle",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "patine",
+        "patinage",
+        "roues qui patinent",
+        "perds la motricite"
+      ],
+      "cause_possible": "Trop de couple pour l’adhérence disponible au braquage actuel.",
+      "conseil": "Dose davantage l’accélérateur, redresse la direction et teste un passage de rapport plus tôt.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Interventions TC et vitesse 100 m après la corde",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "patinage_porsche_cup",
+      "symptome": "Je patine à l’accélération",
+      "phase": "throttle",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "patine",
+        "patinage",
+        "roues qui patinent",
+        "perds la motricite"
+      ],
+      "cause_possible": "Trop de couple pour l’adhérence disponible au braquage actuel.",
+      "conseil": "Dose davantage l’accélérateur, redresse la direction et teste un passage de rapport plus tôt.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Interventions TC et vitesse 100 m après la corde",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "patinage_f1",
+      "symptome": "Je patine à l’accélération",
+      "phase": "throttle",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "patine",
+        "patinage",
+        "roues qui patinent",
+        "perds la motricite"
+      ],
+      "cause_possible": "Trop de couple pour l’adhérence disponible au braquage actuel.",
+      "conseil": "Dose davantage l’accélérateur, redresse la direction et teste un passage de rapport plus tôt.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Interventions TC et vitesse 100 m après la corde",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "patinage_f4",
+      "symptome": "Je patine à l’accélération",
+      "phase": "throttle",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "patine",
+        "patinage",
+        "roues qui patinent",
+        "perds la motricite"
+      ],
+      "cause_possible": "Trop de couple pour l’adhérence disponible au braquage actuel.",
+      "conseil": "Dose davantage l’accélérateur, redresse la direction et teste un passage de rapport plus tôt.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Interventions TC et vitesse 100 m après la corde",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "patinage_hypercar",
+      "symptome": "Je patine à l’accélération",
+      "phase": "throttle",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "patine",
+        "patinage",
+        "roues qui patinent",
+        "perds la motricite"
+      ],
+      "cause_possible": "Trop de couple pour l’adhérence disponible au braquage actuel.",
+      "conseil": "Dose davantage l’accélérateur, redresse la direction et teste un passage de rapport plus tôt.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Interventions TC et vitesse 100 m après la corde",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "patinage_lmp2",
+      "symptome": "Je patine à l’accélération",
+      "phase": "throttle",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "patine",
+        "patinage",
+        "roues qui patinent",
+        "perds la motricite"
+      ],
+      "cause_possible": "Trop de couple pour l’adhérence disponible au braquage actuel.",
+      "conseil": "Dose davantage l’accélérateur, redresse la direction et teste un passage de rapport plus tôt.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Interventions TC et vitesse 100 m après la corde",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "patinage_tcr",
+      "symptome": "Je patine à l’accélération",
+      "phase": "throttle",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "patine",
+        "patinage",
+        "roues qui patinent",
+        "perds la motricite"
+      ],
+      "cause_possible": "Trop de couple pour l’adhérence disponible au braquage actuel.",
+      "conseil": "Dose davantage l’accélérateur, redresse la direction et teste un passage de rapport plus tôt.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Interventions TC et vitesse 100 m après la corde",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_sortie_gt3",
+      "symptome": "Je pars en tête-à-queue à la sortie",
+      "phase": "throttle",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "tete a queue en sortie",
+        "survirage a la sortie",
+        "arriere part en sortie"
+      ],
+      "cause_possible": "Remise de gaz trop rapide ou perte de grip sur vibreur / bosse.",
+      "conseil": "Ouvre le volant avant les gaz, puis reconstruis la motricité par étapes.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Corrections de volant et vitesse en sortie",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_sortie_gt4",
+      "symptome": "Je pars en tête-à-queue à la sortie",
+      "phase": "throttle",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "tete a queue en sortie",
+        "survirage a la sortie",
+        "arriere part en sortie"
+      ],
+      "cause_possible": "Remise de gaz trop rapide ou perte de grip sur vibreur / bosse.",
+      "conseil": "Ouvre le volant avant les gaz, puis reconstruis la motricité par étapes.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Corrections de volant et vitesse en sortie",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_sortie_porsche_cup",
+      "symptome": "Je pars en tête-à-queue à la sortie",
+      "phase": "throttle",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "tete a queue en sortie",
+        "survirage a la sortie",
+        "arriere part en sortie"
+      ],
+      "cause_possible": "Remise de gaz trop rapide ou perte de grip sur vibreur / bosse.",
+      "conseil": "Ouvre le volant avant les gaz, puis reconstruis la motricité par étapes.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Corrections de volant et vitesse en sortie",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_sortie_f1",
+      "symptome": "Je pars en tête-à-queue à la sortie",
+      "phase": "throttle",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "tete a queue en sortie",
+        "survirage a la sortie",
+        "arriere part en sortie"
+      ],
+      "cause_possible": "Remise de gaz trop rapide ou perte de grip sur vibreur / bosse.",
+      "conseil": "Ouvre le volant avant les gaz, puis reconstruis la motricité par étapes.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Corrections de volant et vitesse en sortie",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_sortie_f4",
+      "symptome": "Je pars en tête-à-queue à la sortie",
+      "phase": "throttle",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "tete a queue en sortie",
+        "survirage a la sortie",
+        "arriere part en sortie"
+      ],
+      "cause_possible": "Remise de gaz trop rapide ou perte de grip sur vibreur / bosse.",
+      "conseil": "Ouvre le volant avant les gaz, puis reconstruis la motricité par étapes.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Corrections de volant et vitesse en sortie",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_sortie_hypercar",
+      "symptome": "Je pars en tête-à-queue à la sortie",
+      "phase": "throttle",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "tete a queue en sortie",
+        "survirage a la sortie",
+        "arriere part en sortie"
+      ],
+      "cause_possible": "Remise de gaz trop rapide ou perte de grip sur vibreur / bosse.",
+      "conseil": "Ouvre le volant avant les gaz, puis reconstruis la motricité par étapes.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Corrections de volant et vitesse en sortie",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_sortie_lmp2",
+      "symptome": "Je pars en tête-à-queue à la sortie",
+      "phase": "throttle",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "tete a queue en sortie",
+        "survirage a la sortie",
+        "arriere part en sortie"
+      ],
+      "cause_possible": "Remise de gaz trop rapide ou perte de grip sur vibreur / bosse.",
+      "conseil": "Ouvre le volant avant les gaz, puis reconstruis la motricité par étapes.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Corrections de volant et vitesse en sortie",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "sur_sortie_tcr",
+      "symptome": "Je pars en tête-à-queue à la sortie",
+      "phase": "throttle",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "tete a queue en sortie",
+        "survirage a la sortie",
+        "arriere part en sortie"
+      ],
+      "cause_possible": "Remise de gaz trop rapide ou perte de grip sur vibreur / bosse.",
+      "conseil": "Ouvre le volant avant les gaz, puis reconstruis la motricité par étapes.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Corrections de volant et vitesse en sortie",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lent_sortie_gt3",
+      "symptome": "Je perds du temps en sortie",
+      "phase": "throttle",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "lent en sortie",
+        "perds du temps en sortie",
+        "sortie trop lente",
+        "accelere trop tard"
+      ],
+      "cause_possible": "Vitesse de corde trop faible, trop de braquage ou plein gaz retardé.",
+      "conseil": "Compare deux entrées plus lentes et plus propres pour gagner à la sortie.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Vitesse à 100 m après la corde",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lent_sortie_gt4",
+      "symptome": "Je perds du temps en sortie",
+      "phase": "throttle",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "lent en sortie",
+        "perds du temps en sortie",
+        "sortie trop lente",
+        "accelere trop tard"
+      ],
+      "cause_possible": "Vitesse de corde trop faible, trop de braquage ou plein gaz retardé.",
+      "conseil": "Compare deux entrées plus lentes et plus propres pour gagner à la sortie.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Vitesse à 100 m après la corde",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lent_sortie_porsche_cup",
+      "symptome": "Je perds du temps en sortie",
+      "phase": "throttle",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "lent en sortie",
+        "perds du temps en sortie",
+        "sortie trop lente",
+        "accelere trop tard"
+      ],
+      "cause_possible": "Vitesse de corde trop faible, trop de braquage ou plein gaz retardé.",
+      "conseil": "Compare deux entrées plus lentes et plus propres pour gagner à la sortie.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Vitesse à 100 m après la corde",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lent_sortie_f1",
+      "symptome": "Je perds du temps en sortie",
+      "phase": "throttle",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "lent en sortie",
+        "perds du temps en sortie",
+        "sortie trop lente",
+        "accelere trop tard"
+      ],
+      "cause_possible": "Vitesse de corde trop faible, trop de braquage ou plein gaz retardé.",
+      "conseil": "Compare deux entrées plus lentes et plus propres pour gagner à la sortie.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Vitesse à 100 m après la corde",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lent_sortie_f4",
+      "symptome": "Je perds du temps en sortie",
+      "phase": "throttle",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "lent en sortie",
+        "perds du temps en sortie",
+        "sortie trop lente",
+        "accelere trop tard"
+      ],
+      "cause_possible": "Vitesse de corde trop faible, trop de braquage ou plein gaz retardé.",
+      "conseil": "Compare deux entrées plus lentes et plus propres pour gagner à la sortie.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Vitesse à 100 m après la corde",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lent_sortie_hypercar",
+      "symptome": "Je perds du temps en sortie",
+      "phase": "throttle",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "lent en sortie",
+        "perds du temps en sortie",
+        "sortie trop lente",
+        "accelere trop tard"
+      ],
+      "cause_possible": "Vitesse de corde trop faible, trop de braquage ou plein gaz retardé.",
+      "conseil": "Compare deux entrées plus lentes et plus propres pour gagner à la sortie.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Vitesse à 100 m après la corde",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lent_sortie_lmp2",
+      "symptome": "Je perds du temps en sortie",
+      "phase": "throttle",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "lent en sortie",
+        "perds du temps en sortie",
+        "sortie trop lente",
+        "accelere trop tard"
+      ],
+      "cause_possible": "Vitesse de corde trop faible, trop de braquage ou plein gaz retardé.",
+      "conseil": "Compare deux entrées plus lentes et plus propres pour gagner à la sortie.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Vitesse à 100 m après la corde",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lent_sortie_tcr",
+      "symptome": "Je perds du temps en sortie",
+      "phase": "throttle",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "lent en sortie",
+        "perds du temps en sortie",
+        "sortie trop lente",
+        "accelere trop tard"
+      ],
+      "cause_possible": "Vitesse de corde trop faible, trop de braquage ou plein gaz retardé.",
+      "conseil": "Compare deux entrées plus lentes et plus propres pour gagner à la sortie.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Vitesse à 100 m après la corde",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "tc_gt3",
+      "symptome": "Le TC intervient trop",
+      "phase": "throttle",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "tc intervient",
+        "anti patinage",
+        "traction control",
+        "tc clignote"
+      ],
+      "cause_possible": "Le système coupe le couple à cause d’une demande d’accélération excessive.",
+      "conseil": "Réduis légèrement le gaz pendant le débraquage et compare le delta en sortie.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Temps d’intervention TC",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "tc_gt4",
+      "symptome": "Le TC intervient trop",
+      "phase": "throttle",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "tc intervient",
+        "anti patinage",
+        "traction control",
+        "tc clignote"
+      ],
+      "cause_possible": "Le système coupe le couple à cause d’une demande d’accélération excessive.",
+      "conseil": "Réduis légèrement le gaz pendant le débraquage et compare le delta en sortie.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Temps d’intervention TC",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "tc_porsche_cup",
+      "symptome": "Le TC intervient trop",
+      "phase": "throttle",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "tc intervient",
+        "anti patinage",
+        "traction control",
+        "tc clignote"
+      ],
+      "cause_possible": "Le système coupe le couple à cause d’une demande d’accélération excessive.",
+      "conseil": "Réduis légèrement le gaz pendant le débraquage et compare le delta en sortie.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Temps d’intervention TC",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "tc_f1",
+      "symptome": "Le TC intervient trop",
+      "phase": "throttle",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "tc intervient",
+        "anti patinage",
+        "traction control",
+        "tc clignote"
+      ],
+      "cause_possible": "Le système coupe le couple à cause d’une demande d’accélération excessive.",
+      "conseil": "Réduis légèrement le gaz pendant le débraquage et compare le delta en sortie.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Temps d’intervention TC",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "tc_f4",
+      "symptome": "Le TC intervient trop",
+      "phase": "throttle",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "tc intervient",
+        "anti patinage",
+        "traction control",
+        "tc clignote"
+      ],
+      "cause_possible": "Le système coupe le couple à cause d’une demande d’accélération excessive.",
+      "conseil": "Réduis légèrement le gaz pendant le débraquage et compare le delta en sortie.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Temps d’intervention TC",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "tc_hypercar",
+      "symptome": "Le TC intervient trop",
+      "phase": "throttle",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "tc intervient",
+        "anti patinage",
+        "traction control",
+        "tc clignote"
+      ],
+      "cause_possible": "Le système coupe le couple à cause d’une demande d’accélération excessive.",
+      "conseil": "Réduis légèrement le gaz pendant le débraquage et compare le delta en sortie.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Temps d’intervention TC",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "tc_lmp2",
+      "symptome": "Le TC intervient trop",
+      "phase": "throttle",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "tc intervient",
+        "anti patinage",
+        "traction control",
+        "tc clignote"
+      ],
+      "cause_possible": "Le système coupe le couple à cause d’une demande d’accélération excessive.",
+      "conseil": "Réduis légèrement le gaz pendant le débraquage et compare le delta en sortie.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Temps d’intervention TC",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "tc_tcr",
+      "symptome": "Le TC intervient trop",
+      "phase": "throttle",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "tc intervient",
+        "anti patinage",
+        "traction control",
+        "tc clignote"
+      ],
+      "cause_possible": "Le système coupe le couple à cause d’une demande d’accélération excessive.",
+      "conseil": "Réduis légèrement le gaz pendant le débraquage et compare le delta en sortie.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Temps d’intervention TC",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pneus_gt3",
+      "symptome": "Je surchauffe / use les pneus",
+      "phase": "other",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "pneus surchauffent",
+        "surchauffe pneus",
+        "pneus uses",
+        "usure pneus"
+      ],
+      "cause_possible": "Glissements, pressions ou réglages inadaptés, à confirmer sur des mesures.",
+      "conseil": "Mesure les pneus à chaud et réduis les glissements sur un run constant.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Évolution des temps sur 10 tours",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pneus_gt4",
+      "symptome": "Je surchauffe / use les pneus",
+      "phase": "other",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "pneus surchauffent",
+        "surchauffe pneus",
+        "pneus uses",
+        "usure pneus"
+      ],
+      "cause_possible": "Glissements, pressions ou réglages inadaptés, à confirmer sur des mesures.",
+      "conseil": "Mesure les pneus à chaud et réduis les glissements sur un run constant.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Évolution des temps sur 10 tours",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pneus_porsche_cup",
+      "symptome": "Je surchauffe / use les pneus",
+      "phase": "other",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "pneus surchauffent",
+        "surchauffe pneus",
+        "pneus uses",
+        "usure pneus"
+      ],
+      "cause_possible": "Glissements, pressions ou réglages inadaptés, à confirmer sur des mesures.",
+      "conseil": "Mesure les pneus à chaud et réduis les glissements sur un run constant.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Évolution des temps sur 10 tours",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pneus_f1",
+      "symptome": "Je surchauffe / use les pneus",
+      "phase": "other",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "pneus surchauffent",
+        "surchauffe pneus",
+        "pneus uses",
+        "usure pneus"
+      ],
+      "cause_possible": "Glissements, pressions ou réglages inadaptés, à confirmer sur des mesures.",
+      "conseil": "Mesure les pneus à chaud et réduis les glissements sur un run constant.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Évolution des temps sur 10 tours",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pneus_f4",
+      "symptome": "Je surchauffe / use les pneus",
+      "phase": "other",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "pneus surchauffent",
+        "surchauffe pneus",
+        "pneus uses",
+        "usure pneus"
+      ],
+      "cause_possible": "Glissements, pressions ou réglages inadaptés, à confirmer sur des mesures.",
+      "conseil": "Mesure les pneus à chaud et réduis les glissements sur un run constant.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Évolution des temps sur 10 tours",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pneus_hypercar",
+      "symptome": "Je surchauffe / use les pneus",
+      "phase": "other",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "pneus surchauffent",
+        "surchauffe pneus",
+        "pneus uses",
+        "usure pneus"
+      ],
+      "cause_possible": "Glissements, pressions ou réglages inadaptés, à confirmer sur des mesures.",
+      "conseil": "Mesure les pneus à chaud et réduis les glissements sur un run constant.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Évolution des temps sur 10 tours",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pneus_lmp2",
+      "symptome": "Je surchauffe / use les pneus",
+      "phase": "other",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "pneus surchauffent",
+        "surchauffe pneus",
+        "pneus uses",
+        "usure pneus"
+      ],
+      "cause_possible": "Glissements, pressions ou réglages inadaptés, à confirmer sur des mesures.",
+      "conseil": "Mesure les pneus à chaud et réduis les glissements sur un run constant.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Évolution des temps sur 10 tours",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pneus_tcr",
+      "symptome": "Je surchauffe / use les pneus",
+      "phase": "other",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "pneus surchauffent",
+        "surchauffe pneus",
+        "pneus uses",
+        "usure pneus"
+      ],
+      "cause_possible": "Glissements, pressions ou réglages inadaptés, à confirmer sur des mesures.",
+      "conseil": "Mesure les pneus à chaud et réduis les glissements sur un run constant.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Évolution des temps sur 10 tours",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pluie_gt3",
+      "symptome": "Je perds tout sous la pluie",
+      "phase": "other",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "sous la pluie",
+        "piste mouillee",
+        "aquaplaning",
+        "piste humide"
+      ],
+      "cause_possible": "Adhérence et trajectoire évoluent; une trajectoire moins gommée peut parfois mieux adhérer.",
+      "conseil": "Élargis les marges, ralentis les transitions et compare des lignes sûres sans changements brutaux.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Erreurs et régularité par condition",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pluie_gt4",
+      "symptome": "Je perds tout sous la pluie",
+      "phase": "other",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "sous la pluie",
+        "piste mouillee",
+        "aquaplaning",
+        "piste humide"
+      ],
+      "cause_possible": "Adhérence et trajectoire évoluent; une trajectoire moins gommée peut parfois mieux adhérer.",
+      "conseil": "Élargis les marges, ralentis les transitions et compare des lignes sûres sans changements brutaux.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Erreurs et régularité par condition",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pluie_porsche_cup",
+      "symptome": "Je perds tout sous la pluie",
+      "phase": "other",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "sous la pluie",
+        "piste mouillee",
+        "aquaplaning",
+        "piste humide"
+      ],
+      "cause_possible": "Adhérence et trajectoire évoluent; une trajectoire moins gommée peut parfois mieux adhérer.",
+      "conseil": "Élargis les marges, ralentis les transitions et compare des lignes sûres sans changements brutaux.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Erreurs et régularité par condition",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pluie_f1",
+      "symptome": "Je perds tout sous la pluie",
+      "phase": "other",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "sous la pluie",
+        "piste mouillee",
+        "aquaplaning",
+        "piste humide"
+      ],
+      "cause_possible": "Adhérence et trajectoire évoluent; une trajectoire moins gommée peut parfois mieux adhérer.",
+      "conseil": "Élargis les marges, ralentis les transitions et compare des lignes sûres sans changements brutaux.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Erreurs et régularité par condition",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pluie_f4",
+      "symptome": "Je perds tout sous la pluie",
+      "phase": "other",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "sous la pluie",
+        "piste mouillee",
+        "aquaplaning",
+        "piste humide"
+      ],
+      "cause_possible": "Adhérence et trajectoire évoluent; une trajectoire moins gommée peut parfois mieux adhérer.",
+      "conseil": "Élargis les marges, ralentis les transitions et compare des lignes sûres sans changements brutaux.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Erreurs et régularité par condition",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pluie_hypercar",
+      "symptome": "Je perds tout sous la pluie",
+      "phase": "other",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "sous la pluie",
+        "piste mouillee",
+        "aquaplaning",
+        "piste humide"
+      ],
+      "cause_possible": "Adhérence et trajectoire évoluent; une trajectoire moins gommée peut parfois mieux adhérer.",
+      "conseil": "Élargis les marges, ralentis les transitions et compare des lignes sûres sans changements brutaux.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Erreurs et régularité par condition",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pluie_lmp2",
+      "symptome": "Je perds tout sous la pluie",
+      "phase": "other",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "sous la pluie",
+        "piste mouillee",
+        "aquaplaning",
+        "piste humide"
+      ],
+      "cause_possible": "Adhérence et trajectoire évoluent; une trajectoire moins gommée peut parfois mieux adhérer.",
+      "conseil": "Élargis les marges, ralentis les transitions et compare des lignes sûres sans changements brutaux.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Erreurs et régularité par condition",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "pluie_tcr",
+      "symptome": "Je perds tout sous la pluie",
+      "phase": "other",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "sous la pluie",
+        "piste mouillee",
+        "aquaplaning",
+        "piste humide"
+      ],
+      "cause_possible": "Adhérence et trajectoire évoluent; une trajectoire moins gommée peut parfois mieux adhérer.",
+      "conseil": "Élargis les marges, ralentis les transitions et compare des lignes sûres sans changements brutaux.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Erreurs et régularité par condition",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lenteur_gt3",
+      "symptome": "Je suis régulier mais lent",
+      "phase": "other",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "2 secondes",
+        "3 secondes",
+        "je suis lent",
+        "pas assez rapide",
+        "manque de rythme"
+      ],
+      "cause_possible": "La perte peut venir de plusieurs zones; le meilleur tour seul ne révèle pas la cause.",
+      "conseil": "Compare trois secteurs et choisis la plus forte perte pour la travailler isolément.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Gain par secteur et médiane de 5 tours",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lenteur_gt4",
+      "symptome": "Je suis régulier mais lent",
+      "phase": "other",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "2 secondes",
+        "3 secondes",
+        "je suis lent",
+        "pas assez rapide",
+        "manque de rythme"
+      ],
+      "cause_possible": "La perte peut venir de plusieurs zones; le meilleur tour seul ne révèle pas la cause.",
+      "conseil": "Compare trois secteurs et choisis la plus forte perte pour la travailler isolément.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Gain par secteur et médiane de 5 tours",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lenteur_porsche_cup",
+      "symptome": "Je suis régulier mais lent",
+      "phase": "other",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "2 secondes",
+        "3 secondes",
+        "je suis lent",
+        "pas assez rapide",
+        "manque de rythme"
+      ],
+      "cause_possible": "La perte peut venir de plusieurs zones; le meilleur tour seul ne révèle pas la cause.",
+      "conseil": "Compare trois secteurs et choisis la plus forte perte pour la travailler isolément.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Gain par secteur et médiane de 5 tours",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lenteur_f1",
+      "symptome": "Je suis régulier mais lent",
+      "phase": "other",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "2 secondes",
+        "3 secondes",
+        "je suis lent",
+        "pas assez rapide",
+        "manque de rythme"
+      ],
+      "cause_possible": "La perte peut venir de plusieurs zones; le meilleur tour seul ne révèle pas la cause.",
+      "conseil": "Compare trois secteurs et choisis la plus forte perte pour la travailler isolément.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Gain par secteur et médiane de 5 tours",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lenteur_f4",
+      "symptome": "Je suis régulier mais lent",
+      "phase": "other",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "2 secondes",
+        "3 secondes",
+        "je suis lent",
+        "pas assez rapide",
+        "manque de rythme"
+      ],
+      "cause_possible": "La perte peut venir de plusieurs zones; le meilleur tour seul ne révèle pas la cause.",
+      "conseil": "Compare trois secteurs et choisis la plus forte perte pour la travailler isolément.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Gain par secteur et médiane de 5 tours",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lenteur_hypercar",
+      "symptome": "Je suis régulier mais lent",
+      "phase": "other",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "2 secondes",
+        "3 secondes",
+        "je suis lent",
+        "pas assez rapide",
+        "manque de rythme"
+      ],
+      "cause_possible": "La perte peut venir de plusieurs zones; le meilleur tour seul ne révèle pas la cause.",
+      "conseil": "Compare trois secteurs et choisis la plus forte perte pour la travailler isolément.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Gain par secteur et médiane de 5 tours",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lenteur_lmp2",
+      "symptome": "Je suis régulier mais lent",
+      "phase": "other",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "2 secondes",
+        "3 secondes",
+        "je suis lent",
+        "pas assez rapide",
+        "manque de rythme"
+      ],
+      "cause_possible": "La perte peut venir de plusieurs zones; le meilleur tour seul ne révèle pas la cause.",
+      "conseil": "Compare trois secteurs et choisis la plus forte perte pour la travailler isolément.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Gain par secteur et médiane de 5 tours",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "lenteur_tcr",
+      "symptome": "Je suis régulier mais lent",
+      "phase": "other",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "2 secondes",
+        "3 secondes",
+        "je suis lent",
+        "pas assez rapide",
+        "manque de rythme"
+      ],
+      "cause_possible": "La perte peut venir de plusieurs zones; le meilleur tour seul ne révèle pas la cause.",
+      "conseil": "Compare trois secteurs et choisis la plus forte perte pour la travailler isolément.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Gain par secteur et médiane de 5 tours",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "concentration_gt3",
+      "symptome": "Je perds mes moyens / suis irrégulier",
+      "phase": "other",
+      "categorie": "GT3",
+      "categorie_libelle": "GT3/LMGT3",
+      "declencheurs": [
+        "irregulier",
+        "concentration",
+        "frustre",
+        "stresse",
+        "fatigue"
+      ],
+      "cause_possible": "Fatigue mentale ou objectifs trop nombreux peuvent perturber l’exécution.",
+      "conseil": "Reviens à trois tours propres, un seul objectif et une courte pause si besoin.",
+      "particularite": "ABS/TC généralement disponibles, mais vérifier l’auto et les réglages.",
+      "mesure": "Écart-type et erreurs consécutives",
+      "exercice": "5 tours contrôlés : Mesure les interventions ABS/TC et la dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "concentration_gt4",
+      "symptome": "Je perds mes moyens / suis irrégulier",
+      "phase": "other",
+      "categorie": "GT4",
+      "categorie_libelle": "GT4",
+      "declencheurs": [
+        "irregulier",
+        "concentration",
+        "frustre",
+        "stresse",
+        "fatigue"
+      ],
+      "cause_possible": "Fatigue mentale ou objectifs trop nombreux peuvent perturber l’exécution.",
+      "conseil": "Reviens à trois tours propres, un seul objectif et une courte pause si besoin.",
+      "particularite": "Moins d’appui que GT3, importance de la conservation d’élan.",
+      "mesure": "Écart-type et erreurs consécutives",
+      "exercice": "5 tours contrôlés : Compare vitesse minimale et sortie.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "concentration_porsche_cup",
+      "symptome": "Je perds mes moyens / suis irrégulier",
+      "phase": "other",
+      "categorie": "Porsche Cup",
+      "categorie_libelle": "Porsche Cup",
+      "declencheurs": [
+        "irregulier",
+        "concentration",
+        "frustre",
+        "stresse",
+        "fatigue"
+      ],
+      "cause_possible": "Fatigue mentale ou objectifs trop nombreux peuvent perturber l’exécution.",
+      "conseil": "Reviens à trois tours propres, un seul objectif et une courte pause si besoin.",
+      "particularite": "Ne suppose pas la présence d’ABS; vérifier le modèle exact.",
+      "mesure": "Écart-type et erreurs consécutives",
+      "exercice": "5 tours contrôlés : Surveille le blocage avant et la stabilité aux rétrogradages.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "concentration_f1",
+      "symptome": "Je perds mes moyens / suis irrégulier",
+      "phase": "other",
+      "categorie": "F1",
+      "categorie_libelle": "F1 / Monoplace",
+      "declencheurs": [
+        "irregulier",
+        "concentration",
+        "frustre",
+        "stresse",
+        "fatigue"
+      ],
+      "cause_possible": "Fatigue mentale ou objectifs trop nombreux peuvent perturber l’exécution.",
+      "conseil": "Reviens à trois tours propres, un seul objectif et une courte pause si besoin.",
+      "particularite": "Forte sensibilité à l’appui et aux vitesses; généralement pas d’ABS.",
+      "mesure": "Écart-type et erreurs consécutives",
+      "exercice": "5 tours contrôlés : Compare freinage haute vitesse et dégressivité.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "concentration_f4",
+      "symptome": "Je perds mes moyens / suis irrégulier",
+      "phase": "other",
+      "categorie": "F4",
+      "categorie_libelle": "F4 / Monoplace",
+      "declencheurs": [
+        "irregulier",
+        "concentration",
+        "frustre",
+        "stresse",
+        "fatigue"
+      ],
+      "cause_possible": "Fatigue mentale ou objectifs trop nombreux peuvent perturber l’exécution.",
+      "conseil": "Reviens à trois tours propres, un seul objectif et une courte pause si besoin.",
+      "particularite": "Moins d’appui et de puissance qu’une F1; privilégier fluidité.",
+      "mesure": "Écart-type et erreurs consécutives",
+      "exercice": "5 tours contrôlés : Compare les vitesses de corde et les repères.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "concentration_hypercar",
+      "symptome": "Je perds mes moyens / suis irrégulier",
+      "phase": "other",
+      "categorie": "Hypercar",
+      "categorie_libelle": "Hypercar LMH/LMDh",
+      "declencheurs": [
+        "irregulier",
+        "concentration",
+        "frustre",
+        "stresse",
+        "fatigue"
+      ],
+      "cause_possible": "Fatigue mentale ou objectifs trop nombreux peuvent perturber l’exécution.",
+      "conseil": "Reviens à trois tours propres, un seul objectif et une courte pause si besoin.",
+      "particularite": "Freinage et gestion hybride dépendants de la voiture, risques d’air sale.",
+      "mesure": "Écart-type et erreurs consécutives",
+      "exercice": "5 tours contrôlés : Surveille équilibre et état des pneus.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "concentration_lmp2",
+      "symptome": "Je perds mes moyens / suis irrégulier",
+      "phase": "other",
+      "categorie": "LMP2",
+      "categorie_libelle": "LMP2",
+      "declencheurs": [
+        "irregulier",
+        "concentration",
+        "frustre",
+        "stresse",
+        "fatigue"
+      ],
+      "cause_possible": "Fatigue mentale ou objectifs trop nombreux peuvent perturber l’exécution.",
+      "conseil": "Reviens à trois tours propres, un seul objectif et une courte pause si besoin.",
+      "particularite": "Prototype sensible à l’appui, aux vibreurs et aux transferts.",
+      "mesure": "Écart-type et erreurs consécutives",
+      "exercice": "5 tours contrôlés : Contrôle la stabilité et le trafic.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    },
+    {
+      "id": "concentration_tcr",
+      "symptome": "Je perds mes moyens / suis irrégulier",
+      "phase": "other",
+      "categorie": "TCR",
+      "categorie_libelle": "Touring / FWD",
+      "declencheurs": [
+        "irregulier",
+        "concentration",
+        "frustre",
+        "stresse",
+        "fatigue"
+      ],
+      "cause_possible": "Fatigue mentale ou objectifs trop nombreux peuvent perturber l’exécution.",
+      "conseil": "Reviens à trois tours propres, un seul objectif et une courte pause si besoin.",
+      "particularite": "Le train avant dirige et motrice, attention au sous-virage à la remise des gaz.",
+      "mesure": "Écart-type et erreurs consécutives",
+      "exercice": "5 tours contrôlés : Mesure vitesse de sortie sans patinage avant.",
+      "question": "Le problème arrive-t-il à l’entrée, au point de corde ou à la sortie ? Sur quel virage et avec quel niveau de carburant ?",
+      "statut": "hypothèse à confirmer"
+    }
+  ]
+}
