@@ -1,21 +1,15 @@
-VCE ESPORT / PERFORMANCE HUB V6 — GRIS & VERT
+VCE ESPORT — PERFORMANCE V7
 
-INSTALLATION
-Décompresser l’intégralité du ZIP à la racine du dépôt GitHub Pages (ne pas supprimer les données existantes).
+Nouvelle identité : noir graphite, gris anthracite et vert néon sur toutes les pages.
 
-ACCUEIL
-- Trois profils : INDIVIDUEL, GROUPE, ACCÈS COACHS.
-- ACCÈS COACHS : mot de passe défini à la demande du responsable.
-- Classement public visible avant la sélection d’un profil.
-- Le mode Groupe conserve Race Control mais ne peut plus valider ou modifier les scores.
-- Seul l’écran Accès Coachs propose la validation des séances, la planification et les absences.
-- Les imports pilotes sont systématiquement en attente, ils ne peuvent pas injecter des points validés.
+- index.html : sélection Individuel / Groupe / Accès coach et tableau de classement.
+- entrainement.html : profils, séances, chronomètre, statistiques, curseur d’objectif hebdomadaire (minimum VCE 50 min).
+- interactions.html : assistant contextuel enrichi (800 cas existants + 3 curseurs + réponses après test + hypothèses/exercices).
+- ressources_voitures.html : catalogue des voitures.
+- strategie.html : Race Control (Groupe et Coach uniquement).
+- vce-v7.css / vce-v7.js : nouveau thème et déconnexion de profil.
+- vce-coach-v7.js : nouveau moteur de dialogue local.
 
-DESIGN
-- Palette gris graphite et vert inspirée du circuit transmis.
-- Menu commun VCE Esport sur les pages secondaires.
-- Circuits stylisés animés en rotation : Spa, Monza, Suzuka, Le Mans, Bathurst.
-- Schémas illustratifs et non tracés officiels précis.
+INSTALLATION : extraire tous les fichiers à la racine du site GitHub Pages. Ne pas supprimer vos sauvegardes.
 
-LIMITATION IMPORTANTE
-Le mot de passe est vérifié dans le navigateur (hachage SHA-256), sans serveur. Il protège l’accès par l’interface mais ne constitue PAS une véritable sécurité : le code et localStorage restent accessibles à un utilisateur technique. Il n’y a pas de synchronisation entre appareils, et les temps/tours restent déclaratifs. Pour empêcher réellement la triche, il faut une authentification serveur, une base de données centralisée et une télémétrie authentifiée du jeu.
+LIMITES : le coach interactif est un moteur local de recherche et de règles, pas un modèle IA en ligne. Le mot de passe coach côté navigateur n’est pas une authentification serveur. Les profils et scores ne sont pas synchronisés entre appareils. Le chronomètre navigateur et les kilomètres déclarés ne constituent pas une preuve anti-triche.

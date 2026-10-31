@@ -1,0 +1,52 @@
+/* VCE Performance V7 — graphite / neon green design system */
+:root{color-scheme:dark;--bg:#070a09!important;--surface:#111614!important;--surface2:#181f1b!important;--line:#29362f!important;--muted:#96aa9f!important;--red:#25e58d!important;--teal:#25e58d!important;--v5-red:#23dd88!important;--v5-green:#2cf09a!important;--v5-bg:#070a09!important;--v5-panel:#141b17!important;--v5-line:#2b3d33!important;--v5-muted:#9db2a6!important;--vcep-red:#25e58d!important;--vcep-green:#25e58d!important}
+html{scroll-behavior:smooth}body{background:#070a09!important;color:#eef7f0!important;font-family:Inter,'Segoe UI',system-ui,sans-serif!important}
+.ambient{background:radial-gradient(ellipse 50% 35% at 80% 5%,#0c513129,transparent 76%),radial-gradient(ellipse 40% 35% at 6% 68%,#12362329,transparent 78%),#070a09!important}
+body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(#5e97720b 1px,transparent 1px),linear-gradient(90deg,#5e97720b 1px,transparent 1px);background-size:56px 56px}
+.top,#vce-shared-nav,.topbar{background:#090e0bf5!important;border-color:#23382c!important;box-shadow:0 6px 30px #0004}
+#vce-shared-nav{position:sticky!important;top:0!important;z-index:9998!important;backdrop-filter:blur(16px)}
+#vce-shared-nav .vce-identity-mark,.logo .logomark,.brand-mark{background:linear-gradient(145deg,#183b2a,#101c15)!important;border-color:#278f5d!important;color:#fff!important}
+#vce-shared-nav .vce-identity-mark b,.logo .logomark b,.brand-mark b{color:#26e58e!important}
+#vce-shared-nav .vce-links a,.nav a{color:#a8b9ad!important}
+#vce-shared-nav .vce-links a[aria-current=page],#vce-shared-nav .vce-links a:hover,.nav a:hover{background:#143825!important;color:#41efa0!important}
+#vce-shared-nav .vce-home{border-color:#2b6345!important;color:#4aeda0!important}
+.vce-v7-logout{border:1px solid #355c43;border-radius:9px;background:#12281c;color:#55eda4;font-size:10px;font-weight:850;letter-spacing:.055em;padding:10px 13px;cursor:pointer;white-space:nowrap;transition:background .2s,transform .2s}
+.vce-v7-logout:hover{background:#215438;transform:translateY(-1px)}
+#vce-v7-profile-pill{display:inline-flex;align-items:center;gap:7px;font:800 10px system-ui;color:#9ce7bb;background:#112a1b;border:1px solid #245c3d;padding:9px 12px;border-radius:999px;white-space:nowrap}
+#vce-v7-profile-pill:before{content:'';height:6px;width:6px;border-radius:50%;background:#29f399;box-shadow:0 0 11px #29f399}
+.v5-gate,.v5-dashboard,.v5-box,.v5-metric,.v5-entry-detail,.v5-mode-card,.v6-public-board,.vcep-card,.panel,.tool,.main-card,.mini-card,.spa-shell,.structure,.card{background:linear-gradient(145deg,#151c17,#0c120e)!important;border-color:#2a3b30!important;box-shadow:0 14px 40px #0003}
+.v5-gate{background:radial-gradient(ellipse at 85% 5%,#0d713c2e,transparent 60%),linear-gradient(145deg,#131c16,#0a100c)!important}
+.v5-mode-card:hover,.vcep-card:hover,.tool:hover,.main-card:hover,.mini-card:hover{border-color:#28e48c!important;box-shadow:0 12px 35px #11d8791d!important}
+.v5-gate h1 em,.v5-dash-head h2 em,.hero h1 span,.vcep-hero h2 span{color:#25e58d!important}
+.v5-action,.btn,.vcep-button,button{transition:transform .2s,border-color .2s,background .2s,box-shadow .2s}
+.v5-action.primary,.v5-action.green,.btn.primary,#vce-training-portal .vcep-button.primary,button:not(.secondary):not(.v5-action):not(.vce-v7-logout):not(.vcep-card):not(.vcep-button):not(.v5-mode-card):not(.v6-coach-card):not(.vce-switch):not(.v5-switch){background:#1b9d5c;border-color:#25dc83;color:#f7fff9}
+.v5-action.primary:hover,.btn.primary:hover,#vce-training-portal .vcep-button.primary:hover{box-shadow:0 9px 30px #1ce78332!important}
+.v5-metric,.v5-box{background:#101812!important;border-color:#263b2c!important}
+.v5-metric strong,.v5-week strong,.v5-ranking-row strong{color:#f3fdf6}
+.v5-metric:nth-child(3) strong,.v5-ranking-row strong{color:#27ee92!important}
+.v5-progress{background:#060b07!important}.v5-progress i{background:linear-gradient(90deg,#146a3b,#23ec89)!important;box-shadow:0 0 16px #22f38c55}
+.v5-avatar{background:#153722!important;border-color:#259d5c!important;color:#42f2a0}
+.v5-stopwatch,.v5-history-row,.v5-review,.v5-plan,.v5-upcoming{background:#101b14!important;border-color:#294735!important}
+.v5-entry-form input,.v5-entry-form select,.v5-box input,.v5-box select,input,select,textarea{background:#0c140f!important;color:#edf8f0!important;border-color:#34543e!important}
+input:focus,select:focus,textarea:focus{outline:2px solid #25e58d80;outline-offset:1px}
+input[type=range]{accent-color:#2bea8f;cursor:pointer;border:0!important;padding:0!important;background:transparent!important}
+.v5-kicker,.vcep-kicker,.eyebrow,.section-head small,.kicker,.count,.v5-ranking-row b{color:#39e997!important}
+#vce-training-portal .vcep-hero{background:radial-gradient(ellipse at 80% 10%,#0f613a70,transparent 55%),linear-gradient(125deg,#16251a,#0a110d)!important}
+#vce-training-portal .vcep-card{background:linear-gradient(145deg,#19251b,#0c130e)!important}
+#vce-training-portal .vcep-icon{background:#183b25!important;color:#32eb91!important;border-color:#2e8152!important}
+#vce-training-portal .vcep-card.red .vcep-icon{background:#183b25!important}
+#vce-training-portal .vcep-link,#vce-training-portal .vcep-card.red .vcep-link{color:#4cf4a5!important}
+.spa-shell{background:radial-gradient(ellipse 60% 50% at 50% 45%,#0e5b333c,transparent),#0d1510!important}
+.spa-status,.v5-status.verified{background:#123b24!important;color:#39e995!important;border-color:#276f46!important}
+.v5-status.pending{background:#3b3117!important;color:#eac479!important}
+.v5-status.rejected{background:#3e1e23!important;color:#ff9099!important}
+.chat{background:#090f0b!important;border:1px solid #243d2e!important}.bubble{background:#163021!important;border-color:#285d3e!important}.bubble.me{background:#233127!important;border-color:#487450!important}
+.v7-diagnostic{max-width:1250px;margin:0 auto 16px;padding:0 16px}.v7-diagnostic .v7-title{font-size:11px;letter-spacing:.17em;font-weight:900;color:#36ee99;margin-bottom:11px}
+.v7-diagnostic .v7-card{border:1px solid #2a4432;background:linear-gradient(125deg,#15231a,#0b130e);border-radius:17px;padding:21px;box-shadow:0 15px 45px #0005}
+.v7-diagnostic .v7-intro{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:16px}.v7-diagnostic h2{margin:0 0 6px;font-size:23px;letter-spacing:-.04em;color:#f1fff4}.v7-diagnostic p{color:#9db4a3;font-size:12px;line-height:1.6;margin:0}
+.v7-slider-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.v7-slider{border:1px solid #304536;border-radius:12px;padding:15px;background:#101a12}.v7-slider label{display:flex;justify-content:space-between;align-items:center;color:#b8d0c0;font-weight:800;letter-spacing:.03em;font-size:11px;margin-bottom:12px}.v7-slider output{color:#41f49d;font-size:15px}.v7-slider input{width:100%}.v7-slider small{display:block;color:#8da696;font-size:10px;margin-top:7px}
+.v7-controls{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:15px}.v7-chip{border:1px solid #326344;background:#183321;color:#bff3d2;border-radius:999px;padding:9px 12px;font:700 11px system-ui;cursor:pointer}.v7-chip:hover{background:#205a35}.v7-coach-status{display:flex;gap:10px;align-items:center;font-size:10px;color:#9fc9af}.v7-coach-status i{height:7px;width:7px;border-radius:50%;background:#25ef91;box-shadow:0 0 12px #25ef91}
+.v7-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.v7-step{background:#101d14;border:1px solid #2b4c36;border-radius:11px;padding:12px}.v7-step b{color:#4ef4a7;font-size:10px;letter-spacing:.08em}.v7-step p{margin:6px 0 0!important;color:#c3d5c8!important;font-size:11px!important}
+.v7-week-control{margin:12px 0;border:1px solid #2d4e36;background:#101c14;border-radius:11px;padding:12px 14px}.v7-week-control label{display:flex;justify-content:space-between;gap:10px;align-items:center;color:#b2c9b7;font:750 11px system-ui;margin-bottom:10px}.v7-week-control output{color:#38ee98;font-weight:900}.v7-week-control input{width:100%}.v7-week-control small{color:#839e8c;font-size:10px}
+@media(max-width:760px){.v7-slider-grid,.v7-steps{grid-template-columns:1fr}.v7-diagnostic .v7-card{padding:15px}#vce-shared-nav{gap:8px!important}#vce-v7-profile-pill{max-width:190px;overflow:hidden;text-overflow:ellipsis}.vce-v7-logout{padding:8px 10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
