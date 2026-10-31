@@ -1,19 +1,34 @@
-VCE ESPORT — PERFORMANCE HUB V4 · PROFILS PILOTES
+VCE ESPORT PERFORMANCE HUB — VERSION 5
+=====================================
 
 INSTALLATION
-Déposer tous les fichiers du ZIP à la racine du dépôt GitHub Pages.
-Conserver les fichiers vce-pilotes.js et vce-pilotes.css à côté des pages HTML.
-Ne pas supprimer le dossier sauvegardes/ existant.
+- Déposer tous les fichiers du ZIP à la racine de votre site GitHub Pages.
+- Conserver vos dossiers de sauvegardes déjà présents.
+- index.html : écran d'entrée obligatoire Individuel / Groupe.
+- entrainement.html : tableau de bord pilote, chronomètre, historique, validation et classement coach.
+- strategie.html : accès uniquement après sélection Groupe (restriction d'interface, pas une sécurité serveur).
+- ressources_voitures.html et interactions.html : ressources existantes.
+- vce-v5.js et vce-v5.css : fonctions et design V5 indispensables.
 
-NOUVEAUTÉS
-- Accueil : sélection Groupe / Individuel et profil parmi 15 pilotes VCE, avec possibilité d’ajouter un nom.
-- Entraînements : tableau de bord par pilote, nombre de séances, distance, tours et circuits roulés.
-- Formulaire de saisie des séances : circuit, voiture, nombre de tours, longueur du tour ; distance = tours × longueur.
-- Enregistrement via l’ancien bouton « Sauvegarder la séance » du coach : associe la séance au pilote actif si le nom correspond ; compte les tours issus des chronos renseignés. Les autres séances doivent être saisies manuellement.
-- Historique individuel, export et import JSON des profils.
-- Mode Groupe : pas de statistiques individuelles.
-- Les 4 rubriques, le circuit animé de Spa et les autres outils restent présents.
+RÈGLES DE POINTS
++2 points par séance validée par un coach.
+-1 point par entraînement planifié, passé, et marqué absent par un coach.
+0 point pour une séance en attente, refusée ou importée depuis l'ancienne version V4.
+Objectif : 50 minutes d'entraînement VALIDÉES par semaine (du lundi au dimanche), avec exercice spécifique.
 
-IMPORTANT
-Les profils ne sont PAS des comptes en ligne. Les données sont stockées dans le navigateur localStorage de l’appareil. Elles ne sont pas partagées automatiquement entre plusieurs PC/téléphones ni protégées par un mot de passe. Pour changer de navigateur/appareil, exporter puis importer le fichier JSON.
-Les longueurs de circuit sont INDICATIVES et dépendent des variantes de tracé. L’utilisateur doit les confirmer avant d’enregistrer les distances. Aucun rating/safety rating fictif n’est créé.
+CALCULS
+- Chronomètre : temps actif de la page, pause automatique quand l'onglet est masqué.
+- Distance : nombre de tours déclaré x longueur du circuit référencée.
+- Seules les séances validées sont comptabilisées dans les points, kilomètres et minutes hebdomadaires.
+- Dates ISO et connexions individuelles enregistrées localement.
+
+IMPORTANT : LIMITES ANTI-TRICHE ET SYNCHRONISATION
+Le chronomètre JavaScript ne prouve PAS qu'un jeu tourne. Les tours et distances restent déclaratifs.
+Le mode Groupe est accessible sans authentification et une sauvegarde JSON est modifiable.
+Cette V5 ne constitue PAS une protection contre la triche ni une synchronisation entre appareils.
+Pour une preuve fiable et des comptes partagés, prévoir un serveur (base de données + authentification coach)
+ainsi qu'une collecte de télémétrie authentifiée depuis Assetto Corsa / LMU / autre simulateur.
+En attendant, utiliser la validation humaine avec replay, télémétrie ou rapport de session vérifié.
+
+Les données V4 présentes dans le même navigateur sont importées comme archives non validées.
+Exporter les données avant de vider le cache du navigateur.
