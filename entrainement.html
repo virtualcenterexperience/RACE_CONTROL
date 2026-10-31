@@ -59,20 +59,25 @@
 @media(max-width:980px){#vce-training-portal .vcep-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#vce-training-portal .vcep-roadmap{grid-template-columns:repeat(2,minmax(0,1fr))}#vce-training-portal .vcep-step:nth-child(2){border-right:0}#vce-training-portal .vcep-step:nth-child(-n+2){border-bottom:1px solid #31485c}}
 @media(max-width:590px){#vce-training-portal{padding:0 10px;margin-top:12px}#vce-training-portal .vcep-hero{padding:25px 21px}#vce-training-portal .vcep-grid{grid-template-columns:1fr}#vce-training-portal .vcep-card{min-height:160px}#vce-training-portal .vcep-roadmap{grid-template-columns:1fr}#vce-training-portal .vcep-step{border-right:0!important;border-bottom:1px solid #31485c}#vce-training-portal .vcep-step:after{display:none}#vce-training-portal .vcep-section-head{display:block}#vce-training-portal .vcep-section-head span{display:block;margin-top:5px}}
 @media(prefers-reduced-motion:reduce){#vce-training-portal *{transition:none!important}}
+
+<style id="vce-nav-refinement">
+header .head{max-width:1320px;margin:auto}header .nav{display:flex;align-items:center;gap:12px;flex-wrap:wrap}header .nav a{padding:11px 17px;border-radius:9px;transition:background .25s,color .25s,transform .25s;border:1px solid transparent;text-decoration:none}header .nav a:hover{transform:translateY(-2px);background:#ffffff0d}header .nav a.on{background:linear-gradient(110deg,#193c35,#164333);border-color:#397b68;color:#c6ffe6;box-shadow:0 8px 25px #0002}
+#vce-training-portal .vcep-card:first-child{border-color:#6a3b4a}#vce-training-portal .vcep-card:nth-child(2){border-color:#3b7164}#vce-training-portal .vcep-section-head strong{font-size:23px}
+@media(max-width:650px){header .head{gap:12px}header .nav{gap:5px}header .nav a{font-size:11px;padding:9px 11px}}
 </style>
-</head><body><header><div class="head"><div><div class="brand"><b>VCE</b> ESPORT / PERFORMANCE CENTER</div><div class="tagline">ACADÉMIE PILOTES V22 · COACHING & AUTOFORMATION</div></div><nav class="nav"><a href="index.html">ACCUEIL</a><a href="strategie.html">STRATÉGIE</a><a class="on" href="entrainement.html">ENTRAÎNEMENT</a></nav></div></header>
+</head><body><header><div class="head"><div><div class="brand"><b>VCE</b> ESPORT / PERFORMANCE CENTER</div><div class="tagline">ACADÉMIE PILOTES V22 · COACHING & AUTOFORMATION</div></div><nav class="nav" aria-label="Navigation principale"><a href="index.html">ACCUEIL</a><a class="on" href="entrainement.html" aria-current="page">ENTRAÎNEMENTS</a></nav></div></header>
 <section id="vce-training-portal" aria-label="Portail de formation VCE">
  <div class="vcep-hero">
   <div class="vcep-top"><div class="vcep-kicker">VCE ESPORT / DRIVER DEVELOPMENT</div><div class="vcep-tag">ACADÉMIE PILOTES</div></div>
-  <h2>TON PILOTAGE.<br><span>TON ÉVOLUTION.</span></h2>
-  <p>Un espace central pour t'entraîner, comprendre les réactions de ta voiture, consulter les ressources et mesurer tes progrès. Du premier tour propre à la performance eSport.</p>
+  <h2>TON ESPACE.<br><span>TA PROGRESSION.</span></h2>
+  <p>Retrouve tes entraînements, ton coach, tes exercices et toutes les ressources techniques au même endroit. Choisis ton programme et progresse à ton rythme.</p>
   <div class="vcep-actions">
    <button type="button" class="vcep-button primary" data-vcep-target="coach">💬 DÉMARRER AVEC COACH →</button>
    <button type="button" class="vcep-button green" data-vcep-target="solo">🏁 S'ENTRAÎNER EN AUTONOMIE →</button>
    <a class="vcep-button" href="index.html" data-transition>⌂ ACCUEIL VCE</a>
   </div>
  </div>
- <div class="vcep-section-head"><strong>Explore ton centre de performance</strong><span>4 espaces accessibles en un clic</span></div>
+ <div class="vcep-section-head"><strong>Choisis ton entraînement</strong><span>Coaching, autonomie et ressources</span></div>
  <div class="vcep-grid">
   <button type="button" class="vcep-card red" data-vcep-target="coach"><span class="vcep-icon">🎧</span><strong>Entraînement avec coach</strong><small>Débrief, ressenti pilote, analyse des difficultés et mesure des chronos avant / après.</small><span class="vcep-link">COMMENCER →</span></button>
   <button type="button" class="vcep-card" data-vcep-target="solo"><span class="vcep-icon">🏎️</span><strong>Entraînement sans coach</strong><small>Ateliers trail braking, lift-off, trajectoires, freinage et exercices par niveau.</small><span class="vcep-link">VOIR LES EXERCICES →</span></button>
@@ -87,7 +92,7 @@
   <div class="vcep-step"><em>ÉTAPE 04</em><strong>MESURER</strong><p>Comparer les chronos et la régularité pour valider le progrès.</p></div>
  </div>
  <div class="vcep-nav"><b>ACCÈS RAPIDE</b><button type="button" data-vcep-target="coach">Coach & débrief</button><button type="button" data-vcep-target="solo">Techniques & exercices</button><a href="interactions.html" data-transition>800 interactions</a><a href="ressources_voitures.html" data-transition>Fiches voitures</a><a href="strategie.html" data-transition>Stratégie</a></div>
- <p class="vcep-hint">Les modules existants sont conservés sous ce portail. La navigation utilise des transitions douces entre les pages.</p>
+ <p class="vcep-hint">Retrouve tes outils de suivi et de progression juste en dessous. Les changements de page utilisent des transitions douces.</p>
 </section>
 <script id="vce-training-portal-script">
 (()=>{"use strict";

@@ -1,7 +1,8 @@
-VCE Performance Center — Catalogue voitures et circuits
+VCE Performance Center - Navigation V2
 
-Mise à jour entrainement.html : 13 catégories, 29 entrées voitures/classes, 40 circuits. Choix de la catégorie puis suggestion des voitures. Champ libre pour variantes et circuits personnalisés.
+Navigation principale simplifiée : ACCUEIL / ENTRAÎNEMENTS.
+Accueil : nouveau point d’entrée privilégiant Entraînements, stratégie toujours accessible.
+Entraînements : portail regroupant coach, autonomie, diagnostics et fiches voitures.
+Le pack contient toutes les pages nécessaires et les transitions.
 
-Installer le contenu du ZIP à la racine de GitHub Pages. Les autres pages et transitions restent présentes.
-
-Porsche Cup est séparée des GT3 pour conserver ses spécificités ABS/TC. Les catégories et circuits sont proposés sans prétendre que chaque combinaison est disponible dans chaque jeu.
+Déposer les fichiers à la racine du dépôt GitHub Pages sans supprimer le dossier sauvegardes.
