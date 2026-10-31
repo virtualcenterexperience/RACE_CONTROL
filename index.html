@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VCE ESPORT | Race Control - Autonome</title>
+<title>VCE ESPORT | Race Control v2</title>
 <style>
 :root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#e9eef8;background:#0b1120}
 *{box-sizing:border-box}
@@ -45,13 +45,15 @@ tr.done td{background:#13332d;color:#a9dacb}tr.current td{background:#173657}
 @media(max-width:1150px){.layout,.mainTop{grid-template-columns:1fr}.statgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:540px){.app{padding:10px}.fields,.grid2,.courseNameRow{grid-template-columns:1fr}.pilot{grid-template-columns:24px 1fr}}
 </style>
-</head>
+<style>
+.cloudbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;align-items:end;margin:14px 0}.cloudbar .field{min-width:0}.cloudbar .field label{font-size:11px}.newTabs{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.newTabs button{background:#172742;color:#d8eaff;border:1px solid #3a557c;border-radius:8px;padding:9px 12px;cursor:pointer}.newTabs button.on{background:#2764bf}.dataTable input,.dataTable select{min-width:95px}.infoBox{background:#0c192c;border:1px solid #345076;padding:12px;border-radius:9px;margin:10px 0}.tiny{font-size:11px;color:#abc0df}.panelButton{background:#285aa1;border:0;border-radius:8px;color:#fff;padding:10px;cursor:pointer}.cloudStatus{font-size:12px;color:#a2e1ce;margin:10px 0}.checkrow input{flex-shrink:0}@media(max-width:900px){.cloudbar{grid-template-columns:repeat(2,1fr)}}
+</style></head>
 <body>
 <div class="app">
   <div class="top">
     <div>
       <div class="logo"><b>VCE</b> ESPORT <span style="color:#86acdf">/ RACE CONTROL</span></div>
-      <div class="sub">ORDINATEUR DE STRATÉGIE · ENDURANCE & SPRINT · VERSION LOCALE</div>
+      <div class="sub">ORDINATEUR DE STRATÉGIE · ENDURANCE & SPRINT</div>
     </div>
     <div class="actions">
       <button class="btn" onclick="window.print()">Imprimer</button>
@@ -61,21 +63,7 @@ tr.done td{background:#13332d;color:#a9dacb}tr.current td{background:#173657}
     </div>
   </div>
 
-  <div style="background:#142b42;border:1px solid #28547f;border-radius:12px;padding:10px 14px;margin-bottom:14px;color:#cbe6fc;font-size:12px">Mode sans cloud : sauvegarde automatique sur cet appareil uniquement. Les autres PC ne voient pas les modifications. Pour partager les paramètres, utilisez l’export CSV ou ajoutez ultérieurement un stockage commun.</div>
-<div class="panel" style="margin:0 0 16px"><div class="pad">
-  <div class="bar"><h2>📨 Publication de stratégie sur GitHub</h2><span class="badge">Sans serveur externe</span></div>
-  <div class="fields">
-    <div class="field"><label>Pseudo propriétaire GitHub</label><input id="ghOwner" placeholder="ex. vce-esport"></div>
-    <div class="field"><label>Nom du dépôt public</label><input id="ghRepo" value="vce-race-control"></div>
-  </div>
-  <div class="actions" style="margin-top:12px">
-    <button class="btn green" onclick="publishToGitHub()">📤 Enregistrer / publier sur GitHub</button>
-    <button class="btn blue" onclick="pullFromGitHub(true)">↻ Récupérer la dernière version</button>
-    <label class="checkrow"><input id="ghAuto" type="checkbox" checked> Actualiser chaque minute</label>
-  </div>
-  <div class="small" id="ghStatus" style="margin-top:9px">La publication ouvre une Issue GitHub préremplie. Confirmez « Submit new issue » sur GitHub ; les autres pourront ensuite récupérer les données. Compte GitHub requis pour publier.</div>
-</div></div>
-<div class="layout">
+  <div class="panel pad" style="margin-bottom:14px"><h2>☁ SAUVEGARDES GITHUB · <span class="tiny">3 courses séparées dans /sauvegardes</span></h2><div class="cloudbar"><div class="field"><label>Propriétaire GitHub</label><input id="ghOwner" placeholder="pseudo-github"></div><div class="field"><label>Dépôt</label><input id="ghRepo" value="vce-race-control"></div><div class="field"><label>Branche</label><input id="ghBranch" value="main"></div><div class="field"><label>Jeton GitHub (uniquement pour modifier)</label><input id="ghToken" type="password" placeholder="github_pat_..."></div></div><div class="actions"><button class="btn blue" onclick="ghLoad(true)">↻ Charger COURSE active</button><button class="btn green" onclick="ghSave()">☁ Enregistrer COURSE active</button><label class="checkrow"><input type="checkbox" id="ghAuto" checked> Vérifier toutes les 30 s</label></div><div class="cloudStatus" id="ghStatus">Consultation publique sans connexion · Écriture : compte GitHub autorisé + jeton personnel à droits limités. Aucune clé intégrée au site.</div></div><div class="layout">
     <aside class="panel">
       <div class="pad">
         <h2>Équipe / courses séparées</h2>
@@ -286,7 +274,11 @@ tr.done td{background:#13332d;color:#a9dacb}tr.current td{background:#173657}
           </div>
         </div>
       </div>
-    </main>
+    <div class="sect"><h3>📊 Atelier V4 – analyses et circuit</h3><div class="newTabs"><button onclick="extraView('risques')" class="on" id="etRisques">Scénarios & risques</button><button onclick="extraView('circuit')" id="etCircuit">Carte & virages</button><button onclick="extraView('crash')" id="etCrash">Plan de secours</button><button onclick="extraView('bilan')" id="etBilan">Débrief approfondi</button></div>
+<section id="exRisques"><div class="fields"><div class="field"><label>Trafic perdu (s/tour)</label><input id="rxTraffic" type="number" step="0.1" value="0.3"></div><div class="field"><label>Dégradation pneus (s/tour)</label><input id="rxWear" type="number" step="0.1" value="0.08"></div><div class="field"><label>Évolution piste (s/tour)</label><input id="rxTrack" type="number" step="0.1" value="0"></div><div class="field"><label>Météo (s/tour)</label><input id="rxWeather" type="number" step="0.1" value="0"></div><div class="field"><label>Risque erreur (%)</label><input id="rxErrorChance" type="number" value="10"></div><div class="field"><label>Coût erreur (s)</label><input id="rxErrorCost" type="number" value="8"></div><div class="field"><label>Risque pénalité (%)</label><input id="rxPenaltyChance" type="number" value="8"></div><div class="field"><label>Coût pénalité (s)</label><input id="rxPenaltyCost" type="number" value="25"></div><div class="field"><label>Risque FCY/SC (%)</label><input id="rxSC" type="number" value="20"></div><div class="field"><label>Gain potentiel sous SC (s)</label><input id="rxSCGain" type="number" value="12"></div></div><div id="riskCards" class="infoBox"></div><button class="panelButton" onclick="updateRisk()">Calculer trois scénarios</button></section>
+<section id="exCircuit" class="hidden"><div class="fields"><div class="field wide"><label>URL de l'image du circuit (HTTPS)</label><input id="mapUrl" placeholder="https://.../circuit.png"></div><div class="field"><label>Nombre de virages</label><input type="number" id="turnCount" min="1" max="30" value="16"></div><div class="field"><label>Notes circuit</label><input id="mapNotes" placeholder="Zones à surveiller"></div></div><img id="mapPreview" alt="Carte du circuit" style="display:none;max-width:100%;max-height:300px;margin:10px 0;border-radius:12px"><div class="tablewrap"><table class="dataTable"><thead><tr><th>Virage</th><th>Nom / repère</th><th>Secteur</th><th>Danger</th><th>Track limits</th><th>Point freinage</th><th>Conseil</th></tr></thead><tbody id="turnRows"></tbody></table></div><button class="panelButton" onclick="renderTurns()">Mettre à jour les virages</button><p class="tiny">L'image sert de référence visuelle : aucune reconnaissance automatique des virages n'est revendiquée.</p></section>
+<section id="exCrash" class="hidden"><div class="infoBox" id="crashPlan"></div><button class="panelButton" onclick="updateCrash()">Comparer NORMAL / ANTICIPÉ / RAPIDE / DÉCALÉ</button></section>
+<section id="exBilan" class="hidden"><div class="fields" id="detailQuestions"></div><div id="detailResult" class="infoBox"></div><button class="panelButton" onclick="updateDetails()">Analyser les 30 critères</button><p class="tiny">L'enregistrement des débriefs reste dans l'onglet Débrief principal ; les critères complètent le diagnostic.</p></section></div></main>
   </div>
 </div>
 <script>
@@ -399,65 +391,45 @@ function bind(){ document.addEventListener('input',e=>{ if(e.target.id==='nPilot
  }); document.addEventListener('change',e=>{ if(e.target.matches('input,select,textarea')){ saveCurrentState(); if(['pLane','pFuel','pTyre','pSwap','pLight','pHeavy'].includes(e.target.id)) updatePit(); if(['damaged','consistency','apex','limits','brakes','throttle','trafficDebrief','tyreState','handling','focus','comm'].includes(e.target.id)) previewDebrief(); }}); }
 bind(); applyCurrentState();
 
-// Publication GitHub : chaque envoi crée une Issue publique contenant une seule course.
-// Aucun jeton n'est présent dans la page. Les visiteurs peuvent charger les données sans se connecter.
-const GH_PREFIX='VCE-RC-DATA-COURSE-';
-let ghBusy=false, ghLastSeen={}, ghLastLocalEdit=0;
-const ghCfg=()=>({owner:$('ghOwner').value.trim(),repo:$('ghRepo').value.trim()});
-function ghSet(s){$('ghStatus').textContent=s;}
-function ghConfigSave(){localStorage.setItem('vce_gh_config',JSON.stringify({...ghCfg(),auto:$('ghAuto').checked}));}
-function ghInit(){
-  try{const c=JSON.parse(localStorage.getItem('vce_gh_config')||'{}');$('ghOwner').value=c.owner||'';$('ghRepo').value=c.repo||'vce-race-control';$('ghAuto').checked=c.auto!==false;}catch(e){}
-  ['ghOwner','ghRepo','ghAuto'].forEach(x=>$(x).addEventListener('change',ghConfigSave));
-  document.addEventListener('input',e=>{if(e.target.closest('.sidebar')||e.target.closest('main'))ghLastLocalEdit=Date.now();});
-  setInterval(()=>{if($('ghAuto').checked && Date.now()-ghLastLocalEdit>20000 && !ghBusy)pullFromGitHub(false);},60000);
+// --- Sauvegarde GitHub Contents API : GitHub Pages ne peut pas écrire sans autorisation.
+const GH_FIELDS=['ghOwner','ghRepo','ghBranch'];
+let ghBusy=false,ghLast='',ghDirtyAt=0;
+function ghStatus(t){$('ghStatus').textContent=t;}
+function ghSettings(){return {owner:$('ghOwner').value.trim(),repo:$('ghRepo').value.trim(),branch:$('ghBranch').value.trim()||'main',token:$('ghToken').value.trim()};}
+function ghPath(){return 'sauvegardes/course'+(currentSlot()+1)+'.json';}
+function githubAuth(){const t=ghSettings().token;return t?{Authorization:'Bearer '+t}:{}}
+function utf8ToBase64(s){const bytes=new TextEncoder().encode(s);let b='';bytes.forEach(x=>b+=String.fromCharCode(x));return btoa(b);}
+function base64ToUtf8(s){let b=atob(s.replace(/\s/g,''));return new TextDecoder().decode(Uint8Array.from(b,c=>c.charCodeAt(0)));}
+function ghApi(){let s=ghSettings();return `https://api.github.com/repos/${encodeURIComponent(s.owner)}/${encodeURIComponent(s.repo)}/contents/${ghPath()}`;}
+async function ghRead(){let s=ghSettings();if(!s.owner||!s.repo)throw Error('Indique ton propriétaire et ton dépôt GitHub.');let r=await fetch(ghApi()+'?ref='+encodeURIComponent(s.branch)+'&t='+Date.now(),{headers:{Accept:'application/vnd.github+json',...githubAuth()},cache:'no-store'});if(r.status===404)return {sha:null,data:null};if(!r.ok)throw Error('Lecture GitHub '+r.status);let v=await r.json();return {sha:v.sha,data:JSON.parse(base64ToUtf8(v.content))};}
+async function ghLoad(manual=false){if(ghBusy)return; if(!manual && document.activeElement?.matches('input,select,textarea'))return;if(!manual&&Date.now()-ghDirtyAt<15000)return;ghBusy=true;try{let result=await ghRead();if(!result.data){if(manual)ghStatus('Aucune sauvegarde pour cette course.');return;}let serialized=JSON.stringify(result.data);if(serialized===ghLast){if(manual)ghStatus('Déjà à jour.');return;}if(manual&& !confirm('Charger la sauvegarde GitHub de cette course et remplacer les modifications locales ?'))return;
+ let d=result.data;if(d.version!==5||!d.slot)throw Error('Format de sauvegarde invalide');store.slots[currentSlot()]=d.slot;store.slotNames[currentSlot()]=d.name||store.slotNames[currentSlot()];saveStore();ghLast=serialized;applyCurrentState();loadExtras();ghStatus('✓ COURSE '+(currentSlot()+1)+' synchronisée depuis GitHub à '+new Date().toLocaleTimeString('fr-FR'));}catch(e){if(manual)ghStatus('⚠ '+e.message);else console.warn(e);}finally{ghBusy=false;}}
+async function ghSave(){if(ghBusy)return;let s=ghSettings();if(!s.token){ghStatus('Pour enregistrer sur GitHub, renseigne un jeton personnel avec droit Contents: Read and Write sur ce dépôt.');return;}ghBusy=true;try{saveCurrentState();saveExtras();let original=await ghRead();let payload={version:5,name:store.slotNames[currentSlot()],savedAt:new Date().toISOString(),slot:store.slots[currentSlot()]};let obj={message:`VCE Race Control · ${ghPath()} · ${new Date().toISOString()}`,content:utf8ToBase64(JSON.stringify(payload,null,2)),branch:s.branch};if(original.sha)obj.sha=original.sha;let r=await fetch(ghApi(),{method:'PUT',headers:{Accept:'application/vnd.github+json','Content-Type':'application/json',...githubAuth()},body:JSON.stringify(obj)});if(!r.ok)throw Error('Écriture GitHub '+r.status+(r.status===409?' : conflit, recharge les données.':''));ghLast=JSON.stringify(payload);ghStatus('✓ COURSE '+(currentSlot()+1)+' enregistrée sur GitHub à '+new Date().toLocaleTimeString('fr-FR'));}catch(e){ghStatus('⚠ '+e.message);}finally{ghBusy=false;}}
+const EXTRA_FIELDS=['rxTraffic','rxWear','rxTrack','rxWeather','rxErrorChance','rxErrorCost','rxPenaltyChance','rxPenaltyCost','rxSC','rxSCGain','mapUrl','mapNotes','turnCount'];
+const DETAIL_Q=['Précision freinage','Stabilité freinage','Précision point de corde','Traction en sortie','Dosage accélérateur','Régularité des chronos','Trajectoires répétables','Gestion usure pneus','Température pneus','Économie carburant','Anticipation du trafic','Dépassements propres','Défense propre','Respect des drapeaux','Communication radio','Respect de la stratégie','Repères de freinage','Entrées de virage','Milieu de virage','Sorties de virage','Gestion sous-virage','Gestion survirage','Gestion des pressions','Gestion des freins','Limites de piste','Adaptation météo','Concentration','Gestion fatigue','Entrée et sortie des stands','Prise de décision'];
+let turns=[],detailScores=[];
+function saveExtras(){let s=store.slots[currentSlot()]||{};s.extra=s.extra||{};for(let id of EXTRA_FIELDS)s.extra[id]=$(id).value;s.extra.turns=turns;s.extra.details=detailScores;store.slots[currentSlot()]=s;saveStore();}
+function loadExtras(){let x=(store.slots[currentSlot()]||{}).extra||{};for(let id of EXTRA_FIELDS)if(x[id]!==undefined)$(id).value=x[id];turns=x.turns||[];detailScores=x.details||Array(30).fill(4);renderTurns();renderQuestions();updateRisk();updateCrash();}
+function extraView(v){['risques','circuit','crash','bilan'].forEach(n=>{ $('ex'+n[0].toUpperCase()+n.slice(1)).classList.toggle('hidden',n!==v);$('et'+n[0].toUpperCase()+n.slice(1)).classList.toggle('on',n===v); });}
+function renderTurns(){let n=Math.min(30,Math.max(1,Math.floor(num('turnCount'))));$('turnRows').innerHTML=Array.from({length:n},(_,i)=>{let x=turns[i]||{};return `<tr><td>T${i+1}</td><td><input data-t="${i}" data-k="name" value="${esc(x.name||'')}"></td><td><select data-t="${i}" data-k="sector">${[1,2,3].map(k=>`<option ${+x.sector===k?'selected':''}>${k}</option>`).join('')}</select></td><td><select data-t="${i}" data-k="danger"><option>NON</option><option ${x.danger==='OUI'?'selected':''}>OUI</option></select></td><td><select data-t="${i}" data-k="limits"><option>NON</option><option ${x.limits==='OUI'?'selected':''}>OUI</option></select></td><td><input data-t="${i}" data-k="brake" value="${esc(x.brake||'')}"></td><td><input data-t="${i}" data-k="advice" value="${esc(x.advice||'')}"></td></tr>`}).join('');let u=$('mapUrl').value;if(/^https:\/\//i.test(u)){$('mapPreview').src=u;$('mapPreview').style.display='block'}else $('mapPreview').style.display='none';}
+function renderQuestions(){$('detailQuestions').innerHTML=DETAIL_Q.map((q,i)=>`<div class="field"><label>${i+1}. ${esc(q)} (1–5)</label><select data-d="${i}">${[1,2,3,4,5].map(n=>`<option value="${n}" ${(+detailScores[i]||4)===n?'selected':''}>${n} — ${['','À travailler','Fragile','Moyen','Bon','Excellent'][n]}</option>`).join('')}</select></div>`).join('');updateDetails();}
+function updateDetails(){let avg=detailScores.reduce((a,b)=>a+(+b||4),0)/30,weak=DETAIL_Q.map((x,i)=>[x,+detailScores[i]||4]).filter(x=>x[1]<=2);$('detailResult').innerHTML=`<b>Note technique : ${(avg*20).toFixed(0)}/100</b><p>${weak.length?'Axes prioritaires : '+weak.map(x=>esc(x[0])).join(' · '):'Aucun critère en difficulté. Maintenir la régularité.'}</p><p class="tiny">Calcul basé sur 30 évaluations personnelles : ce n’est pas un diagnostic télémétrique.</p>`;}
+function updateRisk(){let own=lapSecondsSafe($('ownLap')?.value),other=lapSecondsSafe($('otherLap')?.value);let laps=Math.max(0,Math.floor(num('remaining')*60/Math.max(1,own))),gap=num('gap')+num('gapPit'),expected=num('rxErrorChance')/100*num('rxErrorCost')+num('rxPenaltyChance')/100*num('rxPenaltyCost')-num('rxSC')/100*num('rxSCGain');let baseline=gap+laps*(own-other+num('rxTraffic')+num('rxWear')+num('rxTrack')+num('rxWeather'))+expected;
+let cases=[['OPTIMISTE',baseline-Math.abs(laps*.35+10)],['CENTRAL',baseline],['PESSIMISTE',baseline+Math.abs(laps*.4+15)]];
+$('riskCards').innerHTML='<b>Écart final projeté (positif = derrière)</b><div class="tablewrap"><table><tr><th>Scénario</th><th>Écart estimé</th><th>Verdict</th></tr>'+cases.map(([n,v])=>`<tr><td>${n}</td><td>${v.toFixed(1)} s</td><td>${v<0?'EN FAVEUR':v<10?'NEUTRE':'EN PERTE'}</td></tr>`).join('')+'</table></div><p class="tiny">Modèle d’espérance simplifié, à rythmes supposés constants, non probabilités de victoire mesurées.</p>'}
+function lapSecondsSafe(s){return lapSeconds(s)||lapSeconds($('lap').value)||100;}
+function updateCrash(){let active=$('emergency').checked,remaining=Math.max(0,num('hours')*60-num('elapsed')),lap=lapSecondsSafe($('lap').value),f=Math.max(1,Math.floor(num('tank')/Math.max(.1,num('fuel'))-num('reserve'))),ty=Math.max(1,num('tyreLife')),cap=Math.max(1,Math.min(f,ty)),tours=Math.ceil(remaining*60/lap),base=Math.ceil(tours/cap);let rows=[['NORMAL',cap],['ANTICIPÉ',Math.max(1,cap-2)],['RAPIDE',Math.max(1,cap-4)],['DÉCALÉ',cap]];let pit=num('pitlane')+num('fuelTime')+num('swapTime');$('crashPlan').innerHTML=`<b>${active?'🚨 URGENCE ACTIVE':'Plan de secours en attente'}</b><p>Temps restant : ${remaining.toFixed(0)} min · Tours théoriques : ${tours} · Réparation : ${num('repair')} s</p><table><tr><th>Mode</th><th>Tours / relais</th><th>Arrêts</th><th>Coût pits + réparation</th></tr>${rows.map(([m,c])=>`<tr><td>${m}</td><td>${c}</td><td>${Math.max(0,Math.ceil(tours/c)-1)}</td><td>${(Math.max(0,Math.ceil(tours/c)-1)*pit+(active?num('repair'):0)).toFixed(0)} s</td></tr>`).join('')}</table><p class="tiny">La fenêtre pit, le pilote actuel et les swaps doivent être vérifiés avant toute décision.</p>`;}
+function bootV5(){try{let c=JSON.parse(localStorage.getItem('vce_gh_settings_v5')||'{}');for(let id of GH_FIELDS)$(id).value=c[id]||$(id).value;}catch(e){}for(let id of GH_FIELDS)$(id).addEventListener('change',()=>localStorage.setItem('vce_gh_settings_v5',JSON.stringify(Object.fromEntries(GH_FIELDS.map(k=>[k,$(k).value])))));
+ $('turnRows').addEventListener('input',e=>{let el=e.target;if(el.dataset.t!==undefined){let i=+el.dataset.t;turns[i]=turns[i]||{};turns[i][el.dataset.k]=el.value;saveExtras();ghDirtyAt=Date.now();}});$('detailQuestions').addEventListener('change',e=>{if(e.target.dataset.d!==undefined){detailScores[+e.target.dataset.d]=+e.target.value;saveExtras();updateDetails();ghDirtyAt=Date.now();}});
+ for(let id of EXTRA_FIELDS)$(id).addEventListener('input',()=>{saveExtras();ghDirtyAt=Date.now();if(id==='mapUrl'||id==='turnCount')renderTurns();});
+ document.addEventListener('input',e=>{if(e.target.closest('.layout'))ghDirtyAt=Date.now();});
+ let oldSwitch=switchCourse;switchCourse=function(i){saveExtras();oldSwitch(i);ghLast='';loadExtras();ghLoad(false);};
+ let oldSaveDebrief=saveDebrief;saveDebrief=function(){oldSaveDebrief();saveExtras();};
+ let oldApply=applyCurrentState;applyCurrentState=function(){oldApply();loadExtras();};
+ loadExtras();setInterval(()=>{if($('ghAuto').checked)ghLoad(false)},30000);
+ if($('ghOwner').value)ghLoad(false);
 }
-function ghSanitize(s){return String(s||'').replace(/[^a-zA-Z0-9_.-]/g,'');}
-function packSharedSlot(slot){
-  return {inputs:slot.inputs||{},pilotData:slot.pilotData||[],doneMap:slot.doneMap||{},doubleMap:slot.doubleMap||{},debriefs:(slot.debriefs||[]).slice(0,12)};
-}
-function publishToGitHub(){
-  const {owner,repo}=ghCfg();
-  if(!owner||!repo){ghSet('Renseigne le propriétaire et le dépôt GitHub.');return;}
-  saveCurrentState();ghConfigSave();
-  const course=currentSlot()+1;
-  const data={v:1,course,slotName:store.slotNames[currentSlot()],savedAt:new Date().toISOString(),payload:packSharedSlot(getSlotData())};
-  const body='Copie de données VCE Race Control. Cette Issue est publique.\n\n```json\n'+JSON.stringify(data)+'\n```';
-  const url=`https://github.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/issues/new?title=${encodeURIComponent(GH_PREFIX+course+' '+new Date().toISOString())}&body=${encodeURIComponent(body)}`;
-  if(url.length>16000){ghSet('Données trop volumineuses pour une Issue préremplie. Réduis les débriefs ou utilise un stockage serveur.');return;}
-  window.open(url,'_blank','noopener');
-  ghSet('GitHub s’ouvre : clique sur « Submit new issue » pour publier. La simple ouverture ne sauvegarde rien.');
-}
-async function pullFromGitHub(manual=false){
- const {owner,repo}=ghCfg();if(!owner||!repo){if(manual)ghSet('Renseigne d’abord le dépôt.');return;}
- if(ghBusy)return;
- if(Date.now()-ghLastLocalEdit<20000&&!manual)return;
- ghBusy=true;
- const course=currentSlot()+1;
- try{
-  const url=`https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/issues?state=all&sort=created&direction=desc&per_page=100`;
-  const res=await fetch(url,{headers:{Accept:'application/vnd.github+json'} ,cache:'no-store'});
-  if(!res.ok)throw Error(res.status===403?'Limite GitHub atteinte : réessaie plus tard.':`Erreur GitHub ${res.status}. Dépôt public et Issues activées ?`);
-  const items=await res.json();
-  const found=items.find(i=>!i.pull_request && String(i.title||'').startsWith(GH_PREFIX+course+' '));
-  if(!found){if(manual)ghSet('Aucune version publiée pour COURSE '+course+'.');return;}
-  if(ghLastSeen[course]===found.number){if(manual)ghSet('Tu as déjà la dernière version publiée.');return;}
-  const match=String(found.body||'').match(/```json\s*([\s\S]*?)\s*```/);
-  if(!match)throw Error('Format de publication invalide.');
-  const data=JSON.parse(match[1]);if(data.v!==1||data.course!==course||!data.payload?.inputs)throw Error('Données de course incompatibles.');
-  if(!manual && Date.now()-ghLastLocalEdit<20000)return;
-  if(manual && !confirm('Charger la version GitHub de COURSE '+course+' ? Cela remplacera les modifications locales non publiées.'))return;
-  const slot=getSlotData();store.slots[currentSlot()]={...slot,...data.payload};
-  if(data.slotName)store.slotNames[currentSlot()]=data.slotName;
-  ghLastSeen[course]=found.number;
-  saveStore();applyCurrentState();
-  ghSet(`COURSE ${course} chargée depuis GitHub · publication #${found.number}.`);
- }catch(err){if(manual)ghSet('Erreur : '+err.message);else console.warn('Synchronisation GitHub',err);}
- finally{ghBusy=false;}
-}
-
-ghInit();
-if($('ghOwner').value)pullFromGitHub(false);
+bootV5();
 </script>
 </body>
 </html>
