@@ -47,6 +47,12 @@ tr.done td{background:#13332d;color:#a9dacb}tr.current td{background:#173657}
 </style>
 <style>
 .cloudbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;align-items:end;margin:14px 0}.cloudbar .field{min-width:0}.cloudbar .field label{font-size:11px}.newTabs{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.newTabs button{background:#172742;color:#d8eaff;border:1px solid #3a557c;border-radius:8px;padding:9px 12px;cursor:pointer}.newTabs button.on{background:#2764bf}.dataTable input,.dataTable select{min-width:95px}.infoBox{background:#0c192c;border:1px solid #345076;padding:12px;border-radius:9px;margin:10px 0}.tiny{font-size:11px;color:#abc0df}.panelButton{background:#285aa1;border:0;border-radius:8px;color:#fff;padding:10px;cursor:pointer}.cloudStatus{font-size:12px;color:#a2e1ce;margin:10px 0}.checkrow input{flex-shrink:0}@media(max-width:900px){.cloudbar{grid-template-columns:repeat(2,1fr)}}
+
+/* V7 control-room */
+:root{--vce-border:#304965;--vce-blue:#3d84ed;--vce-red:#e94f61}button{transition:background .17s,transform .17s}button:hover{filter:brightness(1.16)}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #59a4ff;outline-offset:2px}
+.control-launch{position:sticky;top:7px;z-index:8;display:flex;gap:10px;align-items:center;justify-content:space-between;background:#0e1e34f2;border:1px solid #385479;border-radius:13px;padding:12px 16px;margin-bottom:15px;backdrop-filter:blur(10px)}
+.control-launch .btn{font-size:13px}.vce-dialog{position:fixed;inset:0;z-index:60;background:#030916db;display:none;align-items:center;justify-content:center;padding:12px}.vce-dialog.open{display:flex}.vce-dialog-main{background:#111c31;border:1px solid #49638b;box-shadow:0 28px 75px #000a;border-radius:20px;width:min(1020px,100%);max-height:94vh;overflow:auto;padding:20px}.vce-dialog-header{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #2d4260;padding-bottom:12px;margin-bottom:12px}.vce-dialog-header h2{font-size:22px;margin:0}.setup-pills{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 15px}.setup-pills button{background:#152740;border:1px solid #496080;color:#c7dcf9;border-radius:8px;padding:9px 16px;cursor:pointer}.setup-pills button.active{background:#2365b5;color:white}.setup-section{display:none}.setup-section.active{display:block}.setting-pair{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px;border-bottom:1px solid #263956}.setting-pair .desc{max-width:62%;font-size:13px}.setting-pair strong{display:block}.setting-pair small{display:block;color:#91add3;margin-top:3px}.setting-pair select,.setting-pair input{max-width:180px}.pit-item{display:grid;grid-template-columns:minmax(140px,1fr) minmax(70px,105px) 65px;align-items:center;gap:9px;padding:10px;background:#0c1729;border:1px solid #2a3d5a;border-radius:10px;margin-bottom:8px}.pit-item span{font-size:13px}.pit-item .pit-status{color:#8fb3da;font-size:11px}.setup-preview{padding:13px;background:#102b40;border:1px solid #2876ac;border-radius:10px;line-height:1.7;margin-top:12px}.minitabs{display:flex;gap:8px;flex-wrap:wrap}.minitabs .btn{background:#213e66}.vce-warning{color:#ffd17e}
+@media(max-width:650px){.control-launch{flex-direction:column;align-items:stretch}.vce-dialog-main{padding:12px}.setting-pair{flex-wrap:wrap}.setting-pair .desc{max-width:100%}.pit-item{grid-template-columns:1fr 85px}}
 </style></head>
 <body>
 <div class="app">
@@ -63,7 +69,32 @@ tr.done td{background:#13332d;color:#a9dacb}tr.current td{background:#173657}
     </div>
   </div>
 
-  <div class="panel pad" style="margin-bottom:14px"><h2>☁ SAUVEGARDES GITHUB · <span class="tiny">3 courses séparées dans /sauvegardes</span></h2><div class="cloudbar"><div class="field"><label>Propriétaire GitHub</label><input id="ghOwner" value="virtualcenterexperience" placeholder="pseudo-github"></div><div class="field"><label>Dépôt</label><input id="ghRepo" value="RACE_CONTROL"></div><div class="field"><label>Branche</label><input id="ghBranch" value="main"></div><div class="field"><label>Clé GitHub privée (mémorisée seulement dans cet onglet)</label><input id="ghToken" type="password" placeholder="github_pat_..."></div></div><div class="actions"><button class="btn blue" onclick="ghLoad(true)">↻ Charger COURSE active</button><button class="btn green" onclick="ghSave()">☁ Enregistrer COURSE active</button><label class="checkrow"><input type="checkbox" id="ghAuto" checked> Vérifier toutes les 30 s</label></div><div class="cloudStatus" id="ghStatus">Consultation publique sans connexion · Écriture : compte GitHub autorisé + jeton personnel à droits limités. Clé gardée dans la session du navigateur uniquement ; ne jamais la publier dans index.html.</div></div><div class="layout">
+  <div class="panel pad" style="margin-bottom:14px"><h2>☁ SAUVEGARDES GITHUB · <span class="tiny">3 courses séparées dans /sauvegardes</span></h2><div class="cloudbar"><div class="field"><label>Propriétaire GitHub</label><input id="ghOwner" value="virtualcenterexperience" placeholder="pseudo-github"></div><div class="field"><label>Dépôt</label><input id="ghRepo" value="RACE_CONTROL"></div><div class="field"><label>Branche</label><input id="ghBranch" value="main"></div><div class="field"><label>Clé GitHub privée (mémorisée seulement dans cet onglet)</label><input id="ghToken" type="password" placeholder="github_pat_..."></div></div><div class="actions"><button class="btn blue" onclick="ghLoad(true)">↻ Charger COURSE active</button><button class="btn green" onclick="ghSave()">☁ Enregistrer COURSE active</button><label class="checkrow"><input type="checkbox" id="ghAuto" checked> Vérifier toutes les 30 s</label></div><div class="cloudStatus" id="ghStatus">Consultation publique sans connexion · Écriture : compte GitHub autorisé + jeton personnel à droits limités. Clé gardée dans la session du navigateur uniquement ; ne jamais la publier dans index.html.</div></div>
+<div class="control-launch"><div><b>🏁 VCE RACE CONTROL — CENTRE DE COMMANDE</b><div class="small">Réglages rapides, arrêts, contraintes et calculs synchronisés sur la course active</div></div><div class="actions"><button class="btn blue" onclick="openSetup('course')">⚙ CONFIGURATION</button><button class="btn" onclick="openSetup('pit')">🛞 PITSTOP</button><button class="btn green" onclick="calculate()">↻ RECALCULER</button></div></div>
+<div class="vce-dialog" id="setupDialog" role="dialog" aria-modal="true" aria-label="Configuration Race Control" onclick="if(event.target===this)closeSetup()"><div class="vce-dialog-main">
+<div class="vce-dialog-header"><div><h2>⚙ RACE CONTROL / CONFIGURATION</h2><div class="small">Modifie seulement les règles et données utiles. La stratégie se met à jour.</div></div><button class="btn" onclick="closeSetup()">✕ Fermer</button></div>
+<div class="setup-pills"><button id="spCourse" onclick="setupTab('course')">🏁 COURSE</button><button id="spPit" onclick="setupTab('pit')">🛞 PITSTOP</button><button id="spTech" onclick="setupTab('tech')">⛽ DONNÉES TECHNIQUES</button></div>
+<div class="setup-section" id="ssCourse">
+<div class="setting-pair"><div class="desc"><strong>Type de compétition</strong><small>Sprint : affichage simplifié, 2h30 au maximum recommandé</small></div><select id="cfgType" onchange="cfgApply()"><option value="endurance">ENDURANCE</option><option value="sprint">SPRINT</option></select></div>
+<div class="setting-pair"><div class="desc"><strong>Durée de la course (heures)</strong><small>Les relais et la consommation changent automatiquement</small></div><input type="number" id="cfgHours" min="0.25" max="24" step="0.25" onchange="cfgApply()"></div>
+<div class="setting-pair"><div class="desc"><strong>Swaps obligatoires ?</strong><small>Le nombre est configuré dans les réglages avancés si OUI</small></div><select id="cfgSwaps" onchange="cfgApply()"><option value="non">NON</option><option value="oui">OUI</option></select></div>
+<div class="setting-pair"><div class="desc"><strong>Durée max de relais ?</strong><small>Ajoute une marge de sécurité pour éviter les pénalités</small></div><select id="cfgLimit" onchange="cfgApply()"><option value="non">NON</option><option value="oui">OUI</option></select></div>
+<div class="setting-pair"><div class="desc"><strong>Pitlane réglementée ?</strong><small>Ouverture / fermeture à paramétrer sur la gauche</small></div><select id="cfgWindow" onchange="cfgApply()"><option value="non">NON</option><option value="oui">OUI</option></select></div>
+<div class="setting-pair"><div class="desc"><strong>Double relais pilote rapide ?</strong><small>Permet au pilote sélectionné de continuer au prochain stint</small></div><select id="cfgDouble" onchange="cfgApply()"><option value="non">NON</option><option value="oui">OUI</option></select></div>
+</div>
+<div class="setup-section" id="ssPit"><p class="small">Seules les actions cochées dans le simulateur PIT sont comptées. Le plan de course ajoute la traversée et les services réellement prévus à chaque arrêt.</p><div id="cfgPitList"></div><div class="setup-preview" id="cfgPitPreview">Temps total : 0 seconde</div><p class="small vce-warning">Le temps de passage doit correspondre à la perte réelle dans la pitlane, hors temps au box. Chronomètre la différence en LMU pour éviter un double comptage.</p></div>
+<div class="setup-section" id="ssTech">
+<div class="fields">
+<div class="field"><label>Chrono moyen (m:ss.mmm)</label><input id="cfgLap" placeholder="1:37.589" onchange="cfgApply()"></div>
+<div class="field"><label>Consommation L / tour</label><input id="cfgFuel" type="number" step="0.01" onchange="cfgApply()"></div>
+<div class="field"><label>Capacité réservoir (L)</label><input id="cfgTank" type="number" step="0.1" onchange="cfgApply()"></div>
+<div class="field"><label>Pneus utilisables (tours)</label><input id="cfgTyre" type="number" step="1" onchange="cfgApply()"></div>
+<div class="field"><label>Marge essence (tours)</label><input id="cfgReserve" type="number" step="0.1" onchange="cfgApply()"></div>
+<div class="field"><label>Conso de sécurité (%)</label><input id="cfgSafety" type="number" step="0.5" onchange="cfgApply()"></div>
+</div><div class="setup-preview" id="cfgTechPreview"></div></div>
+<div class="actions" style="margin-top:14px;justify-content:flex-end"><button class="btn green" onclick="closeSetup();calculate()">✓ APPLIQUER ET RECALCULER</button></div>
+</div></div>
+<div class="layout">
     <aside class="panel">
       <div class="pad">
         <h2>Équipe / courses séparées</h2>
@@ -353,7 +384,16 @@ function calculate(){
  let fuelCap=Math.max(0,Math.floor((tank-extra)/fpt-reserve)), tyreCap=Math.max(0,Math.floor(num('tyreLife')-num('trafficTyres')));
  let stintCap=num('maxStint')>0?Math.max(0,Math.floor((num('maxStint')-num('stintMargin'))*60/avg)):9999;
  let cap=Math.min(fuelCap,tyreCap,stintCap);
- let lapsRemaining=Math.max(0,Math.ceil(remainSeconds/avg)+Number($('extraLap').value));
+ // Estimation de tours incluant les arrêts : résolution itérative jusqu'à stabilisation.
+ let theoreticalLaps=Math.max(0,Math.ceil(remainSeconds/avg)+Number($('extraLap').value));
+ let estimatedLaps=theoreticalLaps;
+ for(let k=0;k<8;k++){
+   const stops=Math.max(0,Math.ceil(estimatedLaps/Math.max(1,cap))-1);
+   const meanService=pitService({lane:true,fuel:true,tyre:true,swap:type==='endurance'&&getPilots().length>1,light:false,heavy:false})+num('pitExtra');
+   const next=Math.max(0,Math.ceil(Math.max(0,remainSeconds-stops*meanService)/avg)+Number($('extraLap').value));
+   if(next===estimatedLaps)break;estimatedLaps=next;
+ }
+ let lapsRemaining=estimatedLaps;
  if(cap<1){$('message').className='notice warn';$('message').textContent='Aucun tour sûr possible avec la configuration actuelle. Augmente l’autonomie ou corrige les marges.';return;}
  if(type==='sprint'&&num('hours')>2.5)warnings.push('Sprint au-delà de 2 h 30 : vérifier la catégorie de course.');
  let pilots=getPilots(), driver=type==='sprint'?0:Math.min(pilots.length-1,parseInt($('currentPilot').value||'0',10)||0);
@@ -463,7 +503,7 @@ function githubAuth(){const t=ghSettings().token;return t?{Authorization:'Bearer
 function utf8ToBase64(s){const bytes=new TextEncoder().encode(s);let b='';bytes.forEach(x=>b+=String.fromCharCode(x));return btoa(b);}
 function base64ToUtf8(s){let b=atob(s.replace(/\s/g,''));return new TextDecoder().decode(Uint8Array.from(b,c=>c.charCodeAt(0)));}
 function ghApi(){let s=ghSettings();return `https://api.github.com/repos/${encodeURIComponent(s.owner)}/${encodeURIComponent(s.repo)}/contents/${ghPath()}`;}
-async function ghRead(){let s=ghSettings();if(!s.owner||!s.repo)throw Error('Indique ton propriétaire et ton dépôt GitHub.');let r=await fetch(ghApi()+'?ref='+encodeURIComponent(s.branch)+'&t='+Date.now(),{headers:{Accept:'application/vnd.github+json',...githubAuth()},cache:'no-store'});if(r.status===404)return {sha:null,data:null};if(!r.ok)throw Error('Lecture GitHub '+r.status);let v=await r.json();return {sha:v.sha,data:JSON.parse(base64ToUtf8(v.content))};}
+async function ghRead(){let s=ghSettings();if(!s.owner||!s.repo)throw Error('Indique ton propriétaire et ton dépôt GitHub.');let r=await fetch(ghApi()+'?ref='+encodeURIComponent(s.branch)+'&t='+Date.now(),{headers:{Accept:'application/vnd.github+json',...githubAuth()},cache:'no-store'});if(r.status===401 && s.token){r=await fetch(ghApi()+'?ref='+encodeURIComponent(s.branch)+'&t='+Date.now(),{headers:{Accept:'application/vnd.github+json'},cache:'no-store'});if(r.ok)ghStatus('⚠ Jeton GitHub rejeté (401). Consultation publique possible mais sauvegarde impossible : renouvelle ton jeton.');}if(r.status===404)return {sha:null,data:null};if(!r.ok)throw Error('Lecture GitHub '+r.status+(r.status===401?' : jeton invalide ou expiré.':''));let v=await r.json();return {sha:v.sha,data:JSON.parse(base64ToUtf8(v.content))};}
 async function ghLoad(manual=false){if(ghBusy)return; if(!manual && document.activeElement?.matches('input,select,textarea'))return;if(!manual&&Date.now()-ghDirtyAt<15000)return;ghBusy=true;try{let result=await ghRead();if(!result.data){if(manual)ghStatus('Aucune sauvegarde pour cette course.');return;}let serialized=JSON.stringify(result.data);if(serialized===ghLast){if(manual)ghStatus('Déjà à jour.');return;}if(manual&& !confirm('Charger la sauvegarde GitHub de cette course et remplacer les modifications locales ?'))return;
  let d=result.data;if(d.version!==5||!d.slot)throw Error('Format de sauvegarde invalide');store.slots[currentSlot()]=d.slot;store.slotNames[currentSlot()]=d.name||store.slotNames[currentSlot()];saveStore();ghLast=serialized;applyCurrentState();loadExtras();ghStatus('✓ COURSE '+(currentSlot()+1)+' synchronisée depuis GitHub à '+new Date().toLocaleTimeString('fr-FR'));}catch(e){if(manual)ghStatus('⚠ '+e.message);else console.warn(e);}finally{ghBusy=false;}}
 async function ghSave(){if(ghBusy)return;let s=ghSettings();if(!s.token){ghStatus('Pour enregistrer sur GitHub, renseigne un jeton personnel avec droit Contents: Read and Write sur ce dépôt.');return;}ghBusy=true;try{saveCurrentState();saveExtras();let original=await ghRead();let payload={version:5,name:store.slotNames[currentSlot()],savedAt:new Date().toISOString(),slot:store.slots[currentSlot()]};let obj={message:`VCE Race Control · ${ghPath()} · ${new Date().toISOString()}`,content:utf8ToBase64(JSON.stringify(payload,null,2)),branch:s.branch};if(original.sha)obj.sha=original.sha;let r=await fetch(ghApi(),{method:'PUT',headers:{Accept:'application/vnd.github+json','Content-Type':'application/json',...githubAuth()},body:JSON.stringify(obj)});if(!r.ok)throw Error('Écriture GitHub '+r.status+(r.status===409?' : conflit, recharge les données.':''));ghLast=JSON.stringify(payload);ghStatus('✓ COURSE '+(currentSlot()+1)+' enregistrée sur GitHub à '+new Date().toLocaleTimeString('fr-FR'));}catch(e){ghStatus('⚠ '+e.message);}finally{ghBusy=false;}}
@@ -496,6 +536,39 @@ function bootV5(){
  if($('ghOwner').value)ghLoad(false);
 }
 bootV5();
+
+// V7 cockpit modal — values wired directly to main strategy inputs.
+const cfgRules={swaps:2,maxStint:60,open:0,close:0};
+const cfgTechMap={cfgLap:'lap',cfgFuel:'fuel',cfgTank:'tank',cfgTyre:'tyreLife',cfgReserve:'reserve',cfgSafety:'safetyFuel'};
+function openSetup(tab){$('setupDialog').classList.add('open');setupTab(tab);cfgSync();}
+function closeSetup(){$('setupDialog').classList.remove('open');}
+function setupTab(t){for(let n of ['Course','Pit','Tech']){$('ss'+n).classList.toggle('active',n.toLowerCase()===t);$('sp'+n).classList.toggle('active',n.toLowerCase()===t);}if(t==='pit')cfgPitRender();if(t==='tech')cfgTechInfo();}
+function cfgSync(){
+ $('cfgType').value=$('raceType').value;$('cfgHours').value=$('hours').value;
+ $('cfgSwaps').value=num('swaps')>0?'oui':'non';$('cfgLimit').value=num('maxStint')>0?'oui':'non';
+ $('cfgWindow').value=(num('open')>0||num('close')>0)?'oui':'non';$('cfgDouble').value=$('allowDoubleFast').checked?'oui':'non';
+ for(let [a,b] of Object.entries(cfgTechMap))$(a).value=$(b).value;
+ cfgPitRender();cfgTechInfo();
+}
+function cfgApply(){
+ $('raceType').value=$('cfgType').value;
+ $('hours').value=Math.max(.25,Math.min(24,+$('cfgHours').value||4));
+ for(let [a,b] of Object.entries(cfgTechMap))if($(a).value!=='')$(b).value=$(a).value;
+ if($('cfgSwaps').value==='non'){if(num('swaps')>0)cfgRules.swaps=num('swaps');$('swaps').value=0;}else if(num('swaps')===0)$('swaps').value=cfgRules.swaps;
+ if($('cfgLimit').value==='non'){if(num('maxStint')>0)cfgRules.maxStint=num('maxStint');$('maxStint').value=0;}else if(num('maxStint')===0)$('maxStint').value=cfgRules.maxStint;
+ if($('cfgWindow').value==='non'){if(num('open')>0)cfgRules.open=num('open');if(num('close')>0)cfgRules.close=num('close');$('open').value=0;$('close').value=0;}else if(num('open')===0&&num('close')===0){$('open').value=cfgRules.open;$('close').value=cfgRules.close;}
+ $('allowDoubleFast').checked=$('cfgDouble').value==='oui';
+ updateCourseVisibility();calculate();cfgTechInfo();
+}
+const cfgPitFields=[['pitlane','pLane','Traversée des stands'],['fuelTime','pFuel','Ravitaillement essence'],['tyreTime','pTyre','Changement des pneus'],['swapTime','pSwap','Changement pilote'],['lightTime','pLight','Réparation dégâts légers'],['heavyTime','pHeavy','Réparation dégâts lourds']];
+function cfgPitRender(){
+ $('cfgPitList').innerHTML=cfgPitFields.map(([id,check,name])=>`<div class="pit-item"><label style="margin:0"><input type="checkbox" ${$(check).checked?'checked':''} onchange="$('${check}').checked=this.checked;cfgPitInfo();updatePit();calculate()"> ${name}</label><input type="number" min="0" step="0.1" value="${esc($(id).value)}" onchange="$('${id}').value=this.value;cfgPitInfo();updatePit();calculate()"><span class="pit-status">secondes</span></div>`).join('');cfgPitInfo();
+}
+function cfgPitInfo(){let total=pitService({lane:yes('pLane'),fuel:yes('pFuel'),tyre:yes('pTyre'),swap:yes('pSwap'),light:yes('pLight'),heavy:yes('pHeavy')});$('cfgPitPreview').innerHTML=`<b>DURÉE TOTALE : ${total.toFixed(1)} s</b> — Sans action cochée : 0 s. <span class="small">Les paramètres restent liés au calcul de stratégie et au simulateur PIT.</span>`;}
+function cfgTechInfo(){let l=lapSeconds($('cfgLap').value)||0, fuel=+($('cfgFuel').value)||0,tank=+($('cfgTank').value)||0, m=+($('cfgReserve').value)||0,safety=+($('cfgSafety').value)||0,tyre=+($('cfgTyre').value)||0;
+ let cap=fuel>0?Math.max(0,Math.floor(tank/(fuel*(1+safety/100))-m)):0;
+ $('cfgTechPreview').innerHTML=`<b>Prévision :</b> ${cap} tours au carburant · ${tyre} tours pneus · ${(l?Math.max(0,Math.min(cap,tyre))*l/60:0).toFixed(1)} min maximum théorique. Données à mesurer en simulateur.`;}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('setupDialog').classList.contains('open'))closeSetup();});
 </script>
 <footer style="max-width:1680px;margin:25px auto 14px;text-align:center;font-size:11px;letter-spacing:.08em;color:#9aaac2;padding:14px">CE SITE APPARTIENT À LA PROPRIÉTÉ DE VIRTUAL CENTER EXPERIENCE ET EST PRIVÉ.</footer>
 </body>
