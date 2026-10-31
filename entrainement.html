@@ -13,7 +13,97 @@
 #workshopDetail{line-height:1.7}
 @media(max-width:1050px){.learn-workshops{grid-template-columns:repeat(2,minmax(0,1fr))}.learn-steps{grid-template-columns:1fr}}
 @media(max-width:620px){.learn-workshops{grid-template-columns:1fr}.learning-banner{padding:17px}.learn-symbol{display:none}}
-</style><style id="vce-page-transition">body{animation:vceArrive .45s cubic-bezier(.2,.8,.2,1) both}@keyframes vceArrive{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){body{animation:none!important}}</style><script defer src="vce-transitions.js"></script></head><body><header><div class="head"><div><div class="brand"><b>VCE</b> ESPORT / PERFORMANCE CENTER</div><div class="tagline">ACADÉMIE PILOTES V22 · COACHING & AUTOFORMATION</div></div><nav class="nav"><a href="index.html">ACCUEIL</a><a href="strategie.html">STRATÉGIE</a><a class="on" href="entrainement.html">ENTRAÎNEMENT</a></nav></div></header><main><div class="topline"><div><h1>🏎️ Centre d'entraînement des pilotes</h1><div class="sub">Une séance simple : évaluer → identifier une erreur → essayer une correction → mesurer le progrès.</div></div><span class="pill">Données pédagogiques intégrées au HTML</span></div>
+</style><style id="vce-page-transition">body{animation:vceArrive .45s cubic-bezier(.2,.8,.2,1) both}@keyframes vceArrive{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){body{animation:none!important}}</style><script defer src="vce-transitions.js"></script>
+<style id="vce-training-portal-styles">
+:root{--vcep-bg:#0b1523;--vcep-panel:#142338;--vcep-line:#34485f;--vcep-red:#fa5364;--vcep-green:#48e0a5;--vcep-muted:#a1b5c8}
+#vce-training-portal{position:relative;isolation:isolate;color:#eef5fa;max-width:1320px;margin:24px auto 26px;padding:0 16px;font-family:Inter,"Segoe UI",system-ui,sans-serif}
+#vce-training-portal *{box-sizing:border-box}
+#vce-training-portal .vcep-hero{position:relative;overflow:hidden;border:1px solid #354a61;border-radius:22px;padding:34px 38px 31px;background:radial-gradient(ellipse at 85% 0%,#17615170,transparent 46%),radial-gradient(ellipse at 3% 100%,#7225364f,transparent 48%),linear-gradient(125deg,#13243a,#0d1827 70%);box-shadow:0 20px 60px #0003}
+#vce-training-portal .vcep-hero:after{content:"";position:absolute;right:-80px;top:-90px;width:360px;height:360px;border:1px solid #76c6a53c;border-radius:50%;box-shadow:0 0 0 48px #75c9ad0c,0 0 0 96px #75c9ad09;pointer-events:none}
+#vce-training-portal .vcep-top{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:1}
+#vce-training-portal .vcep-kicker{color:var(--vcep-green);font-weight:850;letter-spacing:.2em;font-size:11px}
+#vce-training-portal .vcep-tag{color:#b8d2e0;border:1px solid #577c76;background:#11352f;border-radius:999px;padding:8px 13px;font-size:10px;letter-spacing:.08em;font-weight:800}
+#vce-training-portal .vcep-hero h2{font-size:clamp(31px,4.1vw,54px);line-height:1.08;letter-spacing:-.055em;font-weight:900;margin:22px 0 12px;max-width:820px}
+#vce-training-portal .vcep-hero h2 span{color:var(--vcep-red)}
+#vce-training-portal .vcep-hero p{color:#b6c9d7;line-height:1.65;max-width:720px;font-size:14px;margin:0}
+#vce-training-portal .vcep-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:23px;position:relative;z-index:1}
+#vce-training-portal a.vcep-button,#vce-training-portal button.vcep-button{appearance:none;border:1px solid #4e6378;border-radius:9px;min-height:43px;padding:11px 17px;display:inline-flex;align-items:center;gap:10px;justify-content:center;color:#eef7fa;background:#ffffff0d;text-decoration:none;font-size:12px;font-weight:850;letter-spacing:.05em;cursor:pointer;transition:transform .24s,border-color .24s,background .24s}
+#vce-training-portal .vcep-button.primary{background:var(--vcep-red);border-color:var(--vcep-red);color:white}
+#vce-training-portal .vcep-button.green{background:#136a52;border-color:#329e7d}
+#vce-training-portal .vcep-button:hover{transform:translateY(-3px);border-color:var(--vcep-green)}
+#vce-training-portal .vcep-section-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin:28px 2px 16px}
+#vce-training-portal .vcep-section-head strong{font-size:20px;letter-spacing:-.035em}
+#vce-training-portal .vcep-section-head span{font-size:11px;color:var(--vcep-muted)}
+#vce-training-portal .vcep-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+#vce-training-portal .vcep-card{border:1px solid #30475d;border-radius:15px;padding:20px;background:linear-gradient(145deg,#17283c,#101d2c);color:#eef7fa;text-decoration:none;display:flex;flex-direction:column;min-height:207px;transition:transform .25s,border-color .25s,box-shadow .25s;cursor:pointer;text-align:left;position:relative}
+#vce-training-portal .vcep-card:hover{transform:translateY(-5px);border-color:#5ce5b2;box-shadow:0 15px 35px #0004}
+#vce-training-portal .vcep-card:focus-visible,#vce-training-portal .vcep-button:focus-visible{outline:3px solid #9ff3d3;outline-offset:3px}
+#vce-training-portal .vcep-icon{font-size:24px;display:grid;place-items:center;width:47px;height:47px;border-radius:12px;background:#253b49;border:1px solid #47747c;margin-bottom:18px}
+#vce-training-portal .vcep-card.red .vcep-icon{background:#4b2532;border-color:#7e4757}
+#vce-training-portal .vcep-card strong{font-size:16px;letter-spacing:-.025em;margin-bottom:7px}
+#vce-training-portal .vcep-card small{font-size:11px;line-height:1.6;color:#a5b8ca;flex:1}
+#vce-training-portal .vcep-card .vcep-link{font-size:10px;font-weight:850;letter-spacing:.1em;color:#67e3b2;margin-top:13px}
+#vce-training-portal .vcep-card.red .vcep-link{color:#ff8b9a}
+#vce-training-portal .vcep-roadmap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid #31485c;border-radius:15px;background:#101d2c;overflow:hidden}
+#vce-training-portal .vcep-step{position:relative;padding:19px 17px;border-right:1px solid #31485c}
+#vce-training-portal .vcep-step:last-child{border:0}
+#vce-training-portal .vcep-step em{font-style:normal;font-size:11px;color:var(--vcep-green);font-weight:850}
+#vce-training-portal .vcep-step strong{display:block;margin:9px 0 6px;font-size:13px}
+#vce-training-portal .vcep-step p{font-size:11px;line-height:1.5;color:#9bb2c5;margin:0}
+#vce-training-portal .vcep-step:not(:last-child):after{content:"→";position:absolute;right:-10px;top:45%;z-index:1;background:#101d2c;color:var(--vcep-green);padding:3px}
+#vce-training-portal .vcep-nav{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px;padding:12px 15px;border:1px solid #30465b;background:#111f30;border-radius:12px;align-items:center}
+#vce-training-portal .vcep-nav b{font-size:11px;letter-spacing:.12em;color:#89d9b7;margin-right:7px}
+#vce-training-portal .vcep-nav a,#vce-training-portal .vcep-nav button{font:750 11px Inter,"Segoe UI",sans-serif;color:#d8e8f3;background:#1d3044;border:1px solid #37516a;padding:8px 12px;border-radius:8px;cursor:pointer;text-decoration:none}
+#vce-training-portal .vcep-nav a:hover,#vce-training-portal .vcep-nav button:hover{background:#274d50}
+#vce-training-portal .vcep-hint{color:#8ba4b8;font-size:11px;margin:12px 2px 0}
+@media(max-width:980px){#vce-training-portal .vcep-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#vce-training-portal .vcep-roadmap{grid-template-columns:repeat(2,minmax(0,1fr))}#vce-training-portal .vcep-step:nth-child(2){border-right:0}#vce-training-portal .vcep-step:nth-child(-n+2){border-bottom:1px solid #31485c}}
+@media(max-width:590px){#vce-training-portal{padding:0 10px;margin-top:12px}#vce-training-portal .vcep-hero{padding:25px 21px}#vce-training-portal .vcep-grid{grid-template-columns:1fr}#vce-training-portal .vcep-card{min-height:160px}#vce-training-portal .vcep-roadmap{grid-template-columns:1fr}#vce-training-portal .vcep-step{border-right:0!important;border-bottom:1px solid #31485c}#vce-training-portal .vcep-step:after{display:none}#vce-training-portal .vcep-section-head{display:block}#vce-training-portal .vcep-section-head span{display:block;margin-top:5px}}
+@media(prefers-reduced-motion:reduce){#vce-training-portal *{transition:none!important}}
+</style>
+</head><body><header><div class="head"><div><div class="brand"><b>VCE</b> ESPORT / PERFORMANCE CENTER</div><div class="tagline">ACADÉMIE PILOTES V22 · COACHING & AUTOFORMATION</div></div><nav class="nav"><a href="index.html">ACCUEIL</a><a href="strategie.html">STRATÉGIE</a><a class="on" href="entrainement.html">ENTRAÎNEMENT</a></nav></div></header>
+<section id="vce-training-portal" aria-label="Portail de formation VCE">
+ <div class="vcep-hero">
+  <div class="vcep-top"><div class="vcep-kicker">VCE ESPORT / DRIVER DEVELOPMENT</div><div class="vcep-tag">ACADÉMIE PILOTES</div></div>
+  <h2>TON PILOTAGE.<br><span>TON ÉVOLUTION.</span></h2>
+  <p>Un espace central pour t'entraîner, comprendre les réactions de ta voiture, consulter les ressources et mesurer tes progrès. Du premier tour propre à la performance eSport.</p>
+  <div class="vcep-actions">
+   <button type="button" class="vcep-button primary" data-vcep-target="coach">💬 DÉMARRER AVEC COACH →</button>
+   <button type="button" class="vcep-button green" data-vcep-target="solo">🏁 S'ENTRAÎNER EN AUTONOMIE →</button>
+   <a class="vcep-button" href="index.html" data-transition>⌂ ACCUEIL VCE</a>
+  </div>
+ </div>
+ <div class="vcep-section-head"><strong>Explore ton centre de performance</strong><span>4 espaces accessibles en un clic</span></div>
+ <div class="vcep-grid">
+  <button type="button" class="vcep-card red" data-vcep-target="coach"><span class="vcep-icon">🎧</span><strong>Entraînement avec coach</strong><small>Débrief, ressenti pilote, analyse des difficultés et mesure des chronos avant / après.</small><span class="vcep-link">COMMENCER →</span></button>
+  <button type="button" class="vcep-card" data-vcep-target="solo"><span class="vcep-icon">🏎️</span><strong>Entraînement sans coach</strong><small>Ateliers trail braking, lift-off, trajectoires, freinage et exercices par niveau.</small><span class="vcep-link">VOIR LES EXERCICES →</span></button>
+  <a class="vcep-card" href="interactions.html" data-transition><span class="vcep-icon">🧠</span><strong>Diagnostic interactif</strong><small>800 situations combinées pour analyser un problème et tester une correction.</small><span class="vcep-link">OUVRIR LE DIAGNOSTIC →</span></a>
+  <a class="vcep-card" href="ressources_voitures.html" data-transition><span class="vcep-icon">📚</span><strong>Ressources techniques</strong><small>Fiches voitures, catégories, ABS, TC et caractéristiques de pilotage.</small><span class="vcep-link">CONSULTER LES FICHES →</span></a>
+ </div>
+ <div class="vcep-section-head"><strong>Le parcours d'un pilote</strong><span>Une méthode simple, répétable et mesurable</span></div>
+ <div class="vcep-roadmap">
+  <div class="vcep-step"><em>ÉTAPE 01</em><strong>ÉVALUER</strong><p>Choisir un combo voiture / circuit et rouler sans consigne.</p></div>
+  <div class="vcep-step"><em>ÉTAPE 02</em><strong>DIAGNOSTIQUER</strong><p>Identifier une difficulté précise : frein, corde, motricité, rythme.</p></div>
+  <div class="vcep-step"><em>ÉTAPE 03</em><strong>TRAVAILLER</strong><p>Appliquer une correction et répéter un exercice ciblé.</p></div>
+  <div class="vcep-step"><em>ÉTAPE 04</em><strong>MESURER</strong><p>Comparer les chronos et la régularité pour valider le progrès.</p></div>
+ </div>
+ <div class="vcep-nav"><b>ACCÈS RAPIDE</b><button type="button" data-vcep-target="coach">Coach & débrief</button><button type="button" data-vcep-target="solo">Techniques & exercices</button><a href="interactions.html" data-transition>800 interactions</a><a href="ressources_voitures.html" data-transition>Fiches voitures</a><a href="strategie.html" data-transition>Stratégie</a></div>
+ <p class="vcep-hint">Les modules existants sont conservés sous ce portail. La navigation utilise des transitions douces entre les pages.</p>
+</section>
+<script id="vce-training-portal-script">
+(()=>{"use strict";
+ const portal=document.getElementById("vce-training-portal");if(!portal)return;
+ portal.addEventListener("click",e=>{
+  const trigger=e.target.closest("[data-vcep-target]");if(!trigger)return;
+  const kind=trigger.getAttribute("data-vcep-target");
+  const section=document.getElementById(kind==="coach"?"coachMode":"soloMode");
+  if(!section)return;
+  if(typeof window.setMode==="function")window.setMode(kind);
+  const y=section.getBoundingClientRect().top+window.scrollY-18;
+  window.scrollTo({top:y,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+ });
+})();
+</script>
+<main><div class="topline"><div><h1>🏎️ Centre d'entraînement des pilotes</h1><div class="sub">Une séance simple : évaluer → identifier une erreur → essayer une correction → mesurer le progrès.</div></div><span class="pill">Données pédagogiques intégrées au HTML</span></div>
 <div class="panel"><div class="cols3"><div class="field"><label>Pilote</label><input id="driver" placeholder="Nom du pilote"></div><div class="field"><label>Niveau du pilote</label><select id="level"><option>Rookie</option><option>Académie</option><option>Esport</option></select></div><div class="field"><label>Simulation</label><select id="sim"><option>Le Mans Ultimate</option><option>Assetto Corsa</option><option>RaceRoom</option><option>iRacing</option><option>Autre</option></select></div><div class="field"><label>Famille de voiture</label><select id="category"><option value="GT3">GT3 / LMGT3</option><option value="GT4">GT4</option><option value="PORSCHE">Porsche Cup</option><option value="F1">F1 / Formule</option><option value="F4">F4</option><option value="HYPERCAR">Hypercar / LMDh</option><option value="LMP2">LMP2</option><option value="TCR">TCR / Traction</option></select></div><div class="field"><label>Voiture</label><input id="car" list="carNames" placeholder="Ex. Porsche 911 GT3 R"><datalist id="carNames"></datalist></div><div class="field"><label>Circuit</label><input id="track" list="trackNames" placeholder="Ex. Monza"><datalist id="trackNames"></datalist></div></div><div class="notice" id="levelHint"></div></div>
 <div class="tabs"><button id="tabCoach" class="active" onclick="setMode('coach')">💬 ACCÉDER AU COACH</button><button id="tabSolo" class="solo" onclick="setMode('solo')">📚 ALLER AUX TECHNIQUES & EXERCICES</button></div>
 <section id="coachMode"><div class="grid"><aside><div class="panel"><h2>🎯 Objectif du pilote</h2><div class="field"><label>Objectif actuel</label><select id="goal"><option>Freinage</option><option>Trail braking</option><option>Trajectoires</option><option>Accélération / motricité</option><option>Régularité</option><option>Pneus</option><option>Qualification</option><option>Endurance</option></select></div><div class="field" style="margin-top:10px"><label>Virage / zone (optionnel)</label><input id="corner" placeholder="Ex. dernier virage Monza"></div><div class="field" style="margin-top:10px"><label>ABS de la voiture</label><select id="abs"><option value="unknown">À confirmer</option><option value="yes">OUI</option><option value="no">NON</option></select></div><div class="tiny" style="margin-top:9px">Le coach peut poser des questions, mais évite de reposer celles auxquelles le pilote a déjà répondu.</div></div><div class="panel"><h2>✅ Validation humaine</h2><div class="field"><label>Décision du coach</label><select id="coachValidation"><option value="pending">À confirmer</option><option value="valid">Validé</option><option value="modify">À corriger</option><option value="reject">Rejeté</option></select></div><div class="field"><label>Notes / correction du coach</label><textarea id="coachNotes" placeholder="Ce qui a été confirmé sur la piste..."></textarea></div><button class="btn green" id="validate" style="margin-top:9px">Enregistrer l'avis</button><p id="validationStatus" class="tiny"></p></div></aside>
