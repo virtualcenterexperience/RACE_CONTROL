@@ -140,7 +140,19 @@ tr.done td{background:#13332d;color:#a9dacb}tr.current td{background:#173657}
           </div>
         </div>
 
-        <div class="sect enduranceOnly">
+        
+<div class="sect"><h3>🏎️ Stratégie compétitive — recalcul</h3>
+<div class="fields">
+<div class="field"><label>Tours effectivement parcourus</label><input id="liveLaps" type="number" min="0" value="0"></div>
+<div class="field"><label>Temps restant réel (min), 0 = estimation</label><input id="liveMinutes" type="number" min="0" step="0.1" value="0"></div>
+<div class="field"><label>Carburant réel restant (L), 0 = inconnu</label><input id="liveFuel" type="number" min="0" step="0.1" value="0"></div>
+<div class="field"><label>Pneus réellement disponibles (tours), 0 = inconnu</label><input id="liveTyres" type="number" min="0" value="0"></div>
+<div class="field"><label>Variation du rythme (s/tour)</label><input id="paceDelta" type="number" step="0.1" value="0"></div>
+<div class="field"><label>Dernier tour probable supplémentaire ?</label><select id="extraLap"><option value="1">OUI, +1 tour</option><option value="0">NON</option></select></div>
+<div class="field"><label>Marge carburant additionnelle (L)</label><input id="fuelExtra" type="number" min="0" step="0.1" value="0"></div>
+<div class="field"><label>Coût arrêt réel additionnel (s)</label><input id="pitExtra" type="number" min="0" step="0.1" value="0"></div>
+</div><div class="notice" id="optimizer" style="margin-top:12px">Analyse en cours…</div></div>
+<div class="sect enduranceOnly">
           <h3>🚨 Centre de contrôle / urgence</h3>
           <div class="checkrow"><input id="emergency" type="checkbox"><label for="emergency">Activer le recalcul d'urgence</label></div>
           <div class="fields">
@@ -253,7 +265,22 @@ tr.done td{background:#13332d;color:#a9dacb}tr.current td{background:#173657}
                   <div class="field"><label>Comportement auto</label><select id="handling"><option value="ok">Neutre</option><option value="under">Sous-virage</option><option value="over">Survirage</option></select></div>
                   <div class="field"><label>Concentration</label><select id="focus"><option value="4">Excellente</option><option value="3" selected>Bonne</option><option value="2">Moyenne</option><option value="1">Faible</option></select></div>
                   <div class="field"><label>Communication équipe</label><select id="comm"><option value="4">Excellente</option><option value="3" selected>Bonne</option><option value="2">Moyenne</option><option value="1">Faible</option></select></div>
-                  <div class="field wide"><label>Notes pilote / remarques</label><textarea id="notes" placeholder="Exemple : gros sous-virage dans les virages rapides, mieux freiner un poil plus tôt, trafic compliqué..."></textarea></div>
+                  
+<div class="sect"><h3>📊 Données réelles du relais</h3><div class="fields">
+<div class="field"><label>Tours parcourus</label><input id="dbTours" type="number" min="0" value="20"></div>
+<div class="field"><label>Temps moyen réel (m:ss.mmm)</label><input id="dbAverage" value="1:38.000"></div>
+<div class="field"><label>Meilleur tour</label><input id="dbBest" value="1:37.200"></div>
+<div class="field"><label>Consommation mesurée (L/tour)</label><input id="dbFuel" type="number" step="0.01" value="3.1"></div>
+<div class="field"><label>Tours restants pneus estimés</label><input id="dbTyres" type="number" min="0" value="4"></div>
+<div class="field"><label>Incidents / contacts</label><input id="dbContacts" type="number" min="0" value="0"></div>
+<div class="field"><label>Perte estimée dans trafic (s)</label><input id="dbTrafficLoss" type="number" min="0" step="1" value="0"></div>
+<div class="field"><label>Évolution rythme fin de relais (s/tour)</label><input id="dbFade" type="number" step="0.1" value="0"></div>
+<div class="field"><label>Confiance au freinage</label><select id="dbBrakeConfidence"><option value="4">Très bonne</option><option value="3">Bonne</option><option value="2">Moyenne</option><option value="1">Mauvaise</option></select></div>
+<div class="field"><label>Température/équilibre pneus</label><select id="dbTemp"><option value="ok">Normale</option><option value="hotFront">Surchauffe avant</option><option value="hotRear">Surchauffe arrière</option><option value="cold">Pneus froids</option></select></div>
+<div class="field"><label>Fatigue pilote</label><select id="dbFatigue"><option value="none">Aucune</option><option value="some">Modérée</option><option value="high">Forte</option></select></div>
+<div class="field"><label>Conseil pour prochain pilote</label><select id="dbRecommendation"><option value="normal">Rester sur stratégie</option><option value="early">Arrêt avancé</option><option value="fuel">Économie de carburant</option><option value="tyres">Gestion pneus</option></select></div>
+</div></div>
+<div class="field wide"><label>Notes pilote / remarques</label><textarea id="notes" placeholder="Exemple : gros sous-virage dans les virages rapides, mieux freiner un poil plus tôt, trafic compliqué..."></textarea></div>
                 </div>
                 <div class="actions" style="margin-top:10px">
                   <button class="btn green" onclick="saveDebrief()">Enregistrer le débrief</button>
@@ -283,7 +310,7 @@ tr.done td{background:#13332d;color:#a9dacb}tr.current td{background:#173657}
 </div>
 <script>
 const $=id=>document.getElementById(id);
-const inputIds=['raceType','race','car','track','sim','hours','start','lap','fuel','tank','reserve','tyreLife','safetyFuel','trafficTyres','nPilots','driverMode','allowDoubleFast','swaps','maxStint','stintMargin','mode','open','close','pitlane','fuelTime','tyreTime','swapTime','lightTime','heavyTime','emergency','elapsed','repair','currentPilot','remainFuel','remainTyres','pos','goalPos','gap','remaining','ownLap','otherLap','gapPit','pitRisk','slotName1','slotName2','slotName3','pLane','pFuel','pTyre','pSwap','pLight','pHeavy','debriefDriver','debriefStint','damaged','consistency','apex','limits','brakes','throttle','trafficDebrief','tyreState','handling','focus','comm','notes'];
+const inputIds=['liveLaps','liveMinutes','liveFuel','liveTyres','paceDelta','extraLap','fuelExtra','pitExtra','dbTours','dbAverage','dbBest','dbFuel','dbTyres','dbContacts','dbTrafficLoss','dbFade','dbBrakeConfidence','dbTemp','dbFatigue','dbRecommendation','raceType','race','car','track','sim','hours','start','lap','fuel','tank','reserve','tyreLife','safetyFuel','trafficTyres','nPilots','driverMode','allowDoubleFast','swaps','maxStint','stintMargin','mode','open','close','pitlane','fuelTime','tyreTime','swapTime','lightTime','heavyTime','emergency','elapsed','repair','currentPilot','remainFuel','remainTyres','pos','goalPos','gap','remaining','ownLap','otherLap','gapPit','pitRisk','slotName1','slotName2','slotName3','pLane','pFuel','pTyre','pSwap','pLight','pHeavy','debriefDriver','debriefStint','damaged','consistency','apex','limits','brakes','throttle','trafficDebrief','tyreState','handling','focus','comm','notes'];
 const DEFAULTS={slotNames:['Course 1','Course 2','Course 3'],active:0,slots:[null,null,null]};
 let store=loadStore(); let plan=[]; let doneMap={}; let doubleMap={};
 function loadStore(){try{let s=JSON.parse(localStorage.getItem('vce_race_control_v2')||'null'); if(s&&s.slots&&s.slotNames)return s;}catch(e){} return structuredClone(DEFAULTS);}
@@ -315,52 +342,70 @@ function updateCourseVisibility(){ let sprint=$('raceType').value==='sprint'; do
 function getPilots(){ let n=Math.max(1,Math.min(4,parseInt($('nPilots').value||'1',10))); return Array.from({length:n},(_,i)=>({idx:i,name:$('pilotName'+i)?.value||`PILOTE ${i+1}`,lap:lapSeconds($('pilotLap'+i)?.value||$('lap').value)||lapSeconds($('lap').value)})); }
 function pickNextDriver(pilots,currentIdx,stintIndex){ if(doubleMap[stintIndex]) return currentIdx; if($('driverMode').value==='fast'){ let fastest=pilots.reduce((a,p)=>p.lap<a.lap?p:a,pilots[0]); if(yes('allowDoubleFast') && (stintIndex%2===0)) return fastest.idx; return (currentIdx+1)%pilots.length; } return (currentIdx+1)%pilots.length; }
 function pitService({lane,fuel,tyre,swap,light,heavy}){ let t=0; if(lane)t+=num('pitlane'); if(fuel)t+=num('fuelTime'); if(tyre)t+=num('tyreTime'); if(swap)t+=num('swapTime'); if(light)t+=num('lightTime'); if(heavy)t+=num('heavyTime'); return t; }
-function calculate(){ updateSlotNames(); updateCourseVisibility(); fillDebriefPilots(); plan=[]; let warnings=[]; let avgLap=lapSeconds($('lap').value); if(!avgLap){ $('message').className='notice warn'; $('message').textContent='Chrono moyen invalide. Utilise le format 1:37.589'; return; }
- let raceType=$('raceType').value; let durationSec=num('hours')*3600; let totalLaps=Math.max(1,Math.floor(durationSec/avgLap)); let fuelPerLap=num('fuel')*(1+num('safetyFuel')/100); let tank=num('tank'); let marginTours=num('reserve'); let fuelLaps=Math.max(1,Math.floor((tank/Math.max(0.0001,fuelPerLap))-marginTours)); let tyreLife=Math.max(1,Math.floor(num('tyreLife')-num('trafficTyres'))); let maxStintLaps=9999; if(num('maxStint')>0){ maxStintLaps=Math.max(1,Math.floor(((num('maxStint')-num('stintMargin'))*60)/avgLap)); }
- let relayCap=Math.max(1,Math.min(fuelLaps,tyreLife,maxStintLaps)); let mode=$('mode').value; let modeDelta=(mode==='advance'?1:mode==='quick'?2:0); let adjustedCap=Math.max(1,relayCap-modeDelta);
- let pilots=getPilots(); $('currentPilot').innerHTML=pilots.map(p=>`<option value="${p.idx}">${esc(p.name)}</option>`).join('');
- let isEmergency=yes('emergency')&&raceType==='endurance'; let lapsDone=isEmergency?Math.min(totalLaps,Math.floor(num('elapsed')*60/avgLap)):0; let lapsLeft=Math.max(0,totalLaps-lapsDone); let currentTime=isEmergency?num('elapsed')*60:0; let currentDriver=isEmergency?Math.min(pilots.length-1,parseInt($('currentPilot').value||0,10)):0; let currentFuelLaps=isEmergency?Math.max(1,Math.floor((num('remainFuel')/Math.max(0.0001,fuelPerLap))-marginTours)):fuelLaps; let currentTyreLeft=isEmergency?Math.max(0,Math.floor(num('remainTyres'))):tyreLife; let tyreLeft=currentTyreLeft; let swapCount=0; let totalPit=0; let finishTime=currentTime; let stintIndex=0;
- if(raceType==='sprint'){
-   $('sprintNote').classList.remove('hidden');
-   let stopNeeded = totalLaps>fuelLaps || totalLaps>tyreLife;
-   $('sprintNote').innerHTML=stopNeeded?`Mode Sprint : un arrêt est probablement nécessaire. L'outil affiche uniquement le plan utile.`:`Mode Sprint : aucun arrêt obligatoire selon les paramètres. L'information clé est la quantité d'essence nécessaire.`;
-   let fuelNeed=totalLaps*fuelPerLap + marginTours*fuelPerLap;
-   if(!stopNeeded){ plan=[{index:1,driver:pilots[0].name,start:0,end:durationSec,tours:totalLaps,fuel:fuelNeed,tyresLeft:Math.max(0,tyreLife-totalLaps),stop:false,swap:false,tyreStop:false,service:0,double:false,finish:true}]; }
-   else {
-     let first=Math.min(adjustedCap,totalLaps); let remaining=totalLaps-first; let stopLane=true; let needTyres=remaining>Math.max(0,tyreLife-first); let pit=pitService({lane:stopLane,fuel:true,tyre:needTyres,swap:false,light:false,heavy:false}); plan.push({index:1,driver:pilots[0].name,start:0,end:first*avgLap,tours:first,fuel:first*fuelPerLap + marginTours*fuelPerLap,tyresLeft:Math.max(0,tyreLife-first),stop:true,swap:false,tyreStop:needTyres,service:pit,double:false,finish:false}); totalPit+=pit; plan.push({index:2,driver:pilots[0].name,start:first*avgLap+pit,end:durationSec,tours:remaining,fuel:remaining*fuelPerLap + marginTours*fuelPerLap,tyresLeft:Math.max(0,needTyres?tyreLife-remaining:tyreLife-first-remaining),stop:false,swap:false,tyreStop:false,service:0,double:false,finish:true}); finishTime=durationSec+pit; }
- } else {
-   $('sprintNote').classList.add('hidden');
-   while(lapsLeft>0 && stintIndex<80){
-     let localCap = stintIndex===0 && isEmergency ? Math.max(1,Math.min(currentFuelLaps, tyreLeft, maxStintLaps)) : adjustedCap;
-     let baseCap=Math.max(1, localCap - (mode==='offset' && stintIndex%2===1 ? 1:0));
-     let target=Math.min(baseCap,lapsLeft);
-     let pitWindowOpen=num('open')*60, pitWindowClose=durationSec-num('close')*60;
-     let projectedEnd=currentTime + target*avgLap;
-     if(projectedEnd<pitWindowOpen && lapsLeft>target){ while(target<lapsLeft && currentTime+target*avgLap<pitWindowOpen) target++; }
-     let mustStopLater = lapsLeft>target;
-     let needSwap = mustStopLater && pilots.length>1;
-     let needTyres = mustStopLater && (target>=tyreLeft || (tyreLeft-target)<=1 || mode==='quick');
-     if(stintIndex===0 && isEmergency){ needTyres = mustStopLater && target>=tyreLeft; }
-     let pit=mustStopLater?pitService({lane:true,fuel:true,tyre:needTyres,swap:needSwap,light:stintIndex===0&&isEmergency&&num('repair')>0,heavy:false}):0;
-     let row={index:stintIndex+1,driver:pilots[currentDriver].name,start:currentTime,end:currentTime+target*avgLap,tours:target,fuel:target*fuelPerLap + marginTours*fuelPerLap,tyresLeft:Math.max(0,tyreLeft-target),stop:mustStopLater,swap:needSwap,tyreStop:needTyres,service:pit,double:!!doubleMap[stintIndex],finish:!mustStopLater};
-     plan.push(row);
-     currentTime = row.end + (mustStopLater?pit:0);
-     finishTime = currentTime;
-     lapsLeft -= target;
-     totalPit += pit;
-     if(mustStopLater){ if(needSwap) swapCount++; currentDriver=pickNextDriver(pilots,currentDriver,stintIndex); tyreLeft=needTyres?tyreLife:Math.max(0,tyreLeft-target); }
-     stintIndex++;
-     if(currentTime>pitWindowClose && lapsLeft>0){ warnings.push('Fenêtre de pit réglementaire serrée ou dépassée en fin de course.'); }
-     if(stintIndex===1 && relayCap<=1){ warnings.push('Relais trop courts : vérifie consommation / pneus / durée de stint.'); break; }
-   }
+function calculate(){
+ updateSlotNames();updateCourseVisibility();fillDebriefPilots();plan=[];
+ const warnings=[];const avg=lapSeconds($('lap').value)+num('paceDelta');
+ if(avg<=0||num('fuel')<=0||num('tank')<=0||num('tyreLife')<=0){$('message').className='notice warn';$('message').textContent='Vérifie le chrono, la consommation, le réservoir et la durée de vie pneus : valeurs strictement positives requises.';return;}
+ const type=$('raceType').value, totalSeconds=num('hours')*3600;
+ let elapsed=type==='endurance'&&yes('emergency')?Math.max(0,num('elapsed')*60):Math.max(0,num('liveLaps')*avg);
+ let remainSeconds=num('liveMinutes')>0?num('liveMinutes')*60:Math.max(0,totalSeconds-elapsed);
+ let fpt=num('fuel')*(1+num('safetyFuel')/100), tank=num('tank'), reserve=num('reserve'), extra=num('fuelExtra');
+ let fuelCap=Math.max(0,Math.floor((tank-extra)/fpt-reserve)), tyreCap=Math.max(0,Math.floor(num('tyreLife')-num('trafficTyres')));
+ let stintCap=num('maxStint')>0?Math.max(0,Math.floor((num('maxStint')-num('stintMargin'))*60/avg)):9999;
+ let cap=Math.min(fuelCap,tyreCap,stintCap);
+ let lapsRemaining=Math.max(0,Math.ceil(remainSeconds/avg)+Number($('extraLap').value));
+ if(cap<1){$('message').className='notice warn';$('message').textContent='Aucun tour sûr possible avec la configuration actuelle. Augmente l’autonomie ou corrige les marges.';return;}
+ if(type==='sprint'&&num('hours')>2.5)warnings.push('Sprint au-delà de 2 h 30 : vérifier la catégorie de course.');
+ let pilots=getPilots(), driver=type==='sprint'?0:Math.min(pilots.length-1,parseInt($('currentPilot').value||'0',10)||0);
+ let isEmergency=type==='endurance'&&yes('emergency');
+ let firstFuel= isEmergency?num('remainFuel'):num('liveFuel')>0?num('liveFuel'):null;
+ let firstTyres=isEmergency?num('remainTyres'):num('liveTyres')>0?num('liveTyres'):null;
+ let firstCap=Math.min(cap,firstFuel!==null?Math.max(0,Math.floor(firstFuel/fpt-reserve)):cap,firstTyres!==null?Math.floor(firstTyres):cap);
+ let totalPit=0,swaps=0, cursor=elapsed, tyresAvailable=firstTyres??tyreCap;
+ let variant=$('mode').value, i=0;
+ while(lapsRemaining>0&&i<100){
+   let maxNow=i===0?firstCap:cap;
+   if(maxNow===0){warnings.push('Arrêt immédiat nécessaire : essence ou pneus insuffisants pour un tour.');maxNow=1;}
+   let target=Math.min(maxNow,lapsRemaining);
+   if(variant==='advance'&&lapsRemaining>target)target=Math.max(1,target-1);
+   if(variant==='quick'&&lapsRemaining>target)target=Math.max(1,target-2);
+   if(variant==='offset'&&i%2===1&&lapsRemaining>target)target=Math.max(1,target-1);
+   let stop=lapsRemaining>target, nextTyres=tyresAvailable-target;
+   let tyreStop=stop&&nextTyres<Math.min(tyreCap,Math.max(1,lapsRemaining-target));
+   let nextDriver=driver;
+   if(stop&&type==='endurance'){nextDriver=pickNextDriver(pilots,driver,i);}
+   let swap=stop&&type==='endurance'&&nextDriver!==driver;
+   let pit=stop?pitService({lane:true,fuel:true,tyre:tyreStop,swap,light:false,heavy:false})+num('pitExtra'):0;
+   if(isEmergency&&i===0&&stop)pit+=num('repair');
+   const start=cursor,end=start+target*avg;
+   let neededFuel=Math.min(tank,Math.max(0,(target+reserve)*fpt+extra));
+   if(i===0&&firstFuel!==null)neededFuel=firstFuel;
+   plan.push({index:i+1,driver:pilots[driver].name,start,end,tours:target,fuel:neededFuel,tyresLeft:Math.max(0,nextTyres),stop,swap,tyreStop,service:pit,double:!!doubleMap[i],finish:!stop});
+   cursor=end+pit;totalPit+=pit;swaps+=Number(swap);lapsRemaining-=target;
+   if(!stop)break;
+   driver=nextDriver;tyresAvailable=tyreStop?tyreCap:Math.max(0,nextTyres);i++;
  }
- let swapsNeeded=raceType==='sprint'?0:num('swaps'); if(raceType==='endurance' && swapCount<swapsNeeded) warnings.push(`Swaps prévus ${swapCount} / minimum requis ${swapsNeeded}.`);
- if(raceType==='endurance' && maxStintLaps!==9999 && maxStintLaps<relayCap) warnings.push(`Stint limité par règlement à ${maxStintLaps} tours utiles.`);
- if(isEmergency) warnings.push('Mode urgence actif : plan recalculé à partir de la situation en course.');
- $('heading').textContent=$('race').value||store.slotNames[currentSlot()]||`Course ${currentSlot()+1}`; $('context').textContent=`${$('track').value} · ${$('car').value} · ${$('sim').value} · ${num('hours')} h · ${$('start').value}`; $('strategyStatus').textContent=isEmergency?'PLAN D’URGENCE':(raceType==='sprint'?'MODE SPRINT':'STRATÉGIE PRÉVISIONNELLE');
- let finishClock=fmtClock(finishTime); $('stats').innerHTML=[['Tours carburant',fuelLaps,'Avec marge'],['Tours pneus',tyreLife,'Avant fin de vie'],['Relais utiles',relayCap,'Tours / relais max'],['Arrêts prévus',Math.max(0,plan.length-1),raceType==='sprint'?'Sprint':'Hors incident'],['Tours estimés',totalLaps,'Simulation'],['Swaps prévus',swapCount,raceType==='sprint'?'Non requis':`Minimum ${swapsNeeded}`],['Pits cumulés',fmtDur(totalPit),'Temps perdu'],['Fin de course',finishClock,'Heure prévisionnelle']].map(([a,b,c])=>`<div class="stat"><div class="name">${a}</div><div class="val">${esc(b)}</div><div class="hint">${esc(c)}</div></div>`).join('');
- $('message').className='notice'+(warnings.length?' warn':''); $('message').innerHTML=warnings.length?`⚠ ${esc(warnings.join(' · '))}`:`✅ Plan recalculé. Paramètres cohérents. Continuez avec rigueur, calme et efficacité.`;
- renderPlan(); updateProgress(); updateScenario(); updatePit(); previewDebrief(); saveCurrentState(); }
+ let totalPlanned=plan.reduce((s,p)=>s+p.tours,0), requiredSwaps=type==='endurance'?num('swaps'):0;
+ if(swaps<requiredSwaps)warnings.push(`Seulement ${swaps} swap(s) pour ${requiredSwaps} requis : plan non conforme.`);
+ let pitOpen=num('open')*60,pitClose=totalSeconds-num('close')*60;
+ if(type==='endurance')plan.filter(p=>p.stop).forEach(p=>{if(p.end<pitOpen||p.end>pitClose)warnings.push('Un arrêt tombe hors fenêtre réglementaire de pit.');});
+ if(cursor>elapsed+remainSeconds+avg)warnings.push('Temps de service non entièrement compatible avec le nombre de tours prévus : vérifier la fin de course.');
+ $('heading').textContent=$('race').value||store.slotNames[currentSlot()]||'Course VCE';
+ $('context').textContent=`${$('track').value} · ${$('car').value} · ${$('sim').value} · ${num('hours')} h · ${$('start').value}`;
+ $('strategyStatus').textContent=isEmergency?'PLAN D’URGENCE':type==='sprint'?'MODE SPRINT':'STRATÉGIE PRÉVISIONNELLE';
+ $('sprintNote').classList.toggle('hidden',type!=='sprint');
+ if(type==='sprint')$('sprintNote').textContent=plan.length===1?'Aucun arrêt prévu : plein conseillé '+plan[0].fuel.toFixed(1)+' L.':'Arrêt nécessaire : quantité de départ '+plan[0].fuel.toFixed(1)+' L.';
+ let stats=[['Autonomie carburant',fuelCap,'Tours sûrs'],['Longévité pneus',tyreCap,'Tours sûrs'],['Relais max',cap,'Limite combinée'],['Arrêts prévus',Math.max(0,plan.length-1),'Plan actuel'],['Tours ciblés',totalPlanned,'Durée restante'],['Swaps prévus',swaps,`Minimum ${requiredSwaps}`],['Temps total pits',fmtDur(totalPit),'Services configurés'],['Fin prévisionnelle',fmtClock(cursor),'Estimation']];
+ $('stats').innerHTML=stats.map(([a,b,c])=>`<div class="stat"><div class="name">${esc(a)}</div><div class="val">${esc(b)}</div><div class="hint">${esc(c)}</div></div>`).join('');
+ $('message').className='notice'+(warnings.length?' warn':'');$('message').textContent=warnings.length?'⚠ '+[...new Set(warnings)].join(' · '):'✅ Plan calculé. Contrôler le règlement, le carburant réel et les arrêts avant application.';
+ const alternatives=['normal','advance','quick','offset','late'].map(mode=>{
+ const delta=mode==='advance'?1:mode==='quick'?2:mode==='offset'?1:0;
+ const usable=Math.max(1,cap-delta),n=Math.max(0,Math.ceil(totalPlanned/usable)-1);
+ return {mode,n,estimate:n*(num('pitlane')+num('fuelTime')+num('pitExtra'))};
+ }).sort((a,b)=>a.estimate-b.estimate);
+ $('optimizer').innerHTML=`<b>Décision carburant / performance</b><br>Conso corrigée : <b>${fpt.toFixed(3)} L/tour</b> · Autonomie : <b>${fuelCap} tours</b> · Plein théorique requis pour ${totalPlanned} tours sans arrêt : <b>${((totalPlanned+reserve)*fpt+extra).toFixed(1)} L</b> (réservoir ${tank.toFixed(1)} L).<br>Plan actif : <b>${plan.length} relais / ${totalPit.toFixed(1)} s d’arrêts</b>. Mode potentiellement le moins coûteux en passages, selon les hypothèses simplifiées : <b>${alternatives[0].mode.toUpperCase()}</b>.<br><small>Un « pit rapide » n’est pas nécessairement gagnant : comparer le nombre d’arrêts et la durée de chaque service. Les contraintes sportives, sous-cuts, trafic et pneus peuvent inverser le résultat.</small>`;
+ renderPlan();updateProgress();updateScenario();updatePit();previewDebrief();saveCurrentState();
+}
 function renderPlan(){ $('stints').innerHTML=plan.map((p,i)=>`<tr class="${doneMap[i]?'done':''} ${!doneMap[i]&&i===0?'current':''}"><td>${p.index}</td><td><b>${esc(p.driver)}</b></td><td>${fmtClock(p.start)}</td><td>${fmtClock(p.end)}</td><td>${p.tours}</td><td>${p.fuel.toFixed(1)} L</td><td>${p.tyresLeft}</td><td>${p.stop?'OUI':'NON'}</td><td>${p.stop && p.swap?'OUI':'NON'}</td><td>${p.stop && p.tyreStop?'OUI':'NON'}</td><td>${p.stop?`<input type="checkbox" ${p.double?'checked':''} onchange="toggleDouble(${i},this.checked)">`:'—'}</td><td>${p.stop?fmtDur(p.service):'0 s'}</td><td><input type="checkbox" ${doneMap[i]?'checked':''} onchange="markDone(${i},this.checked)"></td></tr>`).join(''); }
 function toggleDouble(i,v){ doubleMap[i]=v; saveCurrentState(); calculate(); }
 function markDone(i,v){ doneMap[i]=v; saveCurrentState(); updateProgress(); }
@@ -381,14 +426,31 @@ function previewDebrief(){ let score=100; score -= (4-parseInt($('consistency').
  if($('damaged').value==='yes') advice.push('Voiture endommagée : comparer le temps perdu en piste avec le coût d’une réparation future.');
  if(!advice.length) advice.push('Très bon relais : garde cette base et continue sur le même niveau de rigueur.');
  $('debriefScore').innerHTML=`<div class="score">${score}/100</div><div class="tip"><b>Avis automatique</b><br>${advice.join('<br>')}</div>`; }
-function saveDebrief(){ previewDebrief(); let slot=getSlotData(); slot.debriefs=slot.debriefs||[]; slot.debriefs.unshift({date:new Date().toLocaleString('fr-FR'),pilot:$('debriefDriver').selectedOptions[0]?.textContent||'',stint:$('debriefStint').value,score:document.querySelector('#debriefScore .score')?.textContent||'',notes:$('notes').value,summary:document.querySelector('#debriefScore .tip')?.innerText||''}); setSlotData(slot); showDebrief(); }
+const originalDebriefPreview=previewDebrief;
+previewDebrief=function(){originalDebriefPreview();if(!$('debriefScore'))return;
+let v=[],avg=lapSeconds($('dbAverage').value),best=lapSeconds($('dbBest').value),target=lapSeconds($('lap').value);
+if(avg&&best&&avg-best>1)v.push(`Écart moyen/meilleur tour de ${(avg-best).toFixed(2)} s : travailler la constance plutôt que le tour rapide.`);
+if(avg&&target&&avg-target>0.6)v.push(`Rythme de relais ${(avg-target).toFixed(2)} s/tour plus lent que la cible : analyser trafic, pneus et dégâts.`);
+if(num('dbFuel')>num('fuel')*1.03)v.push(`Consommation réelle supérieure à la prévision : actualiser les L/tour de la stratégie avant le prochain relais.`);
+if(num('dbTyres')<=2)v.push('Pneus en fin de vie : privilégier une remise de gaz progressive et envisager un arrêt pneus plus tôt.');
+if(num('dbFade')>0.6)v.push('Perte de rythme en fin de relais : limiter l’attaque en début de stint et préserver le train de pneus.');
+if(num('dbContacts')>0)v.push('Contacts enregistrés : contrôler les dégâts avant de décider de la durée du prochain relais.');
+if($('dbTemp').value==='hotFront')v.push('Avant en surchauffe : éviter le sous-virage prolongé, freiner légèrement plus tôt et réduire le glissement.');
+if($('dbTemp').value==='hotRear')v.push('Arrière en surchauffe : lisser l’accélération et le transfert de charge.');
+if($('dbFatigue').value==='high')v.push('Fatigue élevée : envisager un changement de pilote plus tôt, même si un double stint était prévu.');
+if(num('dbTrafficLoss')>20)v.push('Fort coût du trafic : envisager un décalage de pit après vérification de la fenêtre et des écarts adverses.');
+if(num('dbBrakeConfidence')<3)v.push('Confiance au freinage à restaurer : commencer le prochain relais avec des points de freinage conservateurs.');
+let html=v.length?v.map(x=>'<div style="margin-top:7px">• '+esc(x)+'</div>').join(''):'Aucune anomalie majeure supplémentaire dans les mesures saisies.';
+$('debriefScore').insertAdjacentHTML('beforeend',`<div class="tip"><b>Analyse télémétrique déclarative</b>${html}<div class="small" style="margin-top:8px">Basée sur les valeurs saisies, sans connexion directe au simulateur.</div></div>`);
+};
+function saveDebrief(){ previewDebrief(); let slot=getSlotData(); slot.debriefs=slot.debriefs||[]; slot.debriefs.unshift({date:new Date().toLocaleString('fr-FR'),pilot:$('debriefDriver').selectedOptions[0]?.textContent||'',stint:$('debriefStint').value,score:document.querySelector('#debriefScore .score')?.textContent||'',notes:$('notes').value,summary:$('debriefScore')?.innerText||''}); setSlotData(slot); showDebrief(); }
 function showDebrief(){ let slot=getSlotData(); let list=slot.debriefs||[]; $('debriefResult').innerHTML=list.length?list.slice(0,20).map(d=>`<div class="tip"><b>${esc(d.pilot)} · relais ${esc(d.stint)} · ${esc(d.score)}</b><div class="small">${esc(d.date)}</div><div style="margin-top:6px">${esc(d.summary)}</div>${d.notes?`<div class="small" style="margin-top:6px">Notes : ${esc(d.notes)}</div>`:''}</div>`).join(''):'<div class="muted">Aucun débrief enregistré pour cette course.</div>'; }
 function clearDebrief(){ if(confirm('Effacer les débriefs de cette course ?')){ let slot=getSlotData(); slot.debriefs=[]; setSlotData(slot); showDebrief(); } }
 function exportCSV(){ if(!plan.length) calculate(); let rows=[['Relais','Pilote','Début','Fin','Tours','Essence départ L','Pneus restants','Arrêt','Swap','Pneus','Double','Durée pit','Validé'],...plan.map((p,i)=>[p.index,p.driver,fmtClock(p.start),fmtClock(p.end),p.tours,p.fuel.toFixed(1),p.tyresLeft,p.stop?'OUI':'NON',p.swap?'OUI':'NON',p.tyreStop?'OUI':'NON',p.double?'OUI':'NON',p.service.toFixed(1),doneMap[i]?'OUI':'NON'])]; let csv='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\r\n'); let a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'})); a.download='VCE_Race_Control_'+(store.slotNames[currentSlot()]||('Course_'+(currentSlot()+1))).replace(/[^\w-]+/g,'_')+'.csv'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000); }
 function initDefaultsIfEmpty(){ if(!store.slots[0]){ store.slots[0]={ inputs:{raceType:'endurance',race:'Endurance VCE',car:'LMP2',track:'Le Mans',sim:'LMU',hours:'4',start:'13:30:00',lap:'1:37.589',fuel:'3.1',tank:'75',reserve:'1',tyreLife:'23',safetyFuel:'3',trafficTyres:'0',nPilots:'4',driverMode:'rotation',allowDoubleFast:false,swaps:'2',maxStint:'0',stintMargin:'2',mode:'normal',open:'0',close:'0',pitlane:'41',fuelTime:'14.5',tyreTime:'20',swapTime:'20',lightTime:'20',heavyTime:'70',emergency:false,elapsed:'60',repair:'120',currentPilot:'0',remainFuel:'30',remainTyres:'10',pos:'2',goalPos:'1',gap:'40',remaining:'20',ownLap:'1:30.000',otherLap:'1:32.000',gapPit:'0',pitRisk:'5',pLane:false,pFuel:false,pTyre:false,pSwap:false,pLight:false,pHeavy:false,debriefStint:'1',damaged:'no',consistency:'3',apex:'3',limits:'0',brakes:'0',throttle:'0',trafficDebrief:'3',tyreState:'fresh',handling:'ok',focus:'3',comm:'3',notes:''}, pilotData:[{name:'PILOTE 1',lap:'1:37.589'},{name:'PILOTE 2',lap:'1:37.989'},{name:'PILOTE 3',lap:'1:38.389'},{name:'PILOTE 4',lap:'1:38.789'}], doneMap:{}, doubleMap:{}, debriefs:[]}; saveStore(); } }
 initDefaultsIfEmpty();
-function bind(){ document.addEventListener('input',e=>{ if(e.target.id==='nPilots'){ pilotList(); } if(e.target.id.startsWith('pilotName')||e.target.id.startsWith('pilotLap')){ fillDebriefPilots(); } if(['slotName1','slotName2','slotName3'].includes(e.target.id)){ updateSlotNames(); } if(['pLane','pFuel','pTyre','pSwap','pLight','pHeavy'].includes(e.target.id)) updatePit(); if(['pos','goalPos','gap','remaining','ownLap','otherLap','gapPit','pitRisk'].includes(e.target.id)) updateScenario(); if(['damaged','consistency','apex','limits','brakes','throttle','trafficDebrief','tyreState','handling','focus','comm','notes','debriefDriver','debriefStint'].includes(e.target.id)) previewDebrief(); if(['raceType'].includes(e.target.id)) updateCourseVisibility(); if(e.target.matches('input,select,textarea') && !['notes'].includes(e.target.id)){ saveCurrentState(); calculate(); }
- }); document.addEventListener('change',e=>{ if(e.target.matches('input,select,textarea')){ saveCurrentState(); if(['pLane','pFuel','pTyre','pSwap','pLight','pHeavy'].includes(e.target.id)) updatePit(); if(['damaged','consistency','apex','limits','brakes','throttle','trafficDebrief','tyreState','handling','focus','comm'].includes(e.target.id)) previewDebrief(); }}); }
+function bind(){ document.addEventListener('input',e=>{ if(e.target.id==='nPilots'){ pilotList(); } if(e.target.id.startsWith('pilotName')||e.target.id.startsWith('pilotLap')){ fillDebriefPilots(); } if(['slotName1','slotName2','slotName3'].includes(e.target.id)){ updateSlotNames(); } if(['pLane','pFuel','pTyre','pSwap','pLight','pHeavy'].includes(e.target.id)) updatePit(); if(['pos','goalPos','gap','remaining','ownLap','otherLap','gapPit','pitRisk'].includes(e.target.id)) updateScenario(); if(['dbTours','dbAverage','dbBest','dbFuel','dbTyres','dbContacts','dbTrafficLoss','dbFade','dbBrakeConfidence','dbTemp','dbFatigue','dbRecommendation','damaged','consistency','apex','limits','brakes','throttle','trafficDebrief','tyreState','handling','focus','comm','notes','debriefDriver','debriefStint'].includes(e.target.id)) previewDebrief(); if(['raceType'].includes(e.target.id)) updateCourseVisibility(); if(e.target.matches('input,select,textarea') && !['notes'].includes(e.target.id)){ saveCurrentState(); calculate(); }
+ }); document.addEventListener('change',e=>{ if(e.target.matches('input,select,textarea')){ saveCurrentState(); if(['pLane','pFuel','pTyre','pSwap','pLight','pHeavy'].includes(e.target.id)) updatePit(); if(['dbTours','dbAverage','dbBest','dbFuel','dbTyres','dbContacts','dbTrafficLoss','dbFade','dbBrakeConfidence','dbTemp','dbFatigue','dbRecommendation','damaged','consistency','apex','limits','brakes','throttle','trafficDebrief','tyreState','handling','focus','comm'].includes(e.target.id)) previewDebrief(); }}); }
 bind(); applyCurrentState();
 
 // --- Sauvegarde GitHub Contents API : GitHub Pages ne peut pas écrire sans autorisation.
@@ -435,5 +497,6 @@ function bootV5(){
 }
 bootV5();
 </script>
+<footer style="max-width:1680px;margin:25px auto 14px;text-align:center;font-size:11px;letter-spacing:.08em;color:#9aaac2;padding:14px">CE SITE APPARTIENT À LA PROPRIÉTÉ DE VIRTUAL CENTER EXPERIENCE ET EST PRIVÉ.</footer>
 </body>
 </html>
