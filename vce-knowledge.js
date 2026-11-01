@@ -100,7 +100,7 @@ answer(rec,results.slice(1).filter(x=>x.score>=Math.max(12,best.score*.43)).map(
 function setStatus(t,error=false){const el=document.getElementById('vceKbStatus');if(el){el.textContent=t;el.classList.toggle('error',error)}}
 window.VCEKnowledge={handle,rank,choose,category,get records(){return KB.records},get ready(){return KB.ready}};
 document.querySelectorAll('[data-vce-example]').forEach(b=>b.addEventListener('click',()=>{const text=b.dataset.vceExample;const input=document.getElementById('message');if(input)input.value=text;if(typeof window.sendMessage==='function')window.sendMessage(text)}));
-fetch('solutions_1000.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(data=>{
+fetch('../DATA/solutions_1000.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(data=>{
  if(!Array.isArray(data)||!data.length||!data.every(r=>r.id&&r.probleme&&r.solution&&r.exercice))throw Error('Format JSON incorrect');
  KB.records=data;KB.ready=true;KB.loading=false;setStatus(data.length.toLocaleString('fr-FR')+' solutions disponibles');
 }).catch(err=>{KB.loading=false;setStatus('Base non chargée — coach classique actif',true);console.warn('[VCE] Base solutions_1000.json non chargée :',err.message)});

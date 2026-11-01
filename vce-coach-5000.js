@@ -122,7 +122,7 @@ function handle(raw){const q=String(raw||'').trim();if(!q)return false;
  return true;
 }
 window.VCEKnowledge={handle,rank, classify, get ready(){return STATE.ready},get records(){return STATE.records},get busy(){return STATE.busy},getSummary(){return STATE.last?.detail?.summary||''}};
-fetch('solutions_5000.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(rows=>{
+fetch('../DATA/solutions_5000.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(rows=>{
  if(!Array.isArray(rows)||rows.length!==5000||new Set(rows.map(x=>x.id)).size!==5000||!rows.every(x=>x.id&&x.categorie&&x.domaine&&Array.isArray(x.hypotheses_et_solutions)))throw Error('Base de 5000 fiches invalide');
  STATE.records=rows;STATE.ready=true;STATE.loading=false;setStatus('5 000 situations prêtes · recherche contextuelle active');
 }).catch(err=>{STATE.loading=false;setStatus('Impossible de charger les 5 000 fiches. Ouvre le site via GitHub Pages ou un serveur HTTP.',true);console.error('[VCE5000]',err)});
