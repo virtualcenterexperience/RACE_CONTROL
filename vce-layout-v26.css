@@ -1,0 +1,64 @@
+/* VCE ESPORT V26 — layout unifié, correctifs de centrage et d'overflow.
+   Chaque règle est volontairement limitée aux pages V26 pour protéger les anciens moteurs. */
+:root{--v26-container:1320px;--v26-gutter:clamp(16px,3vw,32px);--v26-border:#355475;--v26-accent:#ff526c}
+html{scroll-padding-top:88px}
+body.v26-page{min-width:0;overflow-x:clip}
+body.v26-page *,body.v26-page *::before,body.v26-page *::after{box-sizing:border-box}
+body.v26-page :is(img,video,canvas,svg){max-width:100%}
+body.v26-page :is(input,select,textarea){max-width:100%}
+body.v26-page :is(.panel,.card,.grid,.layout,.main-panel,.v25-stage,.v25-wizard,.v25-choice,.v25-t-modes,.v23-coach-panel,.v23-pilot-panel){min-width:0}
+body.v26-page :is(button,a,input,select,textarea,summary):focus-visible{outline:2px solid #9ec9ff;outline-offset:3px}
+/* Accueil : le module d'accès devient réellement central au lieu d'être calé à droite. */
+body.v26-index .v25-shell{width:min(100%,1150px);max-width:1150px;margin-inline:auto;display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;align-items:start;gap:34px;padding:clamp(28px,4vw,58px) var(--v26-gutter) 55px}
+body.v26-index .v25-intro{position:static;width:100%;max-width:1020px;padding-top:0;text-align:center;display:flex;flex-direction:column;align-items:center}
+body.v26-index .v25-intro h1{font-size:clamp(66px,9vw,124px);margin:24px 0 22px;line-height:.9;max-width:100%;overflow-wrap:normal}
+body.v26-index .v25-intro>p{max-width:690px;margin-inline:auto}
+body.v26-index .v25-progress{width:min(100%,610px);max-width:610px;margin-top:27px;text-align:left}
+body.v26-index .v25-intro-foot{margin-top:24px;justify-content:center}
+body.v26-index .v25-wizard{width:min(100%,1010px);min-height:0;margin-inline:auto;box-shadow:0 26px 80px #0007}
+body.v26-index .v25-stage{padding:clamp(20px,3vw,34px) clamp(17px,3.5vw,42px) 16px}
+body.v26-index .v25-stage h2{font-size:clamp(48px,6vw,78px)}
+body.v26-index .v25-choices{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.8vw,18px)}
+body.v26-index .v25-choice{min-width:0;min-height:220px;padding:20px;overflow-wrap:anywhere}
+body.v26-index .v25-choice strong{font-size:clamp(23px,2.8vw,32px)}
+body.v26-index .v25-bottom{width:min(calc(100% - 2 * var(--v26-gutter)),1010px);max-width:1010px;margin-inline:auto;padding-inline:0}
+body.v26-index .v25-footer{width:min(100%,1150px)}
+/* Entraînements : même axe central pour le hub, les trois modes, le diagnostic et Coach IRL. */
+body.v26-entrainement :is(#v25-training-hub,#v25-toolbox,#vce-training-portal,#vce-training-dashboard,#v23-irl,#v20-training){width:min(100%,var(--v26-container));max-width:var(--v26-container);margin-left:auto!important;margin-right:auto!important}
+body.v26-entrainement>main{width:min(100%,calc(var(--v26-container) + 2 * var(--v26-gutter)));max-width:calc(var(--v26-container) + 2 * var(--v26-gutter));margin-inline:auto!important;padding-inline:var(--v26-gutter)}
+body.v26-entrainement :is(#coachMode,#soloMode){width:100%;max-width:100%;margin-left:auto!important;margin-right:auto!important}
+body.v26-entrainement #v25-training-hub{padding-inline:var(--v26-gutter)}
+body.v26-entrainement #v25-toolbox{padding-inline:var(--v26-gutter)}
+body.v26-entrainement #v23-irl{padding-inline:var(--v26-gutter)!important}
+body.v26-entrainement :is(.v25-t-heading,.v25-t-modes,.v20-kpi-grid,.v23-irl-layout,.v23-grid){min-width:0}
+body.v26-entrainement :is(.v25-t-heading,.v25-t-modes,.v25-t-person){width:100%}
+/* Dashboard et espaces complémentaires : conteneurs centrés. */
+body.v26-dashboard>main{width:min(100%,calc(var(--v26-container) + 2 * var(--v26-gutter)));max-width:calc(var(--v26-container) + 2 * var(--v26-gutter));margin-inline:auto;padding-inline:var(--v26-gutter)}
+body.v26-team #team-app{width:min(100%,var(--v26-container));max-width:var(--v26-container);margin-inline:auto;padding-inline:var(--v26-gutter)}
+body.v26-profil .v18-shell,body.v26-telemetrie .v18-shell{width:min(100%,var(--v26-container));max-width:var(--v26-container);margin-inline:auto}
+body.v26-strategie>.app{width:min(100%,1600px);margin-inline:auto;padding-inline:var(--v26-gutter)}
+body.v26-interactions>main{width:min(100%,var(--v26-container));max-width:var(--v26-container);margin-inline:auto;padding-inline:var(--v26-gutter)}
+body.v26-interactions>#v7-diagnostic{width:min(calc(100% - 2 * var(--v26-gutter)),var(--v26-container));max-width:var(--v26-container);margin-inline:auto}
+body.v26-ressources_voitures>main,body.v26-ressources_voitures>#cards{width:min(calc(100% - 2 * var(--v26-gutter)),var(--v26-container));max-width:var(--v26-container);margin-inline:auto}
+/* Éviter qu'une grille ou un contenu technique trop large décale la page. */
+body.v26-page :is(.v25-choices,.v25-t-modes,.metrics,.bottom-grid,.edit-form,.v20-kpi-grid)>*{min-width:0}
+body.v26-page pre{max-width:100%;overflow-x:auto}
+body.v26-page table{max-width:100%}
+body.v26-page :is(.v25-header,.v25-footer,.v25-bottom,.v25-wizard-top,.v25-wizard-footer){min-width:0}
+@media(max-width:760px){
+ body.v26-index .v25-shell{padding-inline:16px;gap:23px}
+ body.v26-index .v25-intro h1{font-size:clamp(57px,12vw,85px)}
+ body.v26-index .v25-choices{grid-template-columns:1fr}
+ body.v26-index .v25-choice{min-height:108px;display:grid;grid-template-columns:48px minmax(0,1fr);gap:4px 12px;padding:14px 16px}
+ body.v26-index .v25-choice-number,body.v26-index .v25-choice strong,body.v26-index .v25-choice small{grid-column:2}
+ body.v26-index .v25-choice-symbol{grid-column:1;grid-row:1/span 3}
+ body.v26-index .v25-intro-foot{gap:10px}
+ body.v26-index .v25-bottom{display:block}
+ body.v26-entrainement #v25-training-hub,body.v26-entrainement #v25-toolbox{padding-inline:16px}
+ body.v26-entrainement>main{padding-inline:16px}
+ body.v26-entrainement #v23-irl{padding-inline:16px!important}
+ body.v26-page :is(.v25-t-heading,.heading,.section-head){align-items:flex-start}
+ body.v26-page :is(.v25-t-heading,.heading,.section-head)>*{max-width:100%}
+}
+@media(max-width:420px){body.v26-index .v25-intro h1{font-size:clamp(51px,11.6vw,62px)}body.v26-index .v25-progress-step{gap:5px}body.v26-index .v25-progress-step b{font-size:8px}body.v26-index .v25-wizard-top,body.v26-index .v25-wizard-footer{padding-inline:14px}}
+@media(prefers-reduced-motion:reduce){body.v26-page *,body.v26-page *::before,body.v26-page *::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
