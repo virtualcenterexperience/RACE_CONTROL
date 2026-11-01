@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VCE ESPORT | Race Control V9</title>
+<title>VCE ESPORT | Race Control V19</title>
 <style>
 :root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#e9eef8;background:#0b1120}
 *{box-sizing:border-box}
@@ -98,7 +98,7 @@ aside .sect.closed .sectBody{display:none}
 </style><style id="vce-page-transition">body{animation:vceArrive .45s cubic-bezier(.2,.8,.2,1) both}@keyframes vceArrive{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){body{animation:none!important}}</style><script defer src="vce-transitions.js"></script><style id="vce-shared-nav-style">
 #vce-shared-nav{position:relative;z-index:9998;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:13px max(22px,calc((100vw - 1220px)/2));background:#080e17;border-bottom:1px solid #2b4054;font-family:Inter,"Segoe UI",Arial,sans-serif;color:#f4f7fa;min-height:72px}#vce-shared-nav *{box-sizing:border-box}#vce-shared-nav .vce-identity{display:flex;align-items:center;gap:11px;color:#f6f8fb;text-decoration:none;flex-shrink:0}#vce-shared-nav .vce-identity-mark{width:40px;height:40px;border:1px solid #aa4a58;border-radius:10px;display:grid;place-items:center;background:#341d29;font-size:15px;font-weight:1000;letter-spacing:-.12em;padding-right:2px}#vce-shared-nav .vce-identity-mark b{color:#f34754}#vce-shared-nav .vce-identity strong{display:block;font-size:12px;letter-spacing:.11em}#vce-shared-nav .vce-identity small{display:block;font-size:9px;color:#9bafc0;letter-spacing:.09em;margin-top:4px}#vce-shared-nav .vce-links{display:flex;align-items:center;gap:5px}#vce-shared-nav .vce-links a{color:#b5c4d1;text-decoration:none;padding:11px 13px;border-radius:8px;font-size:10px;letter-spacing:.07em;font-weight:850;transition:background .2s,color .2s}#vce-shared-nav .vce-links a:hover{background:#1d3041;color:#fff}#vce-shared-nav .vce-links a[aria-current="page"]{background:#e64052;color:white}#vce-shared-nav .vce-home{font-size:10px;font-weight:850;color:#9cc2e8;text-decoration:none;border:1px solid #354a68;border-radius:8px;padding:10px 12px;white-space:nowrap}#vce-shared-nav .vce-home:hover{background:#16273f}
 @media(max-width:950px){#vce-shared-nav{flex-wrap:wrap;padding:12px 18px}#vce-shared-nav .vce-links{order:3;width:100%;justify-content:space-between;overflow-x:auto}#vce-shared-nav .vce-links a{white-space:nowrap;padding:10px 8px}}@media(max-width:440px){#vce-shared-nav .vce-identity small{font-size:8px}#vce-shared-nav .vce-links a{font-size:9px;padding:10px 5px}}
-</style><script defer src="vce-shared-nav.js"></script><link rel="stylesheet" href="vce-v6-theme.css"><link rel="stylesheet" href="vce-v7.css"><script defer src="vce-v7.js"></script><link rel="stylesheet" href="vce-v8.css"><script defer src="vce-v8.js"></script><link rel="stylesheet" href="vce-v11.css"><script defer src="vce-v11-nav.js"></script><link rel="stylesheet" href="vce-chrono-global.css"><link rel="stylesheet" href="vce-theme-v17.css"><link rel="stylesheet" href="vce-v18.css"><script defer src="vce-v18-global.js"></script></head>
+</style><script defer src="vce-shared-nav.js"></script><link rel="stylesheet" href="vce-v6-theme.css"><link rel="stylesheet" href="vce-v7.css"><script defer src="vce-v7.js"></script><link rel="stylesheet" href="vce-v8.css"><script defer src="vce-v8.js"></script><link rel="stylesheet" href="vce-v11.css"><script defer src="vce-v11-nav.js"></script><link rel="stylesheet" href="vce-chrono-global.css"><link rel="stylesheet" href="vce-theme-v17.css"><link rel="stylesheet" href="vce-v18.css"><link rel="stylesheet" href="vce-strategy-v19.css"><script defer src="vce-v18-global.js"></script><link rel="stylesheet" href="vce-global-v19.css"><script defer src="vce-global-v19.js"></script></head>
 <body><nav style="display:flex;gap:10px;padding:12px 20px;background:#0b1526;border-bottom:1px solid #354660;position:relative;z-index:999"><a href="index.html" style="color:#fff;text-decoration:none;padding:9px 15px;background:#263b55;border-radius:8px;font-weight:700;font-size:12px">⌂ ACCUEIL</a><a href="strategie.html" style="color:#fff;text-decoration:none;padding:9px 15px;background:#c53f51;border-radius:8px;font-weight:700;font-size:12px">🏁 STRATÉGIE</a><a href="entrainement.html" style="color:#fff;text-decoration:none;padding:9px 15px;background:#173866;border-radius:8px;font-weight:700;font-size:12px">🏎️ ENTRAÎNEMENT</a></nav>
 <div class="app">
   <div class="top">
@@ -114,7 +114,7 @@ aside .sect.closed .sectBody{display:none}
     </div>
   </div>
 
-  <div class="panel pad" style="margin-bottom:14px"><h2>☁ SAUVEGARDES GITHUB · <span class="tiny">3 courses séparées dans /sauvegardes</span></h2><div class="cloudbar"><div class="field"><label>Propriétaire GitHub</label><input id="ghOwner" value="virtualcenterexperience" placeholder="pseudo-github"></div><div class="field"><label>Dépôt</label><input id="ghRepo" value="RACE_CONTROL"></div><div class="field"><label>Branche</label><input id="ghBranch" value="main"></div><div class="field"><label>Clé GitHub privée (mémorisée seulement dans cet onglet)</label><input id="ghToken" type="password" placeholder="github_pat_..."></div></div><div class="actions"><button class="btn blue" onclick="ghLoad(true)">↻ Charger COURSE active</button><button class="btn green" onclick="ghSave()">☁ Enregistrer COURSE active</button><button class="btn" onclick="ghCheckAccess()">🔐 Tester l’accès GitHub</button><button class="btn" onclick="ghClearToken()">Effacer la clé</button><label class="checkrow"><input type="checkbox" id="ghAuto" checked> Vérifier toutes les 30 s</label></div><div class="cloudStatus" id="ghStatus">Dépôt attendu : virtualcenterexperience/RACE_CONTROL · Pour une erreur 401, utilise « Tester l’accès GitHub » puis renouvelle la clé. Clé gardée dans la session du navigateur uniquement ; ne jamais la publier dans index.html.</div></div>
+  <section class="v19-backup" aria-label="Sauvegardes locales"><div><strong>◉ SAUVEGARDE LOCALE · 3 COURSES INDÉPENDANTES</strong><p>Les changements sont enregistrés sur cet appareil. Exporte un JSON pour sauvegarder ou transférer tes données.</p></div><div class="v19-backup-actions"><button class="btn blue" type="button" id="v19-export">↓ EXPORTER LES 3 COURSES</button><button class="btn" type="button" id="v19-import-btn">↑ IMPORTER JSON</button><input type="file" id="v19-import" accept="application/json,.json" hidden></div></section>
 <div class="control-launch"><div><b>🏁 VCE RACE CONTROL — CENTRE DE COMMANDE</b><div class="small">Réglages rapides, arrêts, contraintes et calculs synchronisés sur la course active</div></div><div class="actions"><button class="btn blue" onclick="openSetup('course')">⚙ CONFIGURATION</button><button class="btn" onclick="openSetup('pit')">🛞 PITSTOP</button><button class="btn green" onclick="calculate()">↻ RECALCULER</button></div></div>
 <div class="vce-dialog" id="setupDialog" role="dialog" aria-modal="true" aria-label="Configuration Race Control" onclick="if(event.target===this)closeSetup()"><div class="vce-dialog-main">
 <div class="vce-dialog-header"><div><h2>⚙ RACE CONTROL / CONFIGURATION</h2><div class="small">Modifie seulement les règles et données utiles. La stratégie se met à jour.</div></div><button class="btn" onclick="closeSetup()">✕ Fermer</button></div>
@@ -139,6 +139,8 @@ aside .sect.closed .sectBody{display:none}
 </div><div class="setup-preview" id="cfgTechPreview"></div></div>
 <div class="actions" style="margin-top:14px;justify-content:flex-end"><button class="btn green" onclick="closeSetup();calculate()">✓ APPLIQUER ET RECALCULER</button></div>
 </div></div>
+<section class="v19-command" aria-label="Cockpit stratégie"><div class="v19-command-title"><span class="v19-eyebrow">RACE ENGINEERING / V19</span><h2>STRATÉGIE DE COURSE <em>EN TEMPS RÉEL</em></h2><p>Un calcul clair, des alertes exploitables et une comparaison des options. Les hypothèses sont indicatives et doivent être vérifiées en piste.</p></div><div class="v19-command-buttons"><button class="btn red" type="button" id="v19-analyse">◉ ANALYSER LA COURSE</button><button class="btn blue" type="button" id="v19-scenarios">↔ COMPARER 3 OPTIONS</button><a class="btn" href="#v19-tools">↓ OUTILS RAPIDES</a></div></section>
+<section class="v19-engineering" id="v19-tools"><div class="v19-section-head"><div><span class="v19-eyebrow">01 / INGÉNIERIE</span><h2>CALCULATEURS & DÉCISIONS</h2></div><span class="v19-local-label">● 100 % LOCAL</span></div><div class="v19-metrics" id="v19-metrics" aria-live="polite"></div><div class="v19-tools-grid"><article class="v19-tool"><h3>⛽ Calculateur d'essence</h3><p>Quantité de carburant nécessaire pour un nombre de tours donné, avec réserve et marge.</p><div class="v19-fieldrow"><label>Tours visés<input id="v19-fuel-laps" type="number" min="1" max="500" value="20"></label><label>Essence au départ (L)<input id="v19-fuel-onboard" type="number" min="0" step="0.1" value="0"></label></div><div id="v19-fuel-output" class="v19-result"></div></article><article class="v19-tool"><h3>⚖ Scénarios comparés</h3><p>Simulation indicative à rythme constant. Compare une approche conservatrice, normale ou agressive.</p><div class="v19-compare" id="v19-compare"></div></article></div><div class="v19-alerts" id="v19-alerts" role="status"></div></section>
 <div class="layout">
     <aside class="panel">
       <div class="pad">
@@ -553,40 +555,6 @@ function bind(){ document.addEventListener('input',e=>{ if(e.target.id==='nPilot
  }); document.addEventListener('change',e=>{ if(e.target.matches('input,select,textarea')){ saveCurrentState(); if(['pLane','pFuel','pTyre','pSwap','pLight','pHeavy'].includes(e.target.id)) updatePit(); if(['dbTours','dbAverage','dbBest','dbFuel','dbTyres','dbContacts','dbTrafficLoss','dbFade','dbBrakeConfidence','dbTemp','dbFatigue','dbRecommendation','damaged','consistency','apex','limits','brakes','throttle','trafficDebrief','tyreState','handling','focus','comm'].includes(e.target.id)) previewDebrief(); }}); }
 bind(); applyCurrentState();
 
-// --- Sauvegarde GitHub Contents API : GitHub Pages ne peut pas écrire sans autorisation.
-const GH_FIELDS=['ghOwner','ghRepo','ghBranch'];
-let ghBusy=false,ghLast='',ghDirtyAt=0;
-function ghStatus(t){$('ghStatus').textContent=t;}
-function ghSettings(){return {owner:$('ghOwner').value.trim(),repo:$('ghRepo').value.trim(),branch:$('ghBranch').value.trim()||'main',token:$('ghToken').value.trim()};}
-function ghPath(){return 'sauvegardes/course'+(currentSlot()+1)+'.json';}
-function githubAuth(){const t=ghSettings().token;return t?{Authorization:'Bearer '+t}:{}}
-function utf8ToBase64(s){const bytes=new TextEncoder().encode(s);let b='';bytes.forEach(x=>b+=String.fromCharCode(x));return btoa(b);}
-function base64ToUtf8(s){let b=atob(s.replace(/\s/g,''));return new TextDecoder().decode(Uint8Array.from(b,c=>c.charCodeAt(0)));}
-function ghApi(){let s=ghSettings();return `https://api.github.com/repos/${encodeURIComponent(s.owner)}/${encodeURIComponent(s.repo)}/contents/${ghPath()}`;}
-async function ghRead(){let s=ghSettings();if(!s.owner||!s.repo)throw Error('Indique ton propriétaire et ton dépôt GitHub.');let r=await fetch(ghApi()+'?ref='+encodeURIComponent(s.branch)+'&t='+Date.now(),{headers:{Accept:'application/vnd.github+json',...githubAuth()},cache:'no-store'});if(r.status===401 && s.token){r=await fetch(ghApi()+'?ref='+encodeURIComponent(s.branch)+'&t='+Date.now(),{headers:{Accept:'application/vnd.github+json'},cache:'no-store'});if(r.ok)ghStatus('⚠ Jeton GitHub rejeté (401). Consultation publique possible mais sauvegarde impossible : renouvelle ton jeton.');}if(r.status===404)return {sha:null,data:null};if(!r.ok)throw Error('Lecture GitHub '+r.status+(r.status===401?' : jeton invalide ou expiré.':''));let v=await r.json();return {sha:v.sha,data:JSON.parse(base64ToUtf8(v.content))};}
-async function ghLoad(manual=false){if(ghBusy)return; if(!manual && document.activeElement?.matches('input,select,textarea'))return;if(!manual&&Date.now()-ghDirtyAt<15000)return;ghBusy=true;try{let result=await ghRead();if(!result.data){if(manual)ghStatus('Aucune sauvegarde pour cette course.');return;}let serialized=JSON.stringify(result.data);if(serialized===ghLast){if(manual)ghStatus('Déjà à jour.');return;}if(manual&& !confirm('Charger la sauvegarde GitHub de cette course et remplacer les modifications locales ?'))return;
- let d=result.data;if(d.version!==5||!d.slot)throw Error('Format de sauvegarde invalide');store.slots[currentSlot()]=d.slot;store.slotNames[currentSlot()]=d.name||store.slotNames[currentSlot()];saveStore();ghLast=serialized;applyCurrentState();loadExtras();ghStatus('✓ COURSE '+(currentSlot()+1)+' synchronisée depuis GitHub à '+new Date().toLocaleTimeString('fr-FR'));}catch(e){if(manual)ghStatus('⚠ '+e.message);else console.warn(e);}finally{ghBusy=false;}}
-async function ghSave(){if(ghBusy)return;let s=ghSettings();if(!s.token){ghStatus('Pour enregistrer sur GitHub, renseigne un jeton personnel avec droit Contents: Read and Write sur ce dépôt.');return;}ghBusy=true;try{saveCurrentState();saveExtras();let original=await ghRead();let payload={version:5,name:store.slotNames[currentSlot()],savedAt:new Date().toISOString(),slot:store.slots[currentSlot()]};let obj={message:`VCE Race Control · ${ghPath()} · ${new Date().toISOString()}`,content:utf8ToBase64(JSON.stringify(payload,null,2)),branch:s.branch};if(original.sha)obj.sha=original.sha;let r=await fetch(ghApi(),{method:'PUT',headers:{Accept:'application/vnd.github+json','Content-Type':'application/json',...githubAuth()},body:JSON.stringify(obj)});if(!r.ok){let body={};try{body=await r.json();}catch(e){}throw Error(r.status===401?'Écriture 401 : clé refusée par GitHub. Recrée un jeton et réessaie.':r.status===403?'Écriture 403 : jeton sans droit Contents Read and write, ou dépôt non autorisé.':r.status===404?'Écriture 404 : vérifie le dépôt, la branche et le jeton autorisé sur RACE_CONTROL.':r.status===409?'Écriture 409 : conflit de sauvegarde. Recharge la course avant de réessayer.':'Écriture GitHub '+r.status+' '+(body.message||''));}ghLast=JSON.stringify(payload);ghStatus('✓ COURSE '+(currentSlot()+1)+' enregistrée sur GitHub à '+new Date().toLocaleTimeString('fr-FR'));}catch(e){ghStatus('⚠ '+e.message);}finally{ghBusy=false;}}
-
-function ghClearToken(){
- $('ghToken').value='';try{sessionStorage.removeItem('vce_gh_token_session');}catch(e){}
- ghStatus('Clé effacée de cet onglet. Les lectures publiques restent possibles ; pour enregistrer, ajoute un jeton valide.');
-}
-async function ghCheckAccess(){
- const s=ghSettings();if(!s.owner||!s.repo){ghStatus('Renseigne propriétaire et dépôt.');return;}
- ghStatus('Vérification de la connexion GitHub…');
- try{
-  let repo=await fetch('https://api.github.com/repos/'+encodeURIComponent(s.owner)+'/'+encodeURIComponent(s.repo),{headers:{Accept:'application/vnd.github+json'},cache:'no-store'});
-  if(!repo.ok){ghStatus('⚠ Dépôt inaccessible (HTTP '+repo.status+'). Vérifie virtualcenterexperience / RACE_CONTROL.');return;}
-  if(!s.token){ghStatus('✓ Dépôt public accessible. ⚠ Aucune clé : l’enregistrement ne fonctionnera pas.');return;}
-  let res=await fetch('https://api.github.com/user',{headers:{Accept:'application/vnd.github+json',Authorization:'Bearer '+s.token},cache:'no-store'});
-  if(res.status===401){ghStatus('⚠ Jeton refusé (401). Efface la clé et crée un nouveau fine-grained token GitHub pour le dépôt RACE_CONTROL.');return;}
-  if(!res.ok){ghStatus('⚠ Vérification du jeton : HTTP '+res.status);return;}
-  let who=await res.json();let perm=await fetch('https://api.github.com/repos/'+encodeURIComponent(s.owner)+'/'+encodeURIComponent(s.repo),{headers:{Accept:'application/vnd.github+json',Authorization:'Bearer '+s.token},cache:'no-store'});
-  let data=perm.ok?await perm.json():{};
-  ghStatus('✓ Jeton accepté pour @'+who.login+'. '+(data.permissions?.push?'Écriture probablement autorisée sur le dépôt.':'Droit d’écriture non confirmé : vérifier Contents → Read and write.')+' Essaie « Enregistrer COURSE active ».');
- }catch(e){ghStatus('⚠ Erreur réseau : '+e.message);}
-}
 const EXTRA_FIELDS=['rxTraffic','rxWear','rxTrack','rxWeather','rxErrorChance','rxErrorCost','rxPenaltyChance','rxPenaltyCost','rxSC','rxSCGain','mapUrl','mapNotes','turnCount'];
 const DETAIL_Q=['Précision freinage','Stabilité freinage','Précision point de corde','Traction en sortie','Dosage accélérateur','Régularité des chronos','Trajectoires répétables','Gestion usure pneus','Température pneus','Économie carburant','Anticipation du trafic','Dépassements propres','Défense propre','Respect des drapeaux','Communication radio','Respect de la stratégie','Repères de freinage','Entrées de virage','Milieu de virage','Sorties de virage','Gestion sous-virage','Gestion survirage','Gestion des pressions','Gestion des freins','Limites de piste','Adaptation météo','Concentration','Gestion fatigue','Entrée et sortie des stands','Prise de décision'];
 let turns=[],detailScores=[];
@@ -621,18 +589,13 @@ function updateSetupCoach(){const issue=$('setupIssue')?.value||'underEntry', se
 }
 
 function bootV5(){
- // La clé reste uniquement dans sessionStorage, jamais dans le fichier HTML ou le dépôt.
- try {$('ghToken').value=sessionStorage.getItem('vce_gh_token_session')||'';} catch(e) {}
- $('ghToken').addEventListener('input',()=>{try{const t=$('ghToken').value.trim();if(t)sessionStorage.setItem('vce_gh_token_session',t);else sessionStorage.removeItem('vce_gh_token_session');}catch(e){}});
- try{let c=JSON.parse(localStorage.getItem('vce_gh_settings_v5')||'{}');for(let id of GH_FIELDS)$(id).value=c[id]||$(id).value;if($('ghOwner').value.toLowerCase()==='virtualcenterexperience'&&$('ghRepo').value.toLowerCase()==='vce-race-control')$('ghRepo').value='RACE_CONTROL';}catch(e){}for(let id of GH_FIELDS)$(id).addEventListener('change',()=>localStorage.setItem('vce_gh_settings_v5',JSON.stringify(Object.fromEntries(GH_FIELDS.map(k=>[k,$(k).value])))));
- $('turnRows').addEventListener('input',e=>{let el=e.target;if(el.dataset.t!==undefined){let i=+el.dataset.t;turns[i]=turns[i]||{};turns[i][el.dataset.k]=el.value;saveExtras();ghDirtyAt=Date.now();}});$('detailQuestions').addEventListener('change',e=>{if(e.target.dataset.d!==undefined){detailScores[+e.target.dataset.d]=+e.target.value;saveExtras();updateDetails();ghDirtyAt=Date.now();}});
- for(let id of EXTRA_FIELDS)$(id).addEventListener('input',()=>{saveExtras();ghDirtyAt=Date.now();if(id==='mapUrl'||id==='turnCount')renderTurns();});
- document.addEventListener('input',e=>{if(e.target.closest('.layout'))ghDirtyAt=Date.now();});
- let oldSwitch=switchCourse;switchCourse=function(i){saveExtras();oldSwitch(i);ghLast='';loadExtras();ghLoad(false);};
+ $('turnRows').addEventListener('input',e=>{let el=e.target;if(el.dataset.t!==undefined){let i=+el.dataset.t;turns[i]=turns[i]||{};turns[i][el.dataset.k]=el.value;saveExtras();}});
+ $('detailQuestions').addEventListener('change',e=>{if(e.target.dataset.d!==undefined){detailScores[+e.target.dataset.d]=+e.target.value;saveExtras();updateDetails();}});
+ for(let id of EXTRA_FIELDS)$(id).addEventListener('input',()=>{saveExtras();if(id==='mapUrl'||id==='turnCount')renderTurns();});
+ let oldSwitch=switchCourse;switchCourse=function(i){saveExtras();oldSwitch(i);loadExtras();};
  let oldSaveDebrief=saveDebrief;saveDebrief=function(){oldSaveDebrief();saveExtras();};
  let oldApply=applyCurrentState;applyCurrentState=function(){oldApply();loadExtras();};
- makeSidebarAccordions();updateSetupCoach();loadExtras();setInterval(()=>{if($('ghAuto').checked)ghLoad(false)},30000);
- if($('ghOwner').value)ghLoad(false);
+ makeSidebarAccordions();updateSetupCoach();loadExtras();
 }
 bootV5();
 
@@ -704,5 +667,5 @@ for(let id of ['cfgHours','cfgFuel','cfgTank','cfgTyre','cfgReserve','cfgSafety'
 
 </script>
 <footer style="max-width:1680px;margin:25px auto 14px;text-align:center;font-size:11px;letter-spacing:.08em;color:#9aaac2;padding:14px">CE SITE APPARTIENT À LA PROPRIÉTÉ DE VIRTUAL CENTER EXPERIENCE ET EST PRIVÉ.</footer>
-<script src="vce-chrono-global.js" defer></script></body>
+<script src="vce-chrono-global.js" defer></script><script src="vce-strategy-v19.js" defer></script></body>
 </html>
