@@ -1,7 +1,7 @@
 /* VCE V18 — Design system, consistent palette across all legacy modules */
 :root{--v18-red:#ed4059;--v18-blue:#378fff;--v18-white:#f7f9ff;--v18-bg:#080f1b;--v18-card:#111e32;--v18-line:#2a3d59;--v18-muted:#a8bad1;--green:#378fff!important;--accent:#378fff!important;--teal:#378fff!important;--vce-green:#378fff!important;--primary:#378fff!important;scroll-behavior:smooth}
 body{background-color:#080f1b!important;color:#f5f8ff!important}
-body::before{background-image:linear-gradient(90deg,rgba(5,10,22,.93),rgba(5,10,22,.83)),url('../ASSETS/vce-racing-background.webp')!important;background-size:cover!important;background-position:center!important;background-attachment:fixed!important;pointer-events:none}
+body::before{background-image:linear-gradient(90deg,rgba(5,10,22,.93),rgba(5,10,22,.83)),url('vce-racing-background.webp')!important;background-size:cover!important;background-position:center!important;background-attachment:fixed!important;pointer-events:none}
 ::selection{background:#e94362;color:white}button,a,input,select,textarea{accent-color:#378fff}a,button{transition:transform .22s cubic-bezier(.2,.8,.2,1),border-color .22s,background-color .22s,box-shadow .22s}button:hover:not(:disabled){filter:brightness(1.08)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #7cb6ff;outline-offset:3px}
 .team-btn.primary,.v5-action.primary,.v18-primary{background:linear-gradient(115deg,#e83d58,#ba2548)!important;color:#fff!important;border:1px solid #fb6982!important}
 .team-tabs button.active,.v18-tab.active{background:linear-gradient(115deg,#2b70ce,#17428d)!important;color:#fff!important;border-color:#65a5ff!important}

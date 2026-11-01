@@ -1,8 +1,8 @@
 /* VCE ESPORT V17 — Racing red / blue / white, all pages */
 :root{--v17-red:#f13b54;--v17-blue:#368dff;--v17-white:#f8fbff;--v17-dark:#090f1e;--v17-border:#3b5276;--team-green:#378fff!important;--team-line:#334867!important;--vcep-green:#368dff!important}
 html{scroll-behavior:smooth;scroll-padding-top:95px}
-body{position:relative;min-height:100vh;background:linear-gradient(90deg,rgba(6,10,22,.91),rgba(6,12,28,.84)),url('../ASSETS/vce-racing-background.webp') left center/cover fixed no-repeat!important;color:#f8fbff}
-body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(6,10,22,.87),rgba(6,12,28,.79)),url('../ASSETS/vce-racing-background.webp') left center/cover no-repeat;opacity:.95}
+body{position:relative;min-height:100vh;background:linear-gradient(90deg,rgba(6,10,22,.91),rgba(6,12,28,.84)),url('vce-racing-background.webp') left center/cover fixed no-repeat!important;color:#f8fbff}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(6,10,22,.87),rgba(6,12,28,.79)),url('vce-racing-background.webp') left center/cover no-repeat;opacity:.95}
 body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 80% 20%,rgba(47,123,255,.10),transparent 55%),linear-gradient(150deg,transparent 40%,rgba(239,42,72,.07))}
 body,button,input,select,textarea{accent-color:#f13b54}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #70b3ff;outline-offset:3px}
 .team-page .team-container,.v17-training-start,.v17-training-extras{position:relative;z-index:1}

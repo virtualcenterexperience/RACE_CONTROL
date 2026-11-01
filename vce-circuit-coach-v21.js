@@ -41,7 +41,7 @@ function renderLexicon(){const q=norm($('v21-lexicon-query')?.value);const out=$
  if(!count)out.textContent='Aucun terme correspondant.';
 }
 window.VCECircuitCoach={contextForQuestion,trackOf,findTurn,get circuits(){return circuits}};
-Promise.all([fetch('../DATA/vce-circuits-complets.json').then(r=>{if(!r.ok)throw Error('Circuits '+r.status);return r.json()}),fetch('../DATA/vce-lexique.json').then(r=>{if(!r.ok)throw Error('Lexique '+r.status);return r.json()})]).then(([data,lex])=>{
+Promise.all([fetch('vce-circuits-complets.json').then(r=>{if(!r.ok)throw Error('Circuits '+r.status);return r.json()}),fetch('vce-lexique.json').then(r=>{if(!r.ok)throw Error('Lexique '+r.status);return r.json()})]).then(([data,lex])=>{
  circuits=Object.values(data.continents||{}).flat();lexicon=lex.sections||[];
  const loaded=$('v21-loaded');if(loaded)loaded.textContent=`${circuits.length} circuits · ${circuits.reduce((n,c)=>n+(c.virages||[]).length,0)} virages · ${lexicon.reduce((n,s)=>n+s.terms.length,0)} mots-clés`;
  const input=$('track');if(input){const list=$('trackNames');if(list){const known=new Set([...list.options].map(o=>norm(o.value)));circuits.forEach(c=>{if(!known.has(norm(c.name)))list.add(new Option(c.name,c.name))})}input.addEventListener('input',update);input.addEventListener('change',update)}
