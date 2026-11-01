@@ -1,0 +1,130 @@
+/* VCE ESPORT / DESIGN SYSTEM V15 — Rouge course · Bleu électrique · Blanc.
+   Chargé en dernier pour unifier toutes les anciennes feuilles CSS. */
+:root{
+  color-scheme:dark;
+  --vce-red:#ef344e;--vce-red-bright:#ff526a;--vce-blue:#328cff;--vce-blue-light:#7bb6ff;
+  --vce-white:#f7faff;--vce-text:#e8f0ff;--vce-muted:#a7b7d0;
+  --vce-ink:#070b15;--vce-bg:#090e1b;--vce-surface:#111b2d;--vce-surface-2:#17243a;
+  --vce-border:#2d405c;--vce-radius:18px;
+  --bg:#090e1b!important;--surface:#121b2d!important;--surface2:#18263a!important;
+  --line:#2d405c!important;--muted:#a7b7d0!important;--white:#f7faff!important;
+  --red:#ef344e!important;--teal:#328cff!important;
+  --v5-red:#ef344e!important;--v5-green:#328cff!important;
+  --v5-bg:#090e1b!important;--v5-panel:#121b2d!important;--v5-line:#2d405c!important;
+  --vcep-red:#ef344e!important;--vcep-green:#328cff!important;
+  --vcep-bg:#090e1b!important;--vcep-panel:#121b2d!important;--vcep-line:#2d405c!important;--vcep-muted:#a7b7d0!important;
+  --v10-green:#328cff!important;--v10-muted:#a7b7d0!important;
+  --v11-green:#328cff!important;--v11-dark:#090e1b!important;--v11-panel:#121b2d!important;--v11-border:#2d405c!important;
+  --team-bg:#090e1b;--team-card:#121b2d;--team-card2:#17243a;--team-line:#304663;
+  --team-text:#f7faff;--team-muted:#acbcd3;--team-green:#328cff;
+  accent-color:#328cff;
+}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body,body.team-page{background:#090e1b!important;color:#f1f5ff!important;font-family:Inter,'Segoe UI',system-ui,sans-serif!important;min-width:320px;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+ radial-gradient(ellipse 58% 48% at 100% 0%,rgba(41,110,237,.16),transparent 75%),
+ radial-gradient(ellipse 38% 48% at -12% 78%,rgba(237,45,76,.12),transparent 76%),
+ linear-gradient(rgba(111,151,207,.035) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(111,151,207,.035) 1px,transparent 1px);
+ background-size:auto,auto,70px 70px,70px 70px;opacity:1}
+.ambient{background:radial-gradient(ellipse 52% 40% at 86% 2%,#18447b34,transparent 76%),radial-gradient(ellipse 45% 35% at 6% 85%,#8a1d3030,transparent 76%),#090e1b!important}
+::selection{background:#df304f;color:#fff}
+::-webkit-scrollbar{width:10px;height:9px}::-webkit-scrollbar-track{background:#0a101c}::-webkit-scrollbar-thumb{background:#324d71;border-radius:20px;border:2px solid #0a101c}::-webkit-scrollbar-thumb:hover{background:#4585d2}
+:focus-visible{outline:2px solid #7bb6ff!important;outline-offset:3px!important}
+/* Navigation */
+#vce-unified-nav{background:rgba(9,14,27,.94)!important;border-bottom:1px solid #34445e!important;box-shadow:0 10px 40px #02071299!important;backdrop-filter:blur(22px)}
+#vce-unified-nav::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 3%,#ed334d 25%,#427df1 75%,transparent 97%);opacity:.86}
+#vce-unified-nav .v11-brand-mark{background:linear-gradient(135deg,#61213a,#16345d)!important;border:1px solid #6278a6!important;color:#fff!important;box-shadow:0 0 22px #ed344c25}
+#vce-unified-nav .v11-brand-label small{color:#9caecb!important}
+#vce-unified-nav .v11-nav-links a{color:#c2cde0!important;transition:color .22s,background .22s,transform .22s!important}
+#vce-unified-nav .v11-nav-links a:hover{color:#fff!important;background:#233e66!important;transform:translateY(-1px)}
+#vce-unified-nav .v11-nav-links a[aria-current=page]{color:#fff!important;background:linear-gradient(115deg,#9b273f,#293e74)!important;box-shadow:inset 0 0 0 1px #fa557366,0 5px 17px #e9364c22}
+#vce-unified-nav .v11-account-dot{background:#ef344e!important;box-shadow:0 0 14px #ff486a88!important}
+#vce-unified-nav .v11-logout,#vce-unified-nav .v11-nav-toggle{background:#18263c!important;border-color:#3a5577!important;color:#f3f6ff!important}
+#vce-unified-nav .v121-avatar-control{border-color:#ee3955!important;background:#1b2b47!important}
+#vce-unified-nav .v121-camera{background:#338cff!important;border-color:#091321!important;color:#fff!important}
+#vce-unified-nav .v11-nav-toggle span{background:#dceaff!important}
+/* Hero & feature sections */
+.v5-gate,.v5-dashboard,.v10-ranking,.v10-structure,.v10-dialog,.v14-panel,.team-hero,.team-panel,.team-box,.v5-box,.v5-metric,.v5-entry-detail,.v5-mode-card,.vcep-card,.panel,.tool,.main-card,.mini-card,.spa-shell,.structure,.card,.v7-diagnostic .v7-card,.v7-slider,.v7-step{
+  background:linear-gradient(146deg,#18243a 0%,#111b2d 52%,#0d1424 100%)!important;
+  border:1px solid #2e4262!important;
+  box-shadow:0 15px 40px #02071352!important;
+  border-radius:var(--vce-radius)!important
+}
+.v5-gate,.team-hero,.v14-home .v14-panel:first-child,#vce-training-portal .vcep-hero{
+ background:radial-gradient(ellipse 50% 75% at 96% 0%,#245ba73d,transparent 80%),radial-gradient(ellipse 55% 80% at -8% 100%,#a8243b30,transparent 75%),linear-gradient(135deg,#1b2941,#0c1323)!important;
+ border-color:#395477!important;position:relative
+}
+.team-hero{overflow:hidden}.team-hero::before{content:'';position:absolute;top:0;left:0;width:44%;height:3px;background:linear-gradient(90deg,#ef344e,#328cff,transparent)}
+.v14-panel h2,.team-hero h1,.v5-gate h1,.v10-gate h1,.v10-dashboard-heading h1{color:#fff!important;letter-spacing:-.045em}
+.v14-panel p,.team-hero p,.team-box p{color:#b5c5db!important}
+.v14-kicker,.v5-kicker,.vcep-kicker,.v10-eyebrow,.eyebrow,.kicker,.tool-kicker,.team-kicker{color:#7db8ff!important}
+.v14-panel h2 em,.v5-gate h1 em,.v5-dash-head h2 em,.v10-gate h1 em,.v10-dashboard-heading h1 em,.hero h1 span,.vcep-hero h2 span,.team-hero h1 span{color:#ff536b!important}
+.v14-tag,.v10-pill-group span,.team-chips span{background:#172e4e!important;border-color:#365e91!important;color:#a8d1ff!important}
+.v14-card,.v10-role,.team-race-card,.team-lineup-card,.team-hero-count,.v5-history-row,.v5-review,.v5-plan,.v5-upcoming,.v5-stopwatch,.v14-stat,.team-lineup-members div{
+ background:linear-gradient(135deg,#18283f,#101b2c)!important;border:1px solid #334a68!important;color:#f2f6ff!important;
+ box-shadow:0 8px 25px #03091525!important
+}
+.v14-card,.v10-role,.v5-mode-card,.team-race-card,.vcep-card,.tool,.main-card,.mini-card{transition:transform .28s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s,background .25s!important}
+.v14-card:hover,.v10-role:hover,.v5-mode-card:hover,.vcep-card:hover,.tool:hover,.main-card:hover,.mini-card:hover,.team-race-card:hover{transform:translateY(-4px)!important;border-color:#4e93f3!important;box-shadow:0 20px 42px #0209148c,0 0 0 1px #3a84ed30!important}
+.v14-card.is-current,.v5-mode-card[aria-pressed=true]{border-color:#f05b71!important;background:linear-gradient(130deg,#3c233b,#172a4a)!important}
+.v14-card small,.v14-stat small,.v10-role small{color:#b0c3dd!important}
+.v14-card em,.v14-stat b,.v14-page-sub,.v14-card .v14-symbol,.v14-steps b,.v10-role-foot{color:#74b2ff!important}
+.v14-stat b:nth-child(1){font-variant-numeric:tabular-nums}
+.v14-steps span{background:#101d31!important;border-color:#345273!important;color:#c9d7eb!important}
+.v11-avatar-area{background:linear-gradient(120deg,#1a2d48,#101a2b)!important;border-color:#3d5576!important}
+.v11-avatar-ring{background:#1d3658!important;border-color:#e83b57!important;color:#fff!important}
+.v11-avatar-change{background:#263d5d!important;border-color:#4772a5!important;color:#fff!important}
+/* Controls, pills and tabs */
+.v5-action.primary,.v5-action.green,.v10-button,.v14-action:not(.secondary),.team-btn.primary,.btn.primary,.button.red,#vce-training-portal .vcep-button.primary,.v13-diag-controls button{
+ background:linear-gradient(115deg,#f04a61,#d62645)!important;border:1px solid #ff7182!important;color:#fff!important;
+ box-shadow:0 8px 25px #dc25452d!important;font-weight:850!important
+}
+.v5-action.primary:hover,.v10-button:hover,.v14-action:not(.secondary):hover,.team-btn.primary:hover,.btn.primary:hover,.v13-diag-controls button:hover{background:linear-gradient(115deg,#ff5e74,#ee354f)!important;box-shadow:0 10px 30px #ed34534b!important}
+.v14-action.secondary,.team-btn.ghost,.team-race-actions button,.v10-ghost,.v10-close,.v5-action:not(.primary):not(.green),.vcep-button:not(.primary){background:#1c3050!important;border:1px solid #42648c!important;color:#dceaff!important}
+.v14-action.secondary:hover,.team-btn.ghost:hover,.team-race-actions button:hover{background:#274774!important;border-color:#649ee9!important}
+.team-tabs{background:#0d192c!important;border-color:#324b6c!important;gap:5px!important}
+.team-tabs button{color:#c4d1e6!important;transition:background .22s,color .22s,transform .22s!important}
+.team-tabs button:hover{color:#fff!important;background:#233b5f!important}
+.team-tabs button.active{background:linear-gradient(115deg,#dc304c,#3453a3)!important;color:#fff!important;box-shadow:0 5px 18px #d42d492b}
+.team-race-card.today{border-color:#ee5068!important}.team-race-date{background:#203757!important}.team-race-date strong{color:#80b9ff!important}
+.team-race-tag,.team-section-heading span,.team-countdown,.team-lineup-members span{color:#82baff!important}
+.team-alert{background:#172e4e!important;border-color:#4383d3!important;color:#e5f1ff!important}
+.v13-diagnostic{background:linear-gradient(120deg,#172b47,#0e192a)!important;border-color:#385a87!important;color:#f4f8ff!important}.v13-chevron,.v13-diag-open{color:#7cb8ff!important}.v13-diag-result{background:#111f34!important;border-color:#355476!important}.v13-diag-result h4{color:#9acaff!important}
+/* Form inputs and charts */
+input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea,.team-box input:not([type=checkbox]),.team-box select,.team-box textarea,.team-toolbar select,.team-overlay-controls select{
+ background:#0e1a2c!important;border:1px solid #395475!important;color:#f3f7ff!important;border-radius:10px!important
+}
+input::placeholder,textarea::placeholder{color:#8499b7!important}
+input:focus,select:focus,textarea:focus{border-color:#62a5ff!important;box-shadow:0 0 0 3px #348aff20!important}
+input[type=range],input[type=checkbox],input[type=radio]{accent-color:#ef344e!important}
+.v5-progress i{background:linear-gradient(90deg,#ec334f,#378cff)!important;box-shadow:0 0 15px #338cff55!important}
+.v5-ranking-row strong,.v10-rank-row strong,.v5-metric:nth-child(3) strong{color:#7bb6ff!important}
+.v5-mode-icon,.v5-avatar,.vcep-icon,.tool-icon,.v10-role-symbol{color:#8fc4ff!important;background:#1c365a!important;border-color:#426a9d!important}
+.spa-shell{background:radial-gradient(ellipse at 50% 50%,#1d488340,transparent),#101b2b!important}.spa-track-light{stroke:#56a3ff!important;filter:drop-shadow(0 0 8px #4b8cff)!important}.spa-pin{fill:#f04561!important}.spa-status{background:#1a3455!important;border-color:#426a9a!important;color:#a9d2ff!important}
+.team-overlay-stage{background:#080f1d!important;border-color:#365378!important}
+.team-footer{color:#91a6c4!important}
+/* Page transition: diagonal racing stripe, logo, progress line */
+#vce-nav-curtain{background:linear-gradient(120deg,#080e1b 0%,#132849 54%,#1c1830 100%)!important;isolation:isolate}
+#vce-nav-curtain::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(116deg,transparent 0 110px,#ff46601b 110px 112px,transparent 112px 220px);transform:translateX(-12%);animation:v15-stripes 4s linear infinite}
+#vce-nav-curtain::after{content:'';position:absolute;left:0;bottom:0;height:4px;width:100%;background:linear-gradient(90deg,#ee3450,#3c8fff,#fff);transform-origin:left;animation:v15-curtain-line .65s ease-out both}
+.vce-curtain-logo{position:relative;z-index:1;color:#fff!important;font-size:clamp(26px,5vw,48px)!important;text-shadow:0 0 36px #2779ef40}.vce-curtain-logo span{color:#ff526a!important}.vce-curtain-logo small{color:#b9cce7!important}.vce-curtain-logo i{background:linear-gradient(90deg,transparent,#ed344f,#3a8cff,transparent)!important}
+@keyframes v15-stripes{to{transform:translateX(12%)}}@keyframes v15-curtain-line{from{transform:scaleX(.1)}to{transform:scaleX(1)}}
+/* Loading / scrolling / reveal */
+#v15-scroll-progress{position:fixed;top:0;left:0;z-index:11000;height:3px;width:100%;background:linear-gradient(90deg,#f03651,#408eff 70%,#e7f2ff);transform:scaleX(0);transform-origin:left;pointer-events:none;transition:transform .12s linear;box-shadow:0 0 10px #3d8eff60}
+#v15-to-top{position:fixed;right:22px;bottom:24px;z-index:9000;width:44px;height:44px;display:grid;place-items:center;background:#1a3151;color:#fff;border:1px solid #547eb1;border-radius:14px;box-shadow:0 12px 30px #02071288;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(15px);transition:opacity .25s,visibility .25s,transform .25s,background .25s}
+#v15-to-top.v15-visible{opacity:1;visibility:visible;transform:translateY(0)}#v15-to-top:hover{background:#d92d4a;border-color:#f37c90;transform:translateY(-3px)}
+body.v15-loaded .v15-reveal:not(.v15-visible){opacity:0;transform:translate3d(0,24px,0)}
+body.v15-loaded .v15-reveal{transition:opacity .62s cubic-bezier(.2,.8,.2,1),transform .62s cubic-bezier(.2,.8,.2,1);will-change:opacity,transform}
+body.v15-loaded .v15-reveal.v15-visible{opacity:1;transform:translate3d(0,0,0)}
+body.v15-entering main,body.v15-entering .v10-wrap,body.v15-entering .wrap{animation:v15-enter .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes v15-enter{from{opacity:.5;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:850px){.team-container{padding-top:34px!important}}
+@media(max-width:820px){#vce-unified-nav .v11-nav-links{background:#101e32!important;border-top-color:#334f72!important}#vce-unified-nav .v11-nav-links a{width:100%}.team-container{padding-top:25px!important}}
+@media(max-width:600px){.v14-shell{padding:0 14px!important}.team-hero{padding:23px!important}.team-tabs{overflow-x:auto;max-width:100%;flex-wrap:nowrap}.team-tabs button{flex:0 0 auto;white-space:nowrap}.team-toolbar{align-items:stretch}#v15-to-top{right:14px;bottom:14px;width:40px;height:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}body.v15-loaded .v15-reveal{opacity:1!important;transform:none!important}#vce-nav-curtain::before{animation:none!important}}
+/* Standalone transition support for TEAM (which does not import vce-v8.css). */
+#vce-nav-curtain{position:fixed!important;inset:0!important;z-index:2147483647!important;display:grid!important;place-items:center!important;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .26s ease,visibility .26s ease!important}
+html.vce-navigating #vce-nav-curtain{opacity:1!important;visibility:visible!important;pointer-events:auto!important}
+.vce-curtain-logo{font-weight:950;letter-spacing:.18em;text-align:center}.vce-curtain-logo small{display:block;font-size:10px;letter-spacing:.22em;margin-top:12px}.vce-curtain-logo i{display:block;height:3px;width:100%;border-radius:6px;margin-top:20px;animation:v15-load 1s ease-in-out infinite alternate}
+@keyframes v15-load{from{transform:scaleX(.18)}to{transform:scaleX(1)}}
