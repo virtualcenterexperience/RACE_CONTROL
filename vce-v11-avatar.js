@@ -18,6 +18,6 @@ reset.onclick=()=>{localStorage.removeItem('vce_photo_'+p.id);render()};
 discordArea.append(discordHelp,urlInput,apply,reset,discordStatus);
 box.append(ring,meta,btn,input,discord,discordArea,status);
 }
-function init(){const dashboard=$('v10-dashboard');if(!dashboard)return;render();new MutationObserver(render).observe(dashboard,{attributes:true,attributeFilter:['hidden']});window.addEventListener('storage',render)}
+function init(){const dashboard=$('v10-dashboard');if(!dashboard)return;render();new MutationObserver(render).observe(dashboard,{attributes:true,attributeFilter:['hidden']});window.addEventListener('storage',render);window.addEventListener('vce:avatar-updated',render)}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
