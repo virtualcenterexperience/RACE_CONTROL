@@ -2,7 +2,12 @@
 (()=>{'use strict';const $=id=>document.getElementById(id),page=location.pathname.split('/').pop()||'index.html';
 const safe=(key,def)=>{try{return JSON.parse(localStorage.getItem(key)||'null')??def}catch{return def}};
 const el=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e};
-function home(){const board=document.querySelector('.v6-public-board');if(!board)return;const button=el('button','vc-ranking-toggle','VOIR LE CLASSEMENT COMPLET ↓');button.type='button';button.setAttribute('aria-expanded','false');button.addEventListener('click',()=>{const expanded=board.classList.toggle('vc-rank-expanded');button.textContent=expanded?'RÉDUIRE AU TOP 5 ↑':'VOIR LE CLASSEMENT COMPLET ↓';button.setAttribute('aria-expanded',String(expanded))});board.append(button)}
+function home(){
+ const root=document.getElementById('vce-profiles');if(!root)return;
+ const update=()=>{const boards=[...root.querySelectorAll('.v5-box')].filter(b=>/CLASSEMENT (PUBLIC )?DES PILOTES/i.test(b.querySelector('h3')?.textContent||''));
+  for(const board of boards){if(board.querySelector('.vc-ranking-toggle'))continue;board.classList.add('vc-rank-board');const button=el('button','vc-ranking-toggle','VOIR LE CLASSEMENT COMPLET ↓');button.type='button';button.setAttribute('aria-expanded','false');button.addEventListener('click',()=>{const expanded=board.classList.toggle('vc-rank-expanded');button.textContent=expanded?'RÉDUIRE AU TOP 5 ↑':'VOIR LE CLASSEMENT COMPLET ↓';button.setAttribute('aria-expanded',String(expanded))});board.append(button)}
+ };update();let queued=false;new MutationObserver(()=>{if(queued)return;queued=true;queueMicrotask(()=>{queued=false;update()})}).observe(root,{childList:true,subtree:true});
+}
 function team(){const sidebar=document.querySelector('.team-sidebar'),content=document.querySelector('.team-content');if(!sidebar||!content)return;const drawer=el('details','vc-staff-drawer');const summary=el('summary','','GESTION STAFF, ANNONCES ET COMMUNICATION');drawer.append(summary);content.after(drawer);drawer.append(sidebar);const tabs=document.querySelectorAll('.team-tabs [data-tab]');tabs.forEach(b=>{if(b.dataset.tab==='overlay')b.textContent='▣ AFFICHES';if(b.dataset.tab==='results')b.textContent='🏆 RÉSULTATS'});
 // Keep staff form nodes and their IDs intact for existing handlers.
 }

@@ -1,0 +1,31 @@
+/* VCE ESPORT V32 - single navigation, clean hierarchy, no changes to stored data */
+:root{--vc32-bg:#0b1423;--vc32-blue:#438ff0;--vc32-red:#eb5266;--vc32-border:#33485f}
+/* Hide legacy headers only on pages with the unified V11 menu. */
+body.v32-unified-navigation #vce-shared-nav,body.v32-unified-navigation .wrap > header.top,body.v32-unified-navigation > header:not(#vce-unified-nav),body.v32-unified-navigation > .top{display:none!important}
+body.v32-unified-navigation #vce-unified-nav{display:block!important;position:relative;z-index:1000;width:100%;border-bottom:1px solid #33475d;background:#0c1522;box-shadow:0 10px 30px #0003}
+body.v32-unified-navigation #vce-unified-nav[hidden]{display:block!important}
+body.v32-unified-navigation .v11-nav-inner{max-width:1390px;margin:0 auto;gap:clamp(8px,1.4vw,22px);padding:0 20px}
+body.v32-unified-navigation .v11-nav-links{gap:2px;min-width:0}
+body.v32-unified-navigation .v11-nav-links a{font-size:clamp(9px,.7vw,11px);padding:10px clamp(6px,.65vw,11px);white-space:nowrap}
+body.v32-unified-navigation .v11-account{gap:8px;min-width:0}
+body.v32-unified-navigation .v32-change-profile{background:#1c3047;color:#b9d6f7;border:1px solid #385778;border-radius:7px;padding:8px 9px;font-size:10px;font-weight:800;cursor:pointer;white-space:nowrap}
+body.v32-unified-navigation .v32-change-profile:hover{background:#2b4a6d;color:white}
+body.v32-unified-navigation .v32-change-profile[hidden]{display:none!important}
+body.v32-unified-navigation .v11-role-name{max-width:145px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+body.vce-refresh .v18-home-cta,body.vce-refresh a[href="dashboard.html"].v18-home-cta{display:none!important}
+/* Home: hero and actions stay focused, no giant duplicate leaderboard */
+body.vce-refresh .wrap{max-width:1350px}
+body.vce-refresh .hero{gap:clamp(24px,4vw,65px)}
+body.vce-refresh .vc-rank-board:not(.vc-rank-expanded) .v5-ranking-row:nth-of-type(n+7){display:none!important}
+body.vce-refresh .vc-rank-board.vc-rank-expanded .v5-ranking-row{display:grid!important}
+body.vce-refresh .vc-ranking-toggle{display:block;margin:14px auto 3px;padding:11px 16px;background:#1b2e47;border:1px solid #42668e;color:#e2efff;border-radius:8px;font-weight:700;cursor:pointer}
+/* Team: keep only the functional tab bar, hide redundant onboarding cards */
+body.vce-refresh.team-page .v14-team-intro{display:none!important}
+body.vce-refresh.team-page .team-tabs{position:relative;z-index:3}
+body.vce-refresh.team-page .team-content{min-width:0}
+body.vce-refresh.team-page .team-main{min-width:0}
+/* Cars and training responsive sizing */
+body.vce-refresh #v20-training{max-width:1320px;margin-inline:auto}
+body.vce-refresh :is(.team-container,.v20-training,.vc-page){min-width:0}
+@media(max-width:1120px){body.v32-unified-navigation .v11-nav-inner{flex-wrap:wrap;min-height:64px}body.v32-unified-navigation .v11-nav-links{order:3;flex-basis:100%;justify-content:center;overflow-x:auto}}
+@media(max-width:700px){body.v32-unified-navigation .v11-nav-inner{padding:10px 15px}body.v32-unified-navigation .v11-nav-links{justify-content:flex-start}body.v32-unified-navigation .v11-account{margin-left:auto}body.v32-unified-navigation .v32-change-profile{font-size:9px;padding:7px}body.vce-refresh .hero{grid-template-columns:1fr!important}body.vce-refresh .hero h1{font-size:clamp(37px,9vw,64px)!important}}
