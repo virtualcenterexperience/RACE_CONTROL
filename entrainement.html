@@ -126,8 +126,8 @@ header .head{max-width:1320px;margin:auto}header .nav{display:flex;align-items:c
     }
   });
 })();
-</script><link rel="stylesheet" href="vce-chrono-global.css"><link rel="stylesheet" href="vce-ux-v14.css"><script defer src="vce-ux-v14.js"></script><link rel="stylesheet" href="vce-journey-v16.css"></head><body><header><div class="head"><div><div class="brand"><b>VCE</b> ESPORT / PERFORMANCE CENTER</div><div class="tagline">ACADÉMIE PILOTES V22 · COACHING & AUTOFORMATION</div></div><nav class="nav" aria-label="Navigation principale"><a href="index.html">ACCUEIL</a><a class="on" href="entrainement.html" aria-current="page">ENTRAÎNEMENTS</a></nav></div></header>
-<section id="vce-training-dashboard" aria-label="Profil et progression pilote"></section><section id="vce-training-portal" aria-label="Portail de formation VCE">
+</script><link rel="stylesheet" href="vce-chrono-global.css"><link rel="stylesheet" href="vce-ux-v14.css"><script defer src="vce-ux-v14.js"></script></head><body><header><div class="head"><div><div class="brand"><b>VCE</b> ESPORT / PERFORMANCE CENTER</div><div class="tagline">ACADÉMIE PILOTES V22 · COACHING & AUTOFORMATION</div></div><nav class="nav" aria-label="Navigation principale"><a href="index.html">ACCUEIL</a><a class="on" href="entrainement.html" aria-current="page">ENTRAÎNEMENTS</a></nav></div></header>
+<section class="v17-training-start" aria-label="Démarrer un entraînement"><div class="v17-training-header"><span>VCE ESPORT / ENTRAÎNEMENT</span><h2>QUE VEUX-TU FAIRE AUJOURD’HUI ?</h2><p>Choisis une seule action pour commencer. Ton chronomètre et ton suivi restent disponibles plus bas.</p></div><div class="v17-training-options"><button type="button" data-vcep-target="coach" class="v17-training-option red"><b>01</b><strong>AVEC COACH</strong><small>Analyse et débrief avec accompagnement</small><span>COMMENCER ↗</span></button><button type="button" data-vcep-target="solo" class="v17-training-option blue"><b>02</b><strong>SANS COACH</strong><small>Exercices, chronomètre et progression</small><span>COMMENCER ↗</span></button><a href="interactions.html" class="v17-training-option"><b>03</b><strong>DIAGNOSTICS</strong><small>Comprendre une difficulté de pilotage</small><span>ANALYSER ↗</span></a></div><p class="v17-training-helper">Déjà en séance ? Retrouve ton chrono actif en bas à droite.</p></section><section id="vce-training-dashboard" aria-label="Profil et progression pilote"></section><details class="v17-training-extras"><summary>📚 EXPLORER TOUS LES ATELIERS ET RESSOURCES <span>Afficher les outils complémentaires ▾</span></summary><section id="vce-training-portal" aria-label="Portail de formation VCE">
  <div class="vcep-hero">
   <div class="vcep-top"><div class="vcep-kicker">VCE ESPORT / DRIVER DEVELOPMENT</div><div class="vcep-tag">ACADÉMIE PILOTES</div></div>
   <h2>TON ESPACE.<br><span>TA PROGRESSION.</span></h2>
@@ -154,7 +154,7 @@ header .head{max-width:1320px;margin:auto}header .nav{display:flex;align-items:c
  </div>
  <div class="vcep-nav"><b>ACCÈS RAPIDE</b><button type="button" data-vcep-target="coach">Coach & débrief</button><button type="button" data-vcep-target="solo">Techniques & exercices</button><a href="interactions.html" data-transition>800 interactions</a><a href="ressources_voitures.html" data-transition>Fiches voitures</a><a href="strategie.html" data-transition>Stratégie</a></div>
  <p class="vcep-hint">Retrouve tes outils de suivi et de progression juste en dessous. Les changements de page utilisent des transitions douces.</p>
-</section>
+</section></details>
 <script id="vce-training-portal-script">
 (()=>{"use strict";
  const portal=document.getElementById("vce-training-portal");if(!portal)return;
@@ -326,4 +326,4 @@ if(previous && !allCars.some(x=>norm(x)===norm(previous)))car.value=previous;
 window.VCE_CATALOGUE={cars:CARS,circuits:TRACKS};
 })();
 </script>
-<link rel="stylesheet" href="vce-knowledge.css"><link rel="stylesheet" href="vce-v12.css"><script defer src="vce-coach-5000.js"></script><script defer src="vce-v12-ui.js"></script><script src="vce-chrono-global.js" defer></script><script defer src="vce-journey-v16.js"></script></body></html>
+<link rel="stylesheet" href="vce-knowledge.css"><link rel="stylesheet" href="vce-v12.css"><script defer src="vce-coach-5000.js"></script><script defer src="vce-v12-ui.js"></script><script src="vce-chrono-global.js" defer></script><link rel="stylesheet" href="vce-theme-v17.css"><script defer src="vce-training-v17.js"></script></body></html>

@@ -2,7 +2,7 @@
 const KEY='vce_esport_team_results_v13_2',DB='vce_esport_v5',RACES='vce_esport_team_v13',SEL='vce_esport_v5_selection',STAFF='vce_coach_v6';
 const $=id=>document.getElementById(id);
 const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}};
-const staff=()=>read(SEL,null)?.mode==='coach'&&sessionStorage.getItem(STAFF)==='ok';
+const staff=()=>(read(SEL,null)?.mode==='coach'&&sessionStorage.getItem(STAFF)==='ok')||sessionStorage.getItem('vce_team_manager_v17')==='ok';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmtDate=s=>{if(!s)return 'DATE À CONFIRMER';const [y,m,d]=s.split('-');return `${d}/${m}/${y}`};
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
