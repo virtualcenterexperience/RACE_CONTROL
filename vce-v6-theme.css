@@ -1,0 +1,15 @@
+/* VCE Esport - palette gris graphite / vert paddock */
+:root{--bg:#0c1416!important;--surface:#172427!important;--surface2:#1e3032!important;--line:#314560!important;--muted:#73a2d4!important;--red:#6ba1db!important;--teal:#6ba1db!important;--vcep-red:#6ca1da!important;--vcep-green:#6ca1da!important}
+body{background-color:#0c1416!important;color:#e8edf2!important}
+.ambient{background:radial-gradient(ellipse 48% 50% at 83% 10%,#1e324d45,transparent 75%),radial-gradient(ellipse 45% 40% at 5% 70%,#212e4150,transparent 70%),#0b1416!important}
+.top,#vce-shared-nav,.topbar{border-color:#324560!important}
+.logo .logomark,.brand-mark{background:#1a293e!important;border-color:#3a79bc!important}
+.nav a:hover,.vce-links a:hover{color:#64a1e2!important}
+.tool,.main-card,.mini-card,.spa-shell,.structure,.panel,.vcep-card,.vcep-hero{border-color:#324560!important;background-color:#172528!important}
+.tool:hover,.vcep-card:hover,.main-card:hover{border-color:#69a1dd!important}
+.btn.primary,.vcep-button.primary{background:#244574!important;border-color:#3268a2!important;color:#fff!important;box-shadow:0 8px 26px #2f639a30!important}
+#vce-training-portal .vcep-hero{background:radial-gradient(ellipse at 85% 0%,#25436d65,transparent 46%),linear-gradient(125deg,#203536,#101b1e 70%)!important}
+#vce-training-portal .vcep-card.red .vcep-icon{background:#1f2e43!important;border-color:#346da9!important}
+#vce-training-portal .vcep-card.red .vcep-link{color:#65a1e2!important}
+#vce-training-portal .vcep-hero h2 span{color:#65a1e2!important}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}

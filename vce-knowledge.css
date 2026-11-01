@@ -1,0 +1,21 @@
+
+/* VCE knowledge coach — interface entraînements */
+.vce-kb-panel{border:1px solid #293950!important;background:linear-gradient(140deg,#0f1219,#0c0e13 65%)!important;box-shadow:0 12px 36px #0004}
+.vce-kb-heading{display:flex;justify-content:space-between;align-items:start;gap:18px;flex-wrap:wrap;margin-bottom:14px}
+.vce-kb-heading h2{font-size:19px;letter-spacing:.02em;margin:4px 0 7px;color:#f7fafd}
+.vce-kb-heading p{margin:0;max-width:620px;font-size:12px;color:#a9b9ad;line-height:1.65}
+.vce-kb-eyebrow{color:#3990ec;font-size:10px;letter-spacing:.17em;font-weight:850}
+.vce-kb-status{font-size:11px;color:#358be6;border:1px solid #253750;background:#0e1521;padding:7px 11px;border-radius:99px;white-space:nowrap}
+.vce-kb-status.error{color:#ffca91;border-color:#654c31;background:#2b2119}
+.vce-kb-examples{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 15px}
+.vce-kb-examples button{background:#161a23;border:1px solid #2b3b53;color:#d8e3ee;border-radius:99px;padding:8px 12px;font-size:11px;transition:background .2s,border-color .2s,transform .2s}
+.vce-kb-examples button:hover{background:#162138;border-color:#3990ed;transform:translateY(-2px)}
+.vce-kb-panel #chat{background:#0c0e13!important;border:1px solid #212d3f!important;border-radius:14px!important;min-height:310px}
+.vce-kb-panel .msg{background:#121721!important;border:1px solid #263549!important;border-radius:12px!important}
+.vce-kb-panel .msg.user{background:#202522!important;border-color:#47534b!important}
+.vce-kb-panel .msg .who{color:#3990ed!important}
+.vce-kb-panel #message{background:#0b0e13!important;border-color:#2a3b52!important}
+.vce-kb-panel .chip{background:#171b25!important;border-color:#314460!important;color:#c2daf2!important}
+.vce-kb-panel .chip:hover{background:#223146!important}
+@media(max-width:700px){.vce-kb-heading{gap:8px}.vce-kb-examples button{font-size:10px;padding:7px 9px}}
+@media(prefers-reduced-motion:reduce){.vce-kb-examples button{transition:none!important;transform:none!important}}

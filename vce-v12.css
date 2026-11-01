@@ -1,0 +1,19 @@
+/* V12 : interface coach 5000, palette VCE graphite / vert */
+.vce5000-tools{background:linear-gradient(135deg,#0e1219,#0c0e13);border:1px solid #253347;border-radius:14px;padding:15px;margin:12px 0 16px;color:#d7e6f5}
+.vce5000-tools-title{font-size:12px;font-weight:900;letter-spacing:.07em;color:#398ce5;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.vce5000-tools-title small{color:#73a2d4;font-size:11px;font-weight:500;letter-spacing:normal}
+.vce5000-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.vce5000-controls label{display:block;font-size:11px;font-weight:700;color:#b6c4d3}
+.vce5000-controls select{width:100%;display:block;margin-top:5px;min-width:0;background:#0a0e14;color:#e7f0f9;border:1px solid #27374c;border-radius:9px;padding:9px}
+.vce5000-note{color:#73a2d4;font-size:11px;margin-top:10px;line-height:1.5}
+.vce5000-thinking{display:flex;align-items:center;gap:12px;margin:10px 0;padding:13px 15px;background:#0a101e;border:1px solid #224576;border-radius:11px;color:#56a1f1;font-weight:700;font-size:12px}
+.vce5000-thinking[hidden]{display:none!important}
+.vce5000-spinner{width:20px;height:20px;display:inline-block;border-radius:50%;border:3px solid #26364c;border-top-color:#318ae9;animation:vce5000spin .8s linear infinite}
+@keyframes vce5000spin{to{transform:rotate(360deg)}}
+.vce-kb-heading{gap:10px}.vce-kb-examples button{background:#121722!important;border-color:#273b57!important;color:#b9d4f0!important}
+#chat .msg{border-color:#26354a;background:#111621;color:#eaf2f9}#chat .msg.user{background:#181e29;border-color:#39506f}
+@media(max-width:700px){.vce5000-controls{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.vce5000-spinner{animation:none}}
+
+.vce12-discord-area{display:flex;flex-wrap:wrap;gap:8px;align-items:center;width:100%;padding:12px;background:#0e121a;border:1px solid #273a56;border-radius:12px}
+.vce12-discord-area[hidden]{display:none!important}.vce12-discord-area small{color:#b5c6d7;line-height:1.5}.vce12-discord-area input{min-width:220px;flex:1;padding:10px;background:#080d17;border:1px solid #2d3e57;color:#e7f0f9;border-radius:8px}.vce12-discord-btn{background:#1e2a3a!important}

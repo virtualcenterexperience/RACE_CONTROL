@@ -1,0 +1,8 @@
+(()=>{'use strict';
+// No Discord secret is ever stored in GitHub Pages. Configure only the public Worker URL below.
+const endpoint=(window.VCE_DISCORD_RELAY_URL||'').trim();const STATUS_ID='v11-discord-status';
+function status(msg){let el=document.getElementById(STATUS_ID);if(!el){el=document.createElement('div');el.id=STATUS_ID;el.className='v11-discord-status';el.style.cssText='margin:12px 0;padding:12px 14px;border:1px solid #2e4059;background:#10141d;color:#b7d0e9;border-radius:10px;font-size:12px';const host=document.getElementById('v5-session-status');if(host)host.after(el)}if(el)el.textContent=msg}
+async function notify(p,s){if(!endpoint){status('Séance enregistrée. Notification Discord non configurée : renseigne le relais dans vce-discord-config.js.');return}if(!/^https:\/\//.test(endpoint)){status('Relais Discord invalide : une adresse HTTPS est nécessaire.');return}
+try{const r=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({event:'training_finished',pilot:p.name,sessionId:s.id,endedAt:s.endedAt,seconds:s.seconds,track:s.track,exercise:s.exercise})});if(!r.ok)throw new Error('HTTP '+r.status);status('Séance enregistrée · notification envoyée à Discord (validation coach en attente).')}catch(e){status('Séance enregistrée, mais notification Discord non envoyée : '+e.message)} }
+window.addEventListener('vce:session-finished',e=>{const d=e.detail||{};if(d.pilot&&d.session)notify(d.pilot,d.session)});
+})();

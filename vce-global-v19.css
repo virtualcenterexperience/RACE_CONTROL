@@ -1,0 +1,9 @@
+/* VCE V19 · Cohérence rouge, bleu et blanc sur l'ensemble des pages */
+:root{--vce-v19-red:#f04460;--vce-v19-blue:#348bff;--vce-v19-white:#f4f8ff}
+html{scroll-behavior:smooth}body{--vce-primary:var(--vce-v19-red);--vce-accent:var(--vce-v19-blue)}
+a,button,[role="button"]{-webkit-tap-highlight-color:transparent}button,a,input,select,textarea{transition:background-color .2s,border-color .2s,color .2s,box-shadow .2s,transform .2s}
+button:not(:disabled):hover{filter:brightness(1.09)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--vce-v19-blue)!important;outline-offset:3px}
+.v19-page-indicator{position:fixed;z-index:99999;left:0;top:0;width:100%;height:3px;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--vce-v19-red),#fff,var(--vce-v19-blue));pointer-events:none}
+.v19-scroll-top{position:fixed;right:18px;bottom:84px;z-index:9000;width:43px;height:43px;border-radius:50%;background:linear-gradient(145deg,#e83d57,#276ac2);border:1px solid #a1b7df;color:white;box-shadow:0 12px 30px #0209188c;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(10px)}.v19-scroll-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.v19-page-in{animation:v19-page-in .45s ease-out both}@keyframes v19-page-in{from{opacity:.72;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.v19-page-in{animation:none}button,a,input,select,textarea{transition:none}.v19-scroll-top{transition:none}}
