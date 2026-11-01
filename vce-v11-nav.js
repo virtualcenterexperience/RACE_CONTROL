@@ -1,7 +1,7 @@
 (()=>{'use strict';
 const DB='vce_esport_v5',SEL='vce_esport_v5_selection',STAFF='vce_coach_v6';
 const page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
-const links=[['index.html','ACCUEIL'],['entrainement.html','ENTRAÎNEMENTS'],['strategie.html','STRATÉGIES'],['ressources_voitures.html','CARS'],['interactions.html','DIAGNOSTICS']];
+const links=[['index.html','ACCUEIL'],['entrainement.html','ENTRAÎNEMENTS'],['strategie.html','STRATÉGIES'],['team.html','TEAM'],['ressources_voitures.html','CARS'],['interactions.html','DIAGNOSTICS']];
 function get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}}
 function selection(){return get(SEL,null)}
 function active(){const s=selection();if(!s)return false;if(s.mode==='coach')return sessionStorage.getItem(STAFF)==='ok';if(s.mode==='individual')return !!get(DB,{profiles:{}}).profiles?.[s.id];return s.mode==='group'}
