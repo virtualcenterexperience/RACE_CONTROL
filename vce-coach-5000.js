@@ -92,7 +92,7 @@ function describe(rec,c){const h=hypotheses(rec),tags=[rec.categorie,rec.phase,r
  const text=[head,`\n🧩 CAUSES POSSIBLES (CUMULABLES)\n${lines}`,`\n🧪 EXERCICE DE VALIDATION\n${h[0]?.validation||'Comparer trois passages dans les mêmes conditions.'}\nNe modifier qu’une variable à la fois.`,`\n📊 À RELEVER\n${variables}`,`\n❓ POUR AFFINER\n${question}`,extras.length?'\n⚙️ '+extras.join(' · '):''].join('\n');
  return {text,question,summary:`${rec.id} · ${rec.probleme}\n${h.map((x,i)=>`${i+1}. ${x.name} : ${x.action}`).join('\n')}\nValidation : ${h[0]?.validation||''}`,hypotheses:h};
 }
-function show(rec,c){STATE.last={rec,c,index:0};STATE.tried=new Set();const d=describe(rec,c);const extra=window.VCECircuitCoach?.contextForQuestion?.(STATE.lastQuery)||'';if(extra){d.text='📍 CONTEXTE CIRCUIT / VIRAGE\n'+extra+'\n\n'+d.text;d.summary='Contexte : '+extra+'\n'+d.summary;}STATE.last.detail=d;
+function show(rec,c){STATE.last={rec,c,index:0};STATE.tried=new Set();const d=describe(rec,c);STATE.last.detail=d;
  try{if(window.dialogue){window.dialogue.summary=d.summary;window.dialogue.issue=rec.probleme;window.dialogue.pending='vce5000'}}catch(e){}
  chat(d.text,['J’ai déjà testé','Ça s’améliore','Toujours pareil','C’est pire','Ajouter au bilan']);setStatus('5 000 fiches · diagnostic '+rec.id+' affiché');}
 function followUp(raw){if(!STATE.last)return false;const s=N(raw);
@@ -113,7 +113,7 @@ function handle(raw){const q=String(raw||'').trim();if(!q)return false;
  if(!STATE.ready){chat('La base technique des 5 000 situations se charge. Attends un instant puis réessaie.');return true}
  if(STATE.busy){chat('Une analyse est déjà en cours. Attends le résultat avant d’envoyer une nouvelle question.');return true}
  const {context,results}=rank(q);
- if(!context.primary){const info=window.VCECircuitCoach?.contextForQuestion?.(q);if(info){chat('📍 INFORMATIONS CIRCUIT\n'+info+'\n\nDécris maintenant le symptôme exact, la phase (freinage, entrée, milieu, sortie) et la voiture pour chercher une hypothèse dans les 5 000 fiches.');return true;}chat('Je ne peux pas identifier suffisamment précisément le problème sans risquer une réponse hors sujet. Précise ce qui se passe (arrière qui glisse, sous-virage, freinage, vibreur, pneus…), à quel moment du virage et dans quelle voiture.',['Je perds l’arrière sur un vibreur','Je sous-vire en entrée','Je patine en sortie']);return true}
+ if(!context.primary){chat('Je ne peux pas identifier suffisamment précisément le problème sans risquer une réponse hors sujet. Précise ce qui se passe (arrière qui glisse, sous-virage, freinage, vibreur, pneus…), à quel moment du virage et dans quelle voiture.',['Je perds l’arrière sur un vibreur','Je sous-vire en entrée','Je patine en sortie']);return true}
  if(!results.length||results[0].score<50){chat('Je n’ai pas trouvé de correspondance fiable dans les 5 000 fiches pour cette combinaison. Précise la catégorie de voiture, la phase du virage et le symptôme. Je préfère demander plutôt qu’inventer une cause.');return true}
  STATE.busy=true;STATE.lastQuery=q;setStatus('Analyse en cours : rapprochement des mots-clés, de la voiture et de la phase…');
  const typing=$('vce5000Thinking');if(typing){typing.hidden=false;typing.textContent='Recherche parmi 5 000 situations · analyse du contexte…'}

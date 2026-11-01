@@ -1,0 +1,123 @@
+/* VCE ESPORT / Design Refresh — V20, Track Titan x VCE Racing.
+   Non-destructive final cascade: original feature styles are preserved. */
+:root{
+ --vce-bg:#0b1018;--vce-panel:#171e28;--vce-panel-2:#1d2632;
+ --vce-border:#303d4d;--vce-border-soft:#263340;
+ --vce-text:#f0f4fb;--vce-muted:#9bafc6;
+ --vce-red:#e7485c;--vce-blue:#4489e8;--vce-green:#37bda7;
+ --vce-radius:12px;--vce-shadow:0 10px 35px rgba(0,0,0,.15);
+ color-scheme:dark;
+}
+html{scroll-behavior:smooth}
+body.vce-refresh{
+ background:radial-gradient(ellipse 65% 30% at 78% -14%,rgba(51,93,149,.13),transparent 90%),#0b1018!important;
+ color:var(--vce-text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+ -webkit-font-smoothing:antialiased;line-height:1.5;
+}
+body.vce-refresh *{box-sizing:border-box}
+body.vce-refresh :is(h1,h2,h3,h4){letter-spacing:-.025em;line-height:1.22}
+body.vce-refresh h1{font-weight:850}
+body.vce-refresh :is(a,button,input,select,textarea){font-family:inherit}
+body.vce-refresh :is(button,a,input,select,textarea):focus-visible{outline:2px solid #79afff;outline-offset:3px}
+body.vce-refresh :is(button,.btn,.v18-btn,.team-tabs button,.v20-mode-card,.tools a){transition:background .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease}
+body.vce-refresh :is(button,.btn,.v18-btn,.team-tabs button):hover:not(:disabled){filter:brightness(1.09)}
+body.vce-refresh :is(button,.btn,.v18-btn,.team-tabs button):active:not(:disabled){transform:translateY(1px)}
+body.vce-refresh :is(input:not([type=checkbox]):not([type=radio]),select,textarea){background:#101923!important;border:1px solid #3a4a5e!important;color:#f1f5fc!important;border-radius:8px!important;max-width:100%}
+body.vce-refresh :is(input:not([type=checkbox]):not([type=radio]),select,textarea):focus{border-color:#6b9eeb!important;box-shadow:0 0 0 3px rgba(68,137,232,.12)!important}
+body.vce-refresh :is(table){border-collapse:collapse;max-width:100%}
+body.vce-refresh :is(th){color:#a7b9ce;text-transform:uppercase;font-size:11px;letter-spacing:.06em}
+body.vce-refresh :is(td,th){border-bottom:1px solid #2d3a49}
+body.vce-refresh :is(.panel,.v18-panel,.team-panel,.team-box,.v20-kpi,.v20-weekly,.vcep-hero,.vcep-grid>* ,.v20-training-hero){box-shadow:var(--vce-shadow);border-color:var(--vce-border)!important}
+body.vce-refresh :is(.panel,.v18-panel,.team-panel,.team-box){background:#171e28!important;border-radius:12px!important}
+body.vce-refresh :is(.tagline,.sub,.v18-hero p,.team-hero p){color:var(--vce-muted)!important}
+body.vce-refresh :is(.v19-local-notice,.v18-chip){background:#162633!important;border-color:#34536b!important;color:#9bc4e6!important}
+body.vce-refresh :is(.nav a,.v18-nav a){border-radius:7px!important;font-weight:700}
+body.vce-refresh :is(.nav a.active,.nav a.on,.v18-nav a.active){background:#cf4054!important;color:#fff!important;border-color:#e05b6c!important}
+body.vce-refresh :is(.nav a:hover,.v18-nav a:hover){background:#253449!important;color:#fff!important}
+body.vce-refresh .vce-refresh-topline{height:3px;background:linear-gradient(90deg,#e7485c 0 32%,#4489e8 32% 80%,#37bda7 80%);position:relative;z-index:100}
+body.vce-refresh .vce-refresh-stamp{display:inline-flex;gap:7px;align-items:center;color:#8da5c0;font-size:10px;font-weight:750;letter-spacing:.13em;text-transform:uppercase}
+body.vce-refresh .vce-refresh-stamp:before{content:"";width:7px;height:7px;border-radius:50%;background:#e7485c;box-shadow:0 0 0 3px rgba(231,72,92,.13)}
+/* Homepage — editorial, compact and centered */
+body.vce-refresh.v5-landing .ambient{background:radial-gradient(ellipse 50% 45% at 85% 5%,rgba(49,98,166,.17),transparent 75%),#0b1018!important}
+body.vce-refresh.v5-landing .wrap{max-width:1280px;padding-inline:clamp(18px,3.5vw,44px)}
+body.vce-refresh.v5-landing .top{height:auto;min-height:80px;border-color:#2d3948;gap:12px}
+body.vce-refresh.v5-landing .hero{min-height:unset!important;padding-top:clamp(45px,6vw,82px)!important;padding-bottom:clamp(45px,5vw,72px)!important;align-items:center}
+body.vce-refresh.v5-landing .hero h1{font-size:clamp(36px,5.1vw,76px)!important;line-height:1.03;max-width:760px}
+body.vce-refresh.v5-landing .hero p{max-width:590px;color:#a9bbcf}
+body.vce-refresh.v5-landing .spa-shell{border:1px solid #3a4b60!important;background:linear-gradient(155deg,#1b293a,#121a24)!important;border-radius:14px!important;box-shadow:var(--vce-shadow)}
+body.vce-refresh.v5-landing :is(.tools a,.tool,.tool-card,.profile-card){border-radius:12px!important;border-color:#344357!important;background:#18212e!important}
+body.vce-refresh.v5-landing :is(.tools a,.tool,.tool-card,.profile-card):hover{transform:translateY(-2px);border-color:#5883bc!important}
+body.vce-refresh.v5-landing .structure{border-color:#2d3c4e}
+/* Training — preserve existing modes and coach, remove the visual noise */
+body.vce-refresh .head{max-width:1320px!important;padding:15px clamp(16px,3vw,32px)!important}
+body.vce-refresh header{background:rgba(15,22,32,.96)!important;border-bottom:1px solid #303c4c!important}
+body.vce-refresh .brand{font-size:17px!important;letter-spacing:.03em}
+body.vce-refresh main{max-width:1320px}
+body.vce-refresh #v20-training{max-width:1320px!important;margin-inline:auto!important}
+body.vce-refresh .v20-training-hero{background:linear-gradient(125deg,#1a2839,#151d28)!important;border-radius:13px!important}
+body.vce-refresh .v20-mode-grid{gap:12px!important}
+body.vce-refresh .v20-mode-grid>*{background:#1b2634!important;border:1px solid #3a4b5e!important;border-radius:12px!important;min-width:0}
+body.vce-refresh .v20-mode-grid>*:hover{border-color:#5d91d0!important;transform:translateY(-2px)}
+body.vce-refresh .v20-kpi-grid{gap:12px!important}
+body.vce-refresh .v20-kpi{background:#1a2430!important;border-radius:11px!important}
+body.vce-refresh .v20-weekly{background:#171e28!important;border-radius:12px!important}
+body.vce-refresh .tabs button{background:#1a2635!important;border:1px solid #3a4d61!important;border-radius:8px!important}
+body.vce-refresh .tabs button.active{background:#28466b!important;border-color:#6192d0!important}
+body.vce-refresh .tabs button.solo.active{background:#24584e!important;border-color:#47a797!important}
+body.vce-refresh :is(.vcep-hero,.vcep-grid>*,.vcep-step){background:#171f2a!important;border-radius:11px!important;border-color:#334457!important}
+body.vce-refresh .vce-extra-switch{max-width:1320px;margin:14px auto 18px;padding:0 20px}
+body.vce-refresh .vce-extra-switch button{display:flex;align-items:center;gap:9px;padding:11px 16px;background:#1b2837;border:1px solid #3c5066;border-radius:8px;color:#d9e7f9;font-weight:750;cursor:pointer}
+body.vce-refresh .vce-extra-switch small{font-size:11px;color:#a7b8cd;font-weight:400}
+body.vce-refresh.vce-extras-collapsed #vce-training-portal{display:none!important}
+/* TEAM — balanced operations dashboard */
+body.vce-refresh.team-page .team-container{max-width:1380px!important;margin:0 auto!important;padding-inline:clamp(16px,3vw,36px)!important}
+body.vce-refresh.team-page .team-hero{background:linear-gradient(110deg,#1b2736,#151d29)!important;border:1px solid #35465b!important;border-radius:12px!important;padding:clamp(20px,3vw,34px)!important}
+body.vce-refresh.team-page .team-hero h1{font-size:clamp(25px,3vw,42px)!important}
+body.vce-refresh.team-page .team-toolbar{background:#151e2a!important;border:1px solid #2e3d4f!important;border-radius:10px!important;padding:10px!important}
+body.vce-refresh.team-page .team-tabs{gap:5px!important}
+body.vce-refresh.team-page .team-tabs button{background:#1b293a!important;border:1px solid transparent!important;border-radius:7px!important}
+body.vce-refresh.team-page .team-tabs button.active{background:#31598a!important;border-color:#5081b7!important}
+body.vce-refresh.team-page .team-content{gap:16px!important}
+body.vce-refresh.team-page .team-panel,body.vce-refresh.team-page .team-box{padding:clamp(15px,2vw,23px)!important}
+/* Race control — data dense, legible */
+body.vce-refresh .app{max-width:1440px!important;margin-inline:auto!important;padding:clamp(16px,2.4vw,30px)!important}
+body.vce-refresh .app>.top{border-bottom:1px solid #303d4d;padding-bottom:15px}
+body.vce-refresh .app .layout{grid-template-columns:minmax(300px,410px) minmax(0,1fr)!important;gap:14px!important}
+body.vce-refresh .app .panel{overflow:visible}
+body.vce-refresh :is(.v19-command,.v19-engineering,.v19-backup){border-radius:11px!important;border-color:#35465a!important;background:#171f2a!important}
+body.vce-refresh .app :is(.btn,.tab,.courseBtn){border-radius:7px!important;background:#1c2b3d;border-color:#3b5067}
+body.vce-refresh .app :is(.btn.blue,.tab.active,.courseBtn.active){background:#315f9d!important;border-color:#5b8fcf!important}
+body.vce-refresh .app .btn.red{background:#c83f52!important;border-color:#d34d5e!important}
+/* Dashboard — compact KPI and panels */
+body.vce-refresh .v18-shell{max-width:1440px!important;margin-inline:auto!important;padding:clamp(14px,2.5vw,30px)!important}
+body.vce-refresh .v18-top{background:#121b27!important;border:1px solid #2e3b4c!important;border-radius:10px!important;padding:14px 18px!important;gap:14px}
+body.vce-refresh .v18-brand{font-size:15px!important}
+body.vce-refresh .v18-hero{padding:clamp(22px,3vw,38px)!important;background:linear-gradient(110deg,#1a293a,#141d29)!important;border:1px solid #34465b!important;border-radius:12px!important;margin-top:15px!important}
+body.vce-refresh .v18-hero h1{font-size:clamp(28px,3.5vw,46px)!important}
+body.vce-refresh .v18-grid{gap:12px!important}
+body.vce-refresh .v18-stat{background:#1a2430!important;border:1px solid #344558!important;border-radius:10px!important;padding:20px!important}
+body.vce-refresh .v18-stat strong{font-variant-numeric:tabular-nums;color:#f1f5fb!important}
+body.vce-refresh .v18-layout{gap:16px!important}
+body.vce-refresh .v18-panel{padding:clamp(15px,2vw,23px)!important}
+/* Optional nav clarity, no new modules */
+body.vce-refresh .vce-quicknav{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin:0 auto 14px;max-width:1320px;padding:0 20px}
+body.vce-refresh .vce-quicknav a{padding:8px 11px;border:1px solid #354457;background:#192431;border-radius:7px;font-size:11px;font-weight:750;color:#b9cce4;text-decoration:none}
+body.vce-refresh .vce-quicknav a[aria-current="page"]{background:#263f5e;border-color:#557da9;color:#fff}
+@media(max-width:1000px){
+ body.vce-refresh .app .layout{grid-template-columns:1fr!important}
+ body.vce-refresh .team-content,body.vce-refresh .v18-layout{grid-template-columns:1fr!important}
+ body.vce-refresh.v5-landing .hero{grid-template-columns:1fr!important}
+ body.vce-refresh .v18-top{flex-wrap:wrap}
+}
+@media(max-width:680px){
+ body.vce-refresh.v5-landing .wrap{padding-inline:16px}
+ body.vce-refresh .v18-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ body.vce-refresh .v20-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ body.vce-refresh .v20-mode-grid{grid-template-columns:1fr!important}
+ body.vce-refresh .v18-nav,body.vce-refresh .nav{overflow-x:auto;max-width:100%;flex-wrap:nowrap!important}
+ body.vce-refresh .v18-nav a,body.vce-refresh .nav a{white-space:nowrap}
+ body.vce-refresh .head{align-items:flex-start}
+ body.vce-refresh .app .fields{grid-template-columns:1fr}
+ body.vce-refresh .v18-stat{padding:13px!important}
+}
+@media(prefers-reduced-motion:reduce){body.vce-refresh *,body.vce-refresh *::before,body.vce-refresh *::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
