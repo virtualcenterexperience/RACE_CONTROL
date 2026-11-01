@@ -1,0 +1,12 @@
+(()=>{'use strict';const $=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const local=k=>{try{return JSON.parse(localStorage.getItem(k)||'{}')}catch{return {}}};
+async function render(){const c=window.VCECloud;let results=[],logs=[];let name=localStorage.getItem('v18_profile_search_name')||'';
+try{if(c.enabled){results=(await c.table('race_results','select=payload')).map(x=>x.payload);if(c.user){const pp=await c.table('member_profiles','select=display_name,role&id=eq.'+c.user.id);name=name||pp[0]?.display_name||'';logs=await c.table('training_logs','select=*&user_id=eq.'+c.user.id)}}else results=local('vce_esport_team_results_v13_2').results||[]}catch(e){$('vp-account').textContent='Données indisponibles : '+e.message;return}
+$('vp-name').value=name;$('vp-account').textContent=c.enabled?(c.user?`${c.user.email} · ${c.role}`:'Visiteur : connecte-toi depuis le tableau de bord pour voir les entraînements cloud.'):'Mode local : statistiques indicatives sur ce navigateur.';
+const matches=results.filter(r=>String(r.driver||'').trim().toLocaleLowerCase('fr')===name.trim().toLocaleLowerCase('fr'));
+$('vp-races').textContent=matches.length;$('vp-best').textContent=matches.length?'P'+Math.min(...matches.map(x=>Number(x.position))):'—';$('vp-podiums').textContent=matches.filter(x=>Number(x.position)<=3).length;$('vp-points').textContent=new Set(logs.filter(x=>x.status==='verified').map(x=>x.session_date)).size*2;
+$('vp-results').innerHTML=matches.length?matches.sort((a,b)=>b.date.localeCompare(a.date)).map(r=>`<div class="v18-row"><div><strong>P${Number(r.position)} · ${esc(r.championship)}</strong><small>${esc(r.date)} · ${esc(r.team)} · ${esc(r.game)} · ${esc(r.track)}</small></div></div>`).join(''):'<div class="v18-empty">Aucun résultat trouvé pour ce nom.</div>';
+$('vp-training').innerHTML=logs.length?logs.map(s=>`<div class="v18-row"><div><strong>${esc(s.session_date)} · ${Number(s.minutes)} min · ${esc(s.track)}</strong><small>${esc(s.exercise)} · ${esc(s.status)}</small></div></div>`).join(''):'<div class="v18-empty">Aucun entraînement cloud pour ce compte.</div>';
+}
+function init(){$('vp-search').onclick=()=>{localStorage.setItem('v18_profile_search_name',$('vp-name').value.trim());render()};window.addEventListener('vce:cloud-auth',render);render()}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();})();
