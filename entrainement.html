@@ -245,9 +245,9 @@ let prior=known.lastAnswer;known.lastAnswer=context;known.summary=context+' '+qu
 if(contains(s,'oui','non','toujours','parfois')&&known.pending==='followup'&&!detectIssue(s)&&!detectPhase(s)&&prior)context='Compris. '+context;
 return [context+'\n\nExercice : 5 tours avec le même repère, une seule correction à la fois. Note ton ressenti et ton chrono médian.\n\n'+question,['Ça s’améliore','Toujours pareil','Je bloque encore','Ajouter au bilan']]
 }
-function sendMessage(raw){let t=String(raw??VAL('message')).trim();if(!t)return;$('message').value='';appendChat('PILOTE',t);if(contains(normalize(t),'ajouter au bilan')){toNotes();appendChat('COACH VCE','J’ai ajouté notre diagnostic aux notes de séance.');return}if(window.VCEKnowledge&&window.VCEKnowledge.handle(t))return;let [answer,quick]=reply(t);appendChat('COACH VCE',answer,quick)}
-function toNotes(){let summary=dialogue.summary||'Pas encore de diagnostic.';$('coachNotes').value=($('coachNotes').value?$('coachNotes').value+'\n\n':'')+summary;$('validationStatus').textContent='Diagnostic ajouté aux notes.'}
-function chatInit(){$('chat').replaceChildren();dialogue={issue:'',phase:'',pending:'',lastAnswer:'',summary:'',turns:[]};appendChat('COACH VCE',`Salut ! On débriefe ta séance. Avec ta catégorie ${VAL('category')} et ton niveau ${VAL('level')}, raconte-moi ce qui t’a posé problème.`,['Je bloque au freinage','Je rate le point de corde','Je pars en tête-à-queue','Je perds du temps en sortie'])}
+function sendMessage(raw){let t=String(raw??VAL('message')).trim();if(!t)return;$('message').value='';appendChat('PILOTE',t);if(contains(normalize(t),'ajouter au bilan')){toNotes();appendChat('COACH VCE','J’ai ajouté notre diagnostic aux notes de séance.');return}if(window.VCEKnowledge){window.VCEKnowledge.handle(t);return;}let [answer,quick]=reply(t);appendChat('COACH VCE',answer,quick)}
+function toNotes(){let summary=window.VCEKnowledge?.getSummary?.()||dialogue.summary||'Pas encore de diagnostic.';$('coachNotes').value=($('coachNotes').value?$('coachNotes').value+'\n\n':'')+summary;$('validationStatus').textContent='Diagnostic ajouté aux notes.'}
+function chatInit(){$('chat').replaceChildren();dialogue={issue:'',phase:'',pending:'',lastAnswer:'',summary:'',turns:[]};appendChat('COACH VCE',`Salut ! On débriefe ta séance. Avec ta catégorie ${VAL('category')} et ton niveau ${VAL('level')}, raconte-moi ce qui t’a posé problème.`,['Je perds l’arrière sur un vibreur','Je sous-vire en entrée','Je patine en sortie','Mes pneus surchauffent'])}
 
 const LEARN_MODULES={
  'Rookie':[['01','Repères & position','FOV, position, regard et repères stables'],['02','Trajectoires propres','Approcher la corde sans forcer et exploiter la sortie'],['03','Freinage & motricité','Freiner sans bloquer et remettre les gaz progressivement']],
@@ -326,4 +326,4 @@ if(previous && !allCars.some(x=>norm(x)===norm(previous)))car.value=previous;
 window.VCE_CATALOGUE={cars:CARS,circuits:TRACKS};
 })();
 </script>
-<link rel="stylesheet" href="vce-knowledge.css"><script defer src="vce-knowledge.js"></script></body></html>
+<link rel="stylesheet" href="vce-knowledge.css"><link rel="stylesheet" href="vce-v12.css"><script defer src="vce-coach-5000.js"></script><script defer src="vce-v12-ui.js"></script></body></html>
